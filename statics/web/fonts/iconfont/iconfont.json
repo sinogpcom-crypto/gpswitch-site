@@ -1,0 +1,86 @@
+{
+  "id": "2618548",
+  "name": "通用",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "708166",
+      "name": "客服",
+      "font_class": "kefu",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "959116",
+      "name": "上箭头",
+      "font_class": "shangjiantou",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "12515511",
+      "name": "下箭头",
+      "font_class": "arrow-down",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "928933",
+      "name": "angle-down",
+      "font_class": "angledown",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "928934",
+      "name": "angle-left",
+      "font_class": "angleleft",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "928936",
+      "name": "angle-right",
+      "font_class": "angleright",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "928937",
+      "name": "angle-up",
+      "font_class": "angleup",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "837138",
+      "name": "qq",
+      "font_class": "qq",
+      "unicode": "e7c3",
+      "unicode_decimal": 59331
+    },
+    {
+      "icon_id": "479389",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "1382584",
+      "name": "微信 (1)",
+      "font_class": "weixin",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "2742669",
+      "name": "微博",
+      "font_class": "weibo1",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    }
+  ]
+}

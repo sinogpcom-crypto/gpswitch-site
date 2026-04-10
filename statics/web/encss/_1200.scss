@@ -1,0 +1,151 @@
+
+
+@media only screen and (max-width: 1550px){
+        
+    .index_business {
+        padding: 120px 0;
+
+        .business_top {
+            .business_header {
+                padding-top: 90.7px;
+            }
+            .business_info {
+                .item {
+                    height: 400px;
+                    padding: 50px;
+                    .box {
+                        position: absolute;
+                        top: 50%;
+                        @include transform(translateY(-50%));
+                    }
+
+                    .item-title {
+                        font-size: 32px;
+                        line-height: 1.2;
+
+                    }
+                    .liner {
+                        margin: 25px 0;
+                    }
+                    .item-ftitle {
+                        font-size: 24px;
+                        font-weight: bold;
+                        line-height: 1.2;
+
+                    }
+                    .item-desc {
+                        font-size: 18px;
+                        line-height: 1.2;
+                        margin-top: 5px;
+                    }
+                    .item-icon {
+                        margin-top: 57px;
+                    }
+
+                }
+
+            }
+        }
+
+        .business_bottom {
+
+            .item {
+                width: 16.25%;
+                margin-right: 0.5%;
+            }
+            .box {
+                
+                .item-box {
+                    img {
+                        width: 96%;
+                    }
+                    h3 {
+                        font-size: 20px;
+                        @include whiteSpeceNowrap();
+                        padding: 0 10px;
+                    }
+                    span {
+                        font-size: 14px;
+                        margin-top: 5px;
+                        @include whiteSpeceNowrap();
+                        padding: 0 10px;
+                    }
+                    .icon {
+                        height: 4px;
+                        margin-top: 15px;
+                    }
+                }
+
+                
+
+            }
+        }
+
+    }
+
+
+        
+    .index_strengths {
+                
+
+        .strengths_info {
+            
+            .box {
+                display: none;
+                &:first-child{
+                    display: block;
+                }
+            }
+            
+
+            h4 {
+                font-size: 24px;
+                line-height: 1.2;
+            }
+            .synopsis {
+                font-size: 18px;
+                line-height: 1.6;
+                margin-top: 20px
+            }
+
+        }
+
+        .strengths_list {
+            margin-top: 220px;
+            
+            &::before {
+                top: 101px;
+            }
+            .item-box {
+                height: 223px;
+                .img {
+                    height: 40px;
+                }
+                .icon {
+                    margin: 18px 0;
+                }
+                .title {
+                    font-size: 20px;
+                }
+            }
+        }
+
+
+    }
+
+        
+    .index_cooperative { 
+        .cooperative_list {
+            margin-top: 20px;
+            .item {
+                width: 15%;
+                margin-right: 2%;
+                margin-top: 2%;
+            }
+        }
+
+    }
+
+
+
+}

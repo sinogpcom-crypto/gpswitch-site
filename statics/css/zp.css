@@ -1,0 +1,592 @@
+/*base*/
+body,div,p,img,h1,input,label{
+    margin:0;
+    padding:0;
+    font-size: 12px;
+    color: #000;
+    font-family: 'Microsoft YaHei',Arial,'SimSun';
+}
+img{
+    border:none;}
+.fl{
+    float: left;}
+.fr{
+    float: right;}
+.pt{
+    cursor: pointer;}
+.zp-list input,.zp-list textarea,.zp-list label{
+    margin:0;
+    padding:0;
+}
+/*!base!*/
+/*
+内容样式
+*/
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #999;
+}
+/*倒计时 开始*/
+.timer{
+    width:123px;
+    height:70px;
+    position: fixed;
+    bottom:50px;
+    right:20px;
+    z-index: 1111;
+}
+.timer p{
+    font-size: 12px;
+    color: #999;
+    line-height:12px;
+    text-align: left;
+    margin:0px 0px 22px auto;
+}
+.timer-box .timer-minute-l,.timer-box .timer-minute-r,.timer-box .timer-second-l,.timer-box .timer-second-r{
+    width:15px;
+    height:27px;
+    font-size: 15px;
+    color: #fff;
+    line-height:27px;
+    text-align: center;
+    background: #ccc url(/bangcms_hr/statics/images/job/timer_00.png);
+    margin-right: 2px;
+}
+.timer-box .timer-colon{
+    width:13px;
+    height:27px;
+    font-size: 20px;
+    color: #b1b1b1;
+    line-height:27px;
+    text-align: center;
+    left:-1px;
+}
+/*倒计时 结束*/
+/*滚动 开始*/
+.wheel-box{
+    position: fixed;
+    left:0;
+    right: 0;
+    top:0;
+    bottom:0;
+    margin:auto auto;
+    margin-right:20px;
+    width:102px;
+    height:224px;
+    /*height:252px;*/
+    background: url(/bangcms_hr/statics/images/job/gun_1.png) no-repeat right center;
+    z-index: 1111;
+    display: none;
+}
+.wheel-box ul{
+    margin:0;
+    padding:0;
+}
+.wheel-list{
+    margin:8px auto;
+    text-align: left;
+    height: 19px;
+    width: 102px;
+    /*background: url(../images/gun_2.png) no-repeat;*/
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.wheel-list a{
+    color: #000;
+    display: block;
+    font-size: 14px;
+    line-height:19px;
+}
+/*滚动 结束*/
+/*2-17*/
+/*2-21*/
+.zp-list .zp-select-time-one{
+    width:22px;
+    height:22px;
+    position: absolute;
+    top:15px;
+    left:117px;
+}
+.zp-list .zp-select-time-two{
+    width:22px;
+    height:22px;
+    position: absolute;
+    top:15px;
+    left:387px;
+}
+.zp-list .zp-select-position-r{
+    position: absolute;
+    /*left:365px;*/
+    left:339px;
+}
+/*video*/
+.zp-video{
+    width:1000px;
+    height:563px;
+    background: #ccc;
+    margin:80px auto 150px auto;
+}
+.zp-pic {
+    position: relative;
+    left:11.5px;
+}
+/*video*/
+/*2-21*/
+/*!*2-20*!*/
+.zp-list .zp-select-div-time{
+    position: relative;
+}
+.zp-list .zp-date-one{
+    position: absolute;
+    top:15px;
+    left:12px;
+}
+.zp-site-height{
+    height:50px;
+}
+.zp-list .zp-site-l{
+    position: absolute;
+    top:0;
+    left:0;
+}
+/*2-20*/
+/*2-19*/
+.zp-family-bottom select{
+    margin-bottom: 10px;
+}
+.zp-list .zp-site-left{
+    margin-left: 105px;
+}
+#seachprov,#seachcity,#seachdistrict{
+    width:184px;
+    height:50px;
+    font-size: 15px;
+    color: #000;
+    line-height:50px;
+    text-align: left;
+    background: #f1f2f3;
+    border:none;
+    padding:0 18px 0 16px;
+    margin-right: 9px;
+}
+/*2-18*/.zp-list .star{
+    position: absolute;
+    /*2-18*/top:3px;
+    left:-14px;
+    color: #e70012;
+    line-height:50px;
+    font-size: 15px;
+}
+.zp-list .zp-year-month-date{
+    width:500px;
+    height:50px;
+    font-size: 15px;
+    color: #666;
+    line-height:50px;
+    margin-top: 15px;
+    text-align: left;
+    padding:0 18px 0 16px;
+}
+.zp-list{
+    font-size: 15px;
+    color: #000;
+    line-height:50px;
+    text-align: left;
+}
+.zp-list{
+    position: relative;}
+.zp-list .zp-date-one{
+    position: absolute;
+    top:14px;
+    left:116px;
+}
+.zp-list .zp-date-two{
+    position: absolute;
+    top:14px;
+    left:404px;
+}
+.zp-list .zp-experience-one{
+    position: absolute;
+    top:19px;
+    left:116px;
+}
+.zp-list .zp-occupation-one{
+    position: absolute;
+    top:19px;
+    left:347px;
+}
+.zp-list .zp-occupation-two{
+    position: absolute;
+    top:19px;
+    left:117px;
+}
+.zp-list .zp-occupation-three{
+    position: absolute;
+    top:19px;
+    left:465px;
+}
+.zp-list .zp-time-left{
+    background: #f1f2f3 url(/bangcms_hr/statics/images/job/zp_03.png) no-repeat 12px 14px;
+    padding-left:42px;
+}
+/*2-20*/
+.zp-list .zp-select-div-time{
+    position: relative;
+}
+/*2-20*/
+.zp-list .zp-salary-left{
+    padding-left:31px;
+}
+/*!2-17!*/
+.zp-top img{  width:100%;}
+.zp-con-top{
+    margin:63px auto 67px auto;
+}
+.zp-con-top h1{
+    margin:auto auto 27px auto;
+    font-size: 36px;
+    color: #000;
+    line-height:38px;
+    text-align: center;
+}
+.zp-con-top p{
+    font-size: 12px;
+    color: #999;
+    line-height:14px;
+    text-align: center;
+}
+.zp-date{
+    margin:0 auto;
+    width:1000px;
+    height:auto;
+    border-top:1px solid #e6e6e6;
+    position: relative;
+}
+/*红色小字*/
+.zp-date .zp-date-red{
+    display: inline-block;
+    width:110px;
+    height:46px;
+    font-weight:bolder;
+    font-size: 15px;
+    color: #e70012;
+    line-height:46px;
+    text-align: left;
+}
+/*灰色小字*/
+.zp-date .zp-date-gray{
+    display: inline-block;
+    height:46px;
+    font-size: 12px;
+    color: #999;
+    line-height:46px;
+    text-align: left;
+    position: absolute;
+    left:83px;
+}
+.zp-date .zp-arrow-down{
+    width:15px;
+    height:12px;
+    margin:17px 10px auto auto;
+    line-height:12px;
+}
+.zp-date .zp-arrow-up{
+    width:15px;
+    height:15px;
+    margin:17px 10px auto auto;
+    line-height:15px;
+    display: none;
+}
+.zp-list-box{
+    margin-left:110px;
+    margin-top:17px;
+    margin-bottom:104px;
+    display: none;
+}
+.zp-box-bottom{
+    margin-top:26px;
+    margin-bottom:72px;
+}
+.zp-list{
+    margin:25px auto;
+}
+.zp-list label{
+    width:101px;
+    height:50px;
+    display: inline-block;
+    font-size: 15px;
+    color: #666;
+    line-height:50px;
+    text-align: left;
+}
+.zp-list p{
+    width:500px;
+    height:50px;
+    display: block;
+    font-size: 15px;
+    color: #666;
+    line-height:50px;
+    margin-top: 15px;
+    text-align: left;
+}
+.zp-list .p{
+    width:500px;
+    height:50px;
+    display: block;
+    font-size: 15px;
+    color: #666;
+    line-height:50px;
+    margin-top: 15px;
+    text-align: left;
+    /*width:284px;*/
+    /*font-size: 15px;*/
+    /*color: #000;*/
+    /*line-height:50px;*/
+    /*text-align: left;*/
+    /*padding:0 18px 0 16px;*/
+}
+.zp-list input{
+    width:284px;
+    height:50px;
+    font-size: 15px;
+    color: #000;
+    line-height:50px;
+    text-align: left;
+    background: #f1f2f3;
+    border:none;
+    padding:0 18px 0 16px;
+    margin-right: 10px;
+}
+.zp-list .zp-black{
+    color: #000;
+}
+select{
+    margin-right: 9px;
+}
+/*日期/职位*/
+select.zp-date-order{
+    width:284px;
+    height:50px;
+    font-size: 15px;
+    color: #000;
+    line-height:50px;
+    text-align: left;
+    background: #f1f2f3;
+    border:none;
+    padding:0 18px 0 16px;
+    margin-right: 9px;
+}
+.zp-list .zp-date-gray{
+    color: #999;
+}
+/*2-18*/select option{
+    /*2-17*//*width:284px;*/
+    font-size: 15px;
+    color: #000;
+    /*2-18*//*line-height:50px;*/
+    text-align: left;
+    background: #f1f2f3;
+    border:none;
+    /*2-18*/padding:5px 18px 5px 16px;
+}
+/*！日期/职位！*/
+/*教育/培训*/
+.zp-education-province{
+    width:120px;
+    height:50px;
+    font-size: 15px;
+    color: #000;
+    line-height:50px;
+    text-align: left;
+    background: #f1f2f3;
+    border:none;
+    padding:16px 18px 16px 16px;
+}
+/*！教育/培训！*/
+/*个人信息*/
+select.zp-personal-age{
+    width:120px;
+    height:50px;
+    font-size: 15px;
+    color: #000;
+    line-height:50px;
+    text-align: left;
+    background: #f1f2f3;
+    border:none;
+    padding:0 18px 0 16px;
+}
+/*！个人信息！*/
+/*职业信息*/
+.zp-occupation-reason{
+    width:220px;
+    height:50px;
+    font-size: 15px;
+    color: #000;
+    line-height:50px;
+    text-align: left;
+    background: #f1f2f3;
+    border:none;
+    padding:0 18px 0 16px;
+}
+.zp-list .zp-occupation-label{
+    position: relative;
+    margin-left:-30px;
+    width:70px;
+}
+/*！职业信息！*/
+/*家庭成员*/
+.zp-family input{
+    margin-bottom: 10px;
+}
+/*.zp-list .zp-family-firms{
+    margin-left: 10px;
+}*/
+/*!家庭成员!*/
+/*生活/发展*/
+.zp-evaluation{
+    border-bottom:1px solid #e6e6e6;
+}
+.zp-life textarea,.zp-evaluation textarea,.zp-list .zp-how-comprehension,.zp-list .zp-relative{
+    width:780px;
+    height:80px;
+    resize: none;
+    font-size: 15px;
+    color: #000;
+    line-height:20px;
+    text-align: left;
+    text-indent: 2em;
+    background: #f1f2f3;
+    border:none;
+    /*2-18*/padding:17px 0;
+}
+.zp-list .zp-how-get,.zp-list .zp-how-reason{
+    width:780px;
+    height:50px;
+    resize: none;
+    font-size: 15px;
+    color: #000;
+    line-height:50px;
+    text-align: left;
+    text-indent: 2em;
+    background: #f1f2f3;
+    border:none;
+}
+/*！生活/发展！*/
+/*各种框长度*/
+.zp-list input.zp-date-order{width:216px;}
+/*.zp-list input.zp-date-position{width:296px;}*/
+.zp-list input.zp-date-position{width:186px;}
+.zp-list input.zp-personal-age{width:86px;}
+.zp-list input.zp-personal-area{width:83px;}
+.zp-list input.zp-personal-site{width:286px;}
+.zp-list input.zp-personal-time{width:86px;}
+.zp-list input.zp-experience-from{width:186px;}
+.zp-list .zp-education-province{width:86px;}
+.zp-list input.zp-education-academy{width:286px;}
+.zp-list .zp-probation-salary{width:286px;}
+.zp-list input.zp-experience-from{width:186px;}
+.zp-list .zp-occupation-pay{width:86px;
+    padding-left: 31px;
+    background: #f1f2f3 url(/bangcms_hr/statics/images/job/zp_23.png) no-repeat 12px 19px;}
+.zp-list input.zp-family-name{width:186px;}
+.zp-list input.zp-family-age{width:86px;}
+.zp-list input.zp-family-phone{width:186px;}
+.zp-list input.zp-family-firms{width:286px;}
+.zp-list input.zp-family-position{width:286px;}
+.zp-list input.zp-calendar-width{width:220px;}
+.zp-list label.zp-personal-label {
+    width: 125px;
+    margin-left: 23px;
+    margin-right: 0;
+}
+/*!各种框长度!*/
+.zp-list input[type='radio']{
+    width:12px;
+    height:12px;
+    margin:auto 8px auto 2px;
+    border:1px solid #000;
+    background: #fff;
+}
+.zp-list .zp-radio{
+    width:auto;
+    height:auto;
+    padding-right: 40px;
+}
+.zp-gray-line{
+    width:780px;
+    height:1px;
+    overflow: hidden;
+    background: #f1f2f3;
+    margin:27px 0;
+
+}
+/*!
+内容样式
+!*/
+/*下部保证、确认、四图视频*/
+.zp-guarantee{
+    position: relative;
+    display: block;
+    margin:81px auto 88px auto;
+    width:1000px;
+    height:133px;
+}
+.zp-guarantee p{
+    width:978px;
+    display: inline-block;
+    position: absolute;
+    font-size: 13px;
+    color: #666;
+    line-height:29px;
+    text-align: left;
+    left: 23px;
+    top:0;
+}
+.zp-guarantee input{
+    left:1px;
+    top:8px;
+    position: absolute;
+    width:12px;
+    height:12px;
+    display: inline-block;
+    line-height:29px;
+}
+.zp-submit {
+    display: block;
+    width:260px;
+    height:60px;
+    background: #f5093d;
+    margin:0 auto;
+    font-size: 17px;
+    color: #fff;
+    line-height:60px;
+    text-align: center;
+    border:none;
+}
+.zp-pic{
+    width:1023px;
+    margin:88px auto;
+    overflow: hidden;
+}
+.zp-pic a{
+    overflow: hidden;
+}
+.zp-pic img{
+    float: left;
+    margin:0 21px 21px 0;
+}
+/*！下部保证、确认、四图视频！*/
+
+ 

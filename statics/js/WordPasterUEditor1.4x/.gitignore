@@ -1,0 +1,10 @@
+*.rar
+.vs
+App_Data
+bin
+obj
+upload
+.svn
+*.user
+*.suo
+.DS_Store

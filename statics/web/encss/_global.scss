@@ -1,0 +1,535 @@
+
+/* 禁用iPhone中Safari的字号自动调整 */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+/* 去除iPhone中默认的input样式 */
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input,
+button {
+    /* -webkit-appearance:none; */
+    resize: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+button {
+    border: none;
+}
+/* 设置HTML5元素为块 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+/* 图片自适应 */
+img {
+    /*max-width: 100%;*/
+    height: auto;
+    width: auto\9;
+    /* ie8 */
+    -ms-interpolation-mode: bicubic;
+    /*为了照顾ie图片缩放失真*/
+}
+/* 初始化 */
+body,
+div,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+p,
+dl,
+dt,
+dd,
+a,
+img,
+button,
+form,
+table,
+th,
+tr,
+td,
+tbody,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+    border: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /*取消链接高亮*/
+}
+@import "fonts";
+
+body {
+    font-family: "KozGoPr6N-Regular", PINGFANG-HEAVY, "Helvetica Neue",
+        Helvetica, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", SimSun,
+        sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    min-width: 320px;
+}
+em,
+i {
+    font-style: normal;
+}
+strong {
+    font-weight: normal;
+}
+.clearfix:after {
+    content: "";
+    display:inline-block;
+    display:inline;zoom:1; 
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+a {
+    text-decoration: none;
+    font-family: "KozGoPr6N-Regular", PINGFANG-HEAVY, Microsoft YaHei,
+        Tahoma, Arial, sans-serif;
+    outline: none;
+}
+ul,
+ol {
+    list-style: none;
+    list-style-type: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-family: "KozGoPr6N-Bold", PINGFANG-HEAVY, Microsoft YaHei;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+img {
+    border: none;
+    vertical-align: middle;
+}
+body,
+html {
+    width: 100%;
+    margin: 0 auto;
+    font-family: "KozGoPr6N-Regular", PINGFANG-HEAVY, "Helvetica Neue",
+        Helvetica, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", SimSun,
+        sans-serif;
+    position: relative;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+}
+//过渡效果
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transform-origin($transform-origin) {
+    -webkit-transform-origin: $transform-origin;
+    -moz-transform-origin: $transform-origin;
+    -ms-transform-origin: $transform-origin;
+    -o-transform-origin: $transform-origin;
+    transform-origin: $transform-origin;
+}
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+
+//放大
+
+@mixin scale($transform) {
+    -webkit-transform: scale($transform);
+    -moz-transform: scale($transform);
+    -ms-transform: scale($transform);
+    -o-transform: scale($transform);
+    transform: scale($transform);
+}
+
+//旋转
+@mixin rotate($transform) {
+    -webkit-transform: rotate($transform);
+    -moz-transform: rotate($transform);
+    -ms-transform: rotate($transform);
+    -o-transform: rotate($transform);
+    transform: rotate($transform);
+}
+//倒圆角
+@mixin radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+//阴影
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+    -o-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+//透明度
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    filter: alpha(opacity=$opacity * 100);
+}
+
+//行数
+@mixin clamp($clamp) {
+    overflow: hidden;
+    text-overflow: -o-ellipsis-lastline;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $clamp;
+    line-clamp: $clamp;
+    -webkit-box-orient: vertical;
+}
+//一行显示
+@mixin whiteSpeceNowrap() {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+
+
+
+.transition03 {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.transition08 {
+    -webkit-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+}
+.transition05 {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.transition1 {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.transition14 {
+    -webkit-transition: all 1.4s ease;
+    transition: all 1.4s ease;
+}
+.transition24 {
+    -webkit-transition: all 2.4s ease;
+    transition: all 2.4s ease;
+}
+.transition10 {
+    -webkit-transition: all 10s ease;
+    transition: all 10s ease;
+}
+.delay01 {
+    transition-delay: 0.1s;
+    -moz-transition-delay: 0.1s;
+    -webkit-transition-delay: 0.1s;
+    -o-transition-delay: 0.1s;
+}
+.delay02 {
+    transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+    -o-transition-delay: 0.2s;
+}
+.delay03 {
+    transition-delay: 0.3s;
+    -moz-transition-delay: 0.3s;
+    -webkit-transition-delay: 0.3s;
+    -o-transition-delay: 0.3s;
+}
+.delay04 {
+    transition-delay: 0.4s;
+    -moz-transition-delay: 0.4s;
+    -webkit-transition-delay: 0.4s;
+    -o-transition-delay: 0.4s;
+}
+.delay05 {
+    transition-delay: 0.5s;
+    -moz-transition-delay: 0.5s;
+    -webkit-transition-delay: 0.5s;
+    -o-transition-delay: 0.5s;
+}
+.delay06 {
+    transition-delay: 0.6s;
+    -moz-transition-delay: 0.6s;
+    -webkit-transition-delay: 0.6s;
+    -o-transition-delay: 0.6s;
+}
+.delay07 {
+    transition-delay: 0.7s;
+    -moz-transition-delay: 0.7s;
+    -webkit-transition-delay: 0.7s;
+    -o-transition-delay: 0.7s;
+}
+.delay08 {
+    transition-delay: 0.8s;
+    -moz-transition-delay: 0.8s;
+    -webkit-transition-delay: 0.8s;
+    -o-transition-delay: 0.8s;
+}
+.delay09 {
+    transition-delay: 0.9s;
+    -moz-transition-delay: 0.9s;
+    -webkit-transition-delay: 0.9s;
+    -o-transition-delay: 0.9s;
+}
+.delay10 {
+    transition-delay: 1s;
+    -moz-transition-delay: 1s;
+    -webkit-transition-delay: 1s;
+    -o-transition-delay: 1s;
+}
+a {
+    outline: none;
+}
+
+$hovercolor: #107970;
+
+
+
+.inp_box::-webkit-input-placeholder {
+    color: #222222;
+}
+.inp_box::-moz-placeholder {
+    color: #222222;
+}
+.inp_box::placeholder {
+    color: #222222;
+}
+.inp_box:-ms-input-placeholder {
+    color: #222222;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+table,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+.fix:before,
+.fix:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+input,
+select,
+textarea {
+    outline: none;
+    font-family: inherit;
+    font-size: 100%;
+}
+*:focus {
+    outline: none;
+}
+* {
+    outline: none;
+}
+ul,
+ol {
+    list-style-type: none;
+}
+.i_ico {
+    background: url(../images/i_ico.png);
+    width: 24px;
+    height: 24px;
+}
+
+/*css组件设置*/
+.form-control,
+.input-group-addon,
+.btn {
+    border-radius: 2px;
+}
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+        0 0 6px rgba(102, 175, 233, 0.6);
+}
+
+
+.wrap {
+    width: 1600px;
+    margin: 0 auto;
+    max-width: 88%;
+}
+.page_wrap {
+    width: 1200px;
+    margin: 0 auto;
+    max-width: 92%;
+}
+
+
+ol {
+    list-style-type: inherit;
+}
+body {
+    position: relative;
+}
+
+.mr-0 {
+    margin-right: 0;
+}
+.ml-0 {
+    margin-left: 0;
+}
+.mt-0 {
+    margin-top: 0;
+}
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.ht60 {
+    height: 60px;
+}
+
+.ht60::after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+.ht130 {
+    height: 130px;
+}
+
+.ht130::after {
+    content: "";
+    display:inline-block;
+    display:inline;zoom:1; 
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+
+.sitepage-content::after {
+    content: "";
+    display:inline-block;
+    display:inline;zoom:1; 
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+    
+}
+
+.ta-l {
+    text-align: left;
+}
+.ta-r {
+    text-align: right;
+}
+.ta-c {
+    text-align: center;
+}
+.ta-j {
+    text-align: justify;
+}
+
+@media only screen and (max-width: 768px) {
+    .ht60 {
+        height: 2rem;
+    }
+    .ht130 {
+        height: 4rem;
+    }
+}
+
+body {
+    @include opacity(0);
+    @include transition(opacity .5s ease);
+}
+
+body.show {
+    @include opacity(1);
+}

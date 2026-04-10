@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<!-- Homepage static draft: recovered valid HTML structure using the existing homepage stylesheet. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medium Voltage Switchgear And Electrical Components Supplier | GreenPower Electric</title>
+  <meta name="description" content="GreenPower Electric supplies medium voltage switchgear, vacuum circuit breakers, switching devices, insulation components, and spare parts for EPC contractors, panel builders, utilities, and industrial projects.">
+  <link rel="canonical" href="https://gpswitch.com/">
+  <script>
+    (function () {
+      try {
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document.documentElement.classList.add("has-motion");
+        }
+      } catch (error) {
+        // Leave the homepage static if motion preferences cannot be resolved.
+      }
+    }());
+  </script>
+  <link rel="stylesheet" href="statics/web/css/homepage-static-draft.css">
+  <style>
+    #business .business-card .business-card-media::after {
+      background: none !important;
+      opacity: 0 !important;
+      transition: opacity 220ms ease;
+    }
+
+    #business .business-card:hover .business-card-media::after {
+      background: none !important;
+      opacity: 0 !important;
+    }
+
+    .hero-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    html.has-motion .hero-media img {
+      transform: scale(1.035);
+      transition: transform 1.15s ease;
+      will-change: transform;
+    }
+
+    html.has-motion.motion-ready .hero-media img {
+      transform: scale(1);
+    }
+
+    html.has-motion .hero-content .eyebrow,
+    html.has-motion .hero-content h1,
+    html.has-motion .hero-content .hero-copy,
+    html.has-motion .hero-content .hero-actions {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      will-change: transform, opacity;
+    }
+
+    html.has-motion .hero-content h1 {
+      transition-delay: 0.08s;
+    }
+
+    html.has-motion .hero-content .hero-copy {
+      transition-delay: 0.14s;
+    }
+
+    html.has-motion .hero-content .hero-actions {
+      transition-delay: 0.2s;
+    }
+
+    html.has-motion.motion-ready .hero-content .eyebrow,
+    html.has-motion.motion-ready .hero-content h1,
+    html.has-motion.motion-ready .hero-content .hero-copy,
+    html.has-motion.motion-ready .hero-content .hero-actions {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .motion-reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      transition-delay: var(--reveal-delay, 0s);
+      will-change: transform, opacity;
+    }
+
+    .motion-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .business-card,
+    .strength-card,
+    .application-card,
+    .market-tile,
+    .market-tags span,
+    .about-capability,
+    .about-stage-media img {
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background-color 220ms ease, color 220ms ease;
+    }
+
+    .business-card,
+    .strength-card,
+    .application-card,
+    .market-tile {
+      --reveal-y: 0px;
+      --hover-y: 0px;
+      transform: translateY(calc(var(--reveal-y) + var(--hover-y)));
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        box-shadow 220ms ease,
+        border-color 220ms ease,
+        background-color 220ms ease,
+        color 220ms ease;
+      will-change: transform, opacity;
+    }
+
+    .business-card.motion-reveal,
+    .strength-card.motion-reveal,
+    .application-card.motion-reveal,
+    .market-tile.motion-reveal {
+      opacity: 0;
+      --reveal-y: 26px;
+    }
+
+    .business-card.motion-reveal.is-visible,
+    .strength-card.motion-reveal.is-visible,
+    .application-card.motion-reveal.is-visible,
+    .market-tile.motion-reveal.is-visible {
+      opacity: 1;
+      --reveal-y: 0px;
+    }
+
+    .business-card.is-visible:hover,
+    .business-card.is-visible:focus-within,
+    .strength-card.is-visible:hover,
+    .strength-card.is-visible:focus-within,
+    .application-card.is-visible:hover,
+    .application-card.is-visible:focus-within,
+    .market-tile.is-visible:hover,
+    .market-tile.is-visible:focus-within {
+      transition:
+        opacity 0.7s ease,
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        border-color 220ms ease,
+        background-color 220ms ease,
+        color 220ms ease;
+    }
+
+    .business-card:hover,
+    .business-card:focus-within {
+      --hover-y: -6px;
+      box-shadow: 0 24px 46px rgba(10, 42, 50, 0.14);
+    }
+
+    .business-card-body h3,
+    .application-card h3 {
+      transition: transform 220ms ease, color 220ms ease;
+    }
+
+    .business-card:hover .business-card-body h3,
+    .business-card:focus-within .business-card-body h3,
+    .application-card:hover h3,
+    .application-card:focus-within h3 {
+      transform: translateX(4px);
+      color: #0a564d;
+    }
+
+    .strength-card:hover,
+    .strength-card:focus-within {
+      --hover-y: -6px;
+      border-color: rgba(0, 122, 112, 0.22);
+      box-shadow: 0 24px 48px rgba(10, 42, 50, 0.12);
+    }
+
+    .strength-card::before {
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+
+    .strength-card:hover::before,
+    .strength-card:focus-within::before {
+      opacity: 1;
+      transform: scaleX(1.02);
+    }
+
+    .about-stage-media {
+      overflow: hidden;
+    }
+
+    .about-stage-media img {
+      transform: scale(1);
+      transform-origin: center;
+    }
+
+    .about-stage:hover .about-stage-media img,
+    .about-stage:focus-within .about-stage-media img {
+      transform: scale(1.045);
+    }
+
+    .about-capability:hover,
+    .about-capability:focus-within {
+      transform: translateX(4px);
+      color: #0a564d;
+    }
+
+    .application-card:hover,
+    .application-card:focus-within {
+      --hover-y: -6px;
+      border-color: rgba(0, 122, 112, 0.2);
+      box-shadow: 0 24px 46px rgba(10, 42, 50, 0.12);
+    }
+
+    .market-tile:hover,
+    .market-tile:focus-within {
+      --hover-y: -4px;
+      border-color: rgba(0, 122, 112, 0.2);
+      box-shadow: 0 18px 36px rgba(10, 42, 50, 0.1);
+    }
+
+    .market-tags span:hover,
+    .market-tags span:focus-visible {
+      background: rgba(0, 122, 112, 0.1);
+      border-color: rgba(0, 122, 112, 0.18);
+      color: #0a564d;
+      transform: translateY(-2px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html.has-motion .hero-media img,
+      html.has-motion .hero-content .eyebrow,
+      html.has-motion .hero-content h1,
+      html.has-motion .hero-content .hero-copy,
+      html.has-motion .hero-content .hero-actions,
+      .motion-reveal,
+      .business-card,
+      .strength-card,
+      .application-card,
+      .market-tile,
+      .market-tags span,
+      .about-capability,
+      .about-stage-media img,
+      .business-card-body h3,
+      .application-card h3 {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="statics/web/images/logo.png" alt="GreenPower logo">
+      </a>
+      <div class="header-nav-group">
+        <nav class="site-nav" aria-label="Primary navigation">
+          <ul class="site-nav-list">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item nav-item-products">
+              <a class="product-menu-trigger" href="products.html" aria-expanded="false" aria-controls="products-mega-menu">Products &amp; Solutions</a>
+              <div class="nav-dropdown nav-dropdown-products" id="products-mega-menu">
+                <div class="product-menu">
+                  <div class="product-menu-groups" role="tablist" aria-label="Product groups">
+                    <button class="product-group-link is-active" type="button" data-product-key="mv-switchgear" data-target-url="products-metal-clad-switchgear.html" aria-selected="true"><span>Medium Voltage Switchgear Systems</span></button>
+                    <button class="product-group-link" type="button" data-product-key="primary-switching" data-target-url="products-vacuum-circuit-breaker.html" aria-selected="false"><span>Primary Switching Devices</span></button>
+                    <button class="product-group-link" type="button" data-product-key="instrument-transformers" data-target-url="products-instrument-transformers.html" aria-selected="false"><span>Instrument Transformers And Indicators</span></button>
+                    <button class="product-group-link" type="button" data-product-key="components-spares" data-target-url="products-chassis-and-auxiliary-trucks.html" aria-selected="false"><span>Components And Spare Parts</span></button>
+                  </div>
+                  <div class="product-menu-middle">
+                    <section class="product-panel is-active" data-product-panel="mv-switchgear" aria-hidden="false">
+                      <p class="product-submenu-title">Medium Voltage Switchgear Systems</p>
+                      <div class="product-submenu-links">
+                        <a href="products-metal-clad-switchgear.html">Metal-Clad Switchgear</a>
+                        <a href="products-ring-main-unit.html">Ring Main Unit</a>
+                        <a href="products-gas-insulated-switchgear.html">Gas-Insulated Switchgear</a>
+                        <a href="products-compact-secondary-substation.html">Compact Secondary Substation</a>
+                      </div>
+                    </section>
+                    <section class="product-panel" data-product-panel="primary-switching" aria-hidden="true">
+                      <p class="product-submenu-title">Primary Switching Devices</p>
+                      <div class="product-submenu-links">
+                        <a href="products-vacuum-circuit-breaker.html">Vacuum Circuit Breaker</a>
+                        <a href="products-load-break-switch.html">Load Break Switch</a>
+                        <a href="products-disconnector-switch.html">Disconnector Switch</a>
+                        <a href="products-earthing-switch.html">Earthing Switch</a>
+                      </div>
+                    </section>
+                    <section class="product-panel" data-product-panel="instrument-transformers" aria-hidden="true">
+                      <p class="product-submenu-title">Instrument Transformers And Indicators</p>
+                      <div class="product-submenu-links">
+                        <a href="products-instrument-transformers.html">Instrument Transformers</a>
+                        <a href="products-indicators-and-detection-devices.html">Indicators And Detection Devices</a>
+                        <a href="products-metering-and-monitoring-devices.html">Metering And Monitoring Devices</a>
+                        <a href="products-test-and-diagnostic-tools.html">Test And Diagnostic Tools</a>
+                      </div>
+                    </section>
+                    <section class="product-panel" data-product-panel="components-spares" aria-hidden="true">
+                      <p class="product-submenu-title">Components And Spare Parts</p>
+                      <div class="product-submenu-links">
+                        <a href="products-chassis-and-auxiliary-trucks.html">Chassis And Auxiliary Trucks</a>
+                        <a href="products-vacuum-interrupters.html">Vacuum Interrupters</a>
+                        <a href="products-insulating-parts.html">Insulating Parts</a>
+                        <a href="products-contact-and-copper-parts.html">Contact And Copper Parts</a>
+                        <a href="products-operating-mechanisms-and-coils.html">Operating Mechanisms And Coils</a>
+                        <a href="products-switchgear-accessories-and-controllers.html">Switchgear Accessories And Controllers</a>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="product-menu-support">
+                    <section class="product-support-panel is-active" data-product-support="mv-switchgear" aria-hidden="false">
+                      <p class="product-support-label">Medium Voltage Switchgear Systems</p>
+                      <p class="product-support-copy">Explore medium-voltage systems, switching devices, and core components for project supply.</p>
+                      <div class="product-support-actions">
+                        <a href="products.html">View All Products</a>
+                        <a href="downloads.html">Download Catalog</a>
+                        <a href="inquiry.html">Send Inquiry</a>
+                      </div>
+                    </section>
+                    <section class="product-support-panel" data-product-support="primary-switching" aria-hidden="true">
+                      <p class="product-support-label">Primary Switching Devices</p>
+                      <p class="product-support-copy">Explore switching and isolation products for protection, feeder control, and operational safety.</p>
+                      <div class="product-support-actions">
+                        <a href="products.html">View All Products</a>
+                        <a href="downloads.html">Download Catalog</a>
+                        <a href="inquiry.html">Send Inquiry</a>
+                      </div>
+                    </section>
+                    <section class="product-support-panel" data-product-support="instrument-transformers" aria-hidden="true">
+                      <p class="product-support-label">Instrument Transformers And Indicators</p>
+                      <p class="product-support-copy">Explore current, voltage, and sensing solutions for metering, monitoring, and protection duties.</p>
+                      <div class="product-support-actions">
+                        <a href="products.html">View All Products</a>
+                        <a href="downloads.html">Download Catalog</a>
+                        <a href="inquiry.html">Send Inquiry</a>
+                      </div>
+                    </section>
+                    <section class="product-support-panel" data-product-support="components-spares" aria-hidden="true">
+                      <p class="product-support-label">Components And Spare Parts</p>
+                      <p class="product-support-copy">Explore component kits and replacement parts for retrofit, maintenance, and switchgear servicing.</p>
+                      <div class="product-support-actions">
+                        <a href="products.html">View All Products</a>
+                        <a href="downloads.html">Download Catalog</a>
+                        <a href="inquiry.html">Send Inquiry</a>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item nav-item-applications"><a href="applications.html">Applications</a></li>
+            <li class="nav-item nav-item-about">
+              <a href="about-greenpower.html" data-about-trigger aria-expanded="false" aria-controls="about-menu">About Us</a>
+              <div class="nav-dropdown nav-dropdown-about" id="about-menu" data-about-menu>
+                <a href="about-greenpower.html">About GreenPower</a>
+                <a href="factory-quality.html">Factory &amp; Quality</a>
+                <a href="projects-references.html">Projects &amp; References</a>
+              </div>
+            </li>
+            <li class="nav-item"><a href="inquiry.html">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div class="header-tools" aria-label="Utility actions">
+          <div class="header-lang">
+            <button class="lang-button" type="button" aria-label="Language selector" aria-expanded="false">
+              <span>EN</span>
+              <span class="lang-caret" aria-hidden="true"></span>
+            </button>
+            <div class="lang-dropdown" aria-label="Language options">
+              <a href="javascript:void(0);">English</a>
+              <a href="javascript:void(0);">Español</a>
+              <a href="javascript:void(0);">Français</a>
+              <a href="javascript:void(0);">Русский</a>
+              <a href="javascript:void(0);">العربية</a>
+              <a href="javascript:void(0);">中文</a>
+            </div>
+          </div>
+          <div class="header-search">
+            <button class="tool-button" type="button" aria-label="Search" aria-expanded="false">
+              <span class="tool-icon tool-search" aria-hidden="true"></span>
+            </button>
+            <div class="search-panel">
+              <input class="search-input" type="search" placeholder="Search" aria-label="Search">
+            </div>
+          </div>
+          <div class="header-qr">
+            <button class="tool-button" type="button" aria-label="QR code" aria-expanded="false">
+              <img class="tool-icon-image" src="statics/web/images/whatsapp-qr-icon.png" alt="" aria-hidden="true">
+            </button>
+            <div class="qr-panel" aria-label="QR code panel">
+              <p class="qr-title">WhatsApp</p>
+              <div class="qr-card">
+                <img class="qr-image" src="statics/web/images/whatsapp-qr.png" alt="WhatsApp QR code">
+              </div>
+              <p>Scan To Chat On WhatsApp</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-media">
+        <img src="statics/web/images/page/home/home-hero-main.jpg" alt="GreenPower industrial electrical equipment" fetchpriority="high">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Powering What Matters</p>
+        <h1>Industrial Electrical Equipment And Complete Power Distribution Solutions</h1>
+        <p class="hero-copy">Built for utilities, EPC contractors, industrial plants, and infrastructure projects, GreenPower delivers dependable switchgear systems, core components, and responsive engineering support.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="inquiry.html">Send Inquiry</a>
+          <a class="button button-secondary" href="#business">Explore Products</a>
+        </div>
+      </div>
+      <div class="hero-metrics">
+        <div class="container metrics-grid">
+          <div class="metric-card">
+            <strong>3.6kV To 40.5kV</strong>
+            <span>Medium Voltage Product Coverage</span>
+          </div>
+          <div class="metric-card">
+            <strong>One-Stop Supply</strong>
+            <span>Switchgear And Core Components</span>
+          </div>
+          <div class="metric-card">
+            <strong>Export-Oriented</strong>
+            <span>Support For Global Project Demand</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section business-section" id="business">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Core Portfolio</p>
+            <h2>Our Business</h2>
+          </div>
+          <p class="section-summary">A focused product lineup for distribution systems, switchgear assemblies, and critical component supply.</p>
+        </div>
+        <div class="business-grid">
+          <article class="business-card">
+            <div class="business-card-media"><img src="statics/web/images/page/home/home-our-business-metal-clad-switchgear.jpg" alt="Metal-Clad Switchgear"></div>
+            <div class="business-card-body">
+              <span class="card-number">01</span>
+              <h3>Metal-Clad Switchgear</h3>
+              <p>Engineered medium-voltage assemblies for dependable protection, control, and distribution duty.</p>
+            </div>
+          </article>
+          <article class="business-card">
+            <div class="business-card-media"><img src="statics/web/images/page/home/home-our-business-ring-main-unit.jpg" alt="Ring Main Unit"></div>
+            <div class="business-card-body">
+              <span class="card-number">02</span>
+              <h3>Ring Main Unit</h3>
+              <p>Compact RMU solutions for network reliability, compact substations, and distribution upgrades.</p>
+            </div>
+          </article>
+          <article class="business-card">
+            <div class="business-card-media"><img src="statics/web/images/page/home/home-our-business-vacuum-circuit-breaker.jpg" alt="Vacuum Circuit Breaker"></div>
+            <div class="business-card-body">
+              <span class="card-number">03</span>
+              <h3>Vacuum Circuit Breaker</h3>
+              <p>Reliable switching devices for switchgear panels, industrial systems, and utility applications.</p>
+            </div>
+          </article>
+          <article class="business-card">
+            <div class="business-card-media"><img src="statics/web/images/page/home/home-our-business-load-break-and-isolating-switches.jpg" alt="Load Break And Isolating Switches"></div>
+            <div class="business-card-body">
+              <span class="card-number">04</span>
+              <h3>Load Break And Isolating Switches</h3>
+              <p>Switching and isolation solutions for feeder control, sectionalizing, and operational safety.</p>
+            </div>
+          </article>
+          <article class="business-card">
+            <div class="business-card-media"><img src="statics/web/images/page/home/home-our-business-instrument-transformers-and-indicators.jpg" alt="Instrument Transformers And Indicators"></div>
+            <div class="business-card-body">
+              <span class="card-number">05</span>
+              <h3>Instrument Transformers And Indicators</h3>
+              <p>Current, voltage, and sensing solutions for metering, protection, and monitoring requirements.</p>
+            </div>
+          </article>
+          <article class="business-card">
+            <div class="business-card-media"><img src="statics/web/images/page/home/home-our-business-switchgear-components-and-spare-parts.jpg" alt="Switchgear Components And Spare Parts"></div>
+            <div class="business-card-body">
+              <span class="card-number">06</span>
+              <h3>Switchgear Components And Spare Parts</h3>
+              <p>Critical assemblies, insulating parts, mechanisms, and accessories for retrofit and service support.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section strengths-section">
+      <div class="container">
+        <div class="section-heading section-heading-light">
+          <div>
+            <p class="section-kicker">Execution Advantage</p>
+            <h2>Our Strengths</h2>
+          </div>
+          <p class="section-summary">The approved GreenPower draft emphasizes capability, reliability, and end-to-end support. This section follows that same intent.</p>
+        </div>
+        <div class="strengths-grid">
+          <article class="strength-card">
+            <h3>One-Stop Procurement</h3>
+            <p>Integrated sourcing across switchgear assemblies, components, and accessories to simplify project coordination.</p>
+          </article>
+          <article class="strength-card">
+            <h3>Customized Engineering</h3>
+            <p>Configuration support for varying voltage levels, climates, standards, and site-specific operating requirements.</p>
+          </article>
+          <article class="strength-card">
+            <h3>Quality Manufacturing</h3>
+            <p>Disciplined production management and inspection workflows that support consistency from fabrication to final delivery.</p>
+          </article>
+          <article class="strength-card">
+            <h3>Flexible Logistics</h3>
+            <p>Shipment planning by sea, land, air, and carrier to balance schedule, cost, and equipment protection.</p>
+          </article>
+          <article class="strength-card">
+            <h3>After-Sales Assurance</h3>
+            <p>Responsive technical communication and ongoing service support for installations, spares, and maintenance needs.</p>
+          </article>
+          <article class="strength-card">
+            <h3>Export Coordination</h3>
+            <p>Practical support for overseas orders, distributor supply, and project-based documentation needs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-stage">
+          <div class="about-stage-media">
+            <img src="statics/web/images/page/home/home-about-preview.jpg" alt="GreenPower factory and switchgear workshop">
+          </div>
+          <div class="about-panel">
+            <div class="about-copy">
+              <p class="section-kicker">Company Profile</p>
+              <h2>About GreenPower</h2>
+              <p>GreenPower Electric focuses on medium-voltage switchgear systems, switching devices, instrument transformers, and component supply for utility, industrial, and project-based procurement demand.</p>
+              <p>Our business approach combines practical engineering support, responsive quotation handling, and stable supply coordination for domestic and export-oriented industrial electrical projects.</p>
+              <div class="about-capabilities">
+                <div class="about-capability">
+                  <h3>3.6kV To 40.5kV</h3>
+                  <p>Medium Voltage Product Coverage</p>
+                </div>
+                <div class="about-capability">
+                  <h3>OEM And Retrofit</h3>
+                  <p>Support For New Supply And Replacement Demand</p>
+                </div>
+                <div class="about-capability">
+                  <h3>Export-Oriented</h3>
+                  <p>Built For Overseas Projects And Distribution</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section applications-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Application Scope</p>
+            <h2>Applications</h2>
+          </div>
+          <p class="section-summary">An overview of the project scenarios and industry environments where GreenPower products are typically applied.</p>
+        </div>
+        <div class="application-grid">
+          <article class="application-card">
+            <h3>Utility / Power Distribution</h3>
+            <p>Support for ring networks, feeder distribution, compact substations, and utility reinforcement programs.</p>
+          </article>
+          <article class="application-card">
+            <h3>Industrial Plants</h3>
+            <p>Medium-voltage supply for manufacturing facilities, process plants, workshops, and plant expansion projects.</p>
+          </article>
+          <article class="application-card">
+            <h3>EPC Projects</h3>
+            <p>Coordinated supply for contractors managing schedules, specification matching, and project procurement demands.</p>
+          </article>
+          <article class="application-card">
+            <h3>Infrastructure</h3>
+            <p>Electrical distribution support for transport, municipal development, and public utility expansion.</p>
+          </article>
+          <article class="application-card">
+            <h3>Retrofit And Service</h3>
+            <p>Parts and component supply for panel upgrades, replacements, and lifecycle maintenance programs.</p>
+          </article>
+          <article class="application-card">
+            <h3>Global Cooperation</h3>
+            <p>Export-oriented product supply for distributor sourcing, international projects, and repeat procurement channels.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section partners-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Global Cooperation</p>
+            <h2>Market Coverage</h2>
+          </div>
+          <p class="section-summary">A structured overview of the customer types and market channels served across project-based industrial electrical supply.</p>
+        </div>
+        <div class="partners-layout">
+          <div class="market-grid partner-logos">
+            <article class="logo-tile market-tile"><span>Utility Companies</span></article>
+            <article class="logo-tile market-tile"><span>EPC Contractors</span></article>
+            <article class="logo-tile market-tile"><span>Industrial Plants</span></article>
+            <article class="logo-tile market-tile"><span>Grid Projects</span></article>
+            <article class="logo-tile market-tile"><span>Export Distributors</span></article>
+            <article class="logo-tile market-tile"><span>Retrofit Demand</span></article>
+          </div>
+          <aside class="market-panel">
+            <h3>Market Coverage</h3>
+            <ul class="market-list">
+              <li>Power utilities and industrial clients in domestic and overseas markets</li>
+              <li>Support for EPC procurement, distributor sourcing, and project-based supply</li>
+              <li>Responsive coordination for customized requirements and repeat orders</li>
+            </ul>
+            <div class="market-tags">
+              <span>Asia</span>
+              <span>Middle East</span>
+              <span>Africa</span>
+              <span>South America</span>
+              <span>Industrial OEM</span>
+              <span>Power Grid</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section inquiry-section" id="inquiry">
+      <div class="container inquiry-panel">
+        <div class="inquiry-copy">
+          <p class="section-kicker">Project Consultation</p>
+          <h2>Discuss Your Project Requirements</h2>
+          <p>Share your voltage class, product list, drawings, or project schedule. GreenPower can support quotation, customization, and supply coordination for upcoming procurement.</p>
+        </div>
+        <div class="inquiry-actions">
+          <a class="button button-primary" href="inquiry.html">Send Inquiry</a>
+          <a class="button button-secondary" href="https://wa.me/8618989782765">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <img src="statics/web/images/footer_logo.png" alt="GreenPower footer logo">
+        <p>GreenPower provides industrial electrical equipment and distribution solutions with a practical focus on quality, application fit, and dependable customer support.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <p>827 Wenzhou Dadao, Longwan District, Wenzhou, Zhejiang, China</p>
+        <p>Tel: +86 189 8978 2765</p>
+        <p>Email: gp@sinogp.com</p>
+      </div>
+      <div class="footer-column">
+        <h3>Company</h3>
+        <p><a href="about-greenpower.html">About GreenPower</a></p>
+        <p><a href="factory-quality.html">Factory &amp; Quality</a></p>
+        <p><a href="applications.html">Applications</a></p>
+        <p><a href="projects-references.html">Projects &amp; References</a></p>
+        <p><a href="downloads.html">Downloads</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© GreenPower Electric. Static homepage draft preview.</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bindHoverDropdown = function (wrapper, trigger, panel) {
+        let closeTimer = null;
+
+        if (!wrapper || !trigger || !panel) {
+          return null;
+        }
+
+        const cancelClose = function () {
+          if (closeTimer) {
+            window.clearTimeout(closeTimer);
+            closeTimer = null;
+          }
+        };
+
+        const openPanel = function () {
+          cancelClose();
+          panel.classList.add("is-open");
+          trigger.setAttribute("aria-expanded", "true");
+        };
+
+        const closePanelNow = function () {
+          cancelClose();
+          panel.classList.remove("is-open");
+          trigger.setAttribute("aria-expanded", "false");
+        };
+
+        const scheduleClose = function () {
+          cancelClose();
+          closeTimer = window.setTimeout(function () {
+            closePanelNow();
+          }, 180);
+        };
+
+        wrapper.addEventListener("mouseenter", openPanel);
+        wrapper.addEventListener("mouseleave", scheduleClose);
+
+        panel.addEventListener("mouseenter", openPanel);
+        panel.addEventListener("mouseleave", scheduleClose);
+
+        trigger.addEventListener("focus", openPanel);
+
+        wrapper.addEventListener("focusin", openPanel);
+        wrapper.addEventListener("focusout", function () {
+          window.setTimeout(function () {
+            if (!wrapper.contains(document.activeElement)) {
+              closePanelNow();
+            }
+          }, 0);
+        });
+
+        trigger.setAttribute("aria-expanded", "false");
+
+        return {
+          open: openPanel,
+          close: closePanelNow
+        };
+      };
+
+      const productsTrigger = document.querySelector(".product-menu-trigger");
+      const productsMenu = document.querySelector("#products-mega-menu");
+      const aboutItem = document.querySelector(".nav-item-about");
+      const aboutTrigger = document.querySelector("[data-about-trigger]");
+      const aboutMenu = document.querySelector("[data-about-menu]");
+      const headerLang = document.querySelector(".header-lang");
+      const langButton = document.querySelector(".lang-button");
+      const langDropdown = document.querySelector(".lang-dropdown");
+      const headerSearch = document.querySelector(".header-search");
+      const searchButton = document.querySelector(".header-search .tool-button");
+      const searchPanel = document.querySelector(".search-panel");
+      const headerQr = document.querySelector(".header-qr");
+      const qrButton = document.querySelector(".header-qr .tool-button");
+      const qrPanel = document.querySelector(".qr-panel");
+
+      if (productsTrigger && productsMenu) {
+        let productsCloseTimer = null;
+        const productGroupButtons = Array.from(productsMenu.querySelectorAll(".product-group-link[data-product-key]"));
+        const productPanels = Array.from(productsMenu.querySelectorAll(".product-panel[data-product-panel]"));
+        const productSupportPanels = Array.from(productsMenu.querySelectorAll(".product-support-panel[data-product-support]"));
+
+        const cancelProductsClose = function () {
+          if (productsCloseTimer) {
+            window.clearTimeout(productsCloseTimer);
+            productsCloseTimer = null;
+          }
+        };
+
+        const setActiveProductGroup = function (productKey) {
+          productGroupButtons.forEach(function (button) {
+            const isActive = button.getAttribute("data-product-key") === productKey;
+            button.classList.toggle("is-active", isActive);
+            button.setAttribute("aria-selected", isActive ? "true" : "false");
+          });
+
+          productPanels.forEach(function (panel) {
+            const isActive = panel.getAttribute("data-product-panel") === productKey;
+            panel.classList.toggle("is-active", isActive);
+            panel.setAttribute("aria-hidden", isActive ? "false" : "true");
+          });
+
+          productSupportPanels.forEach(function (panel) {
+            const isActive = panel.getAttribute("data-product-support") === productKey;
+            panel.classList.toggle("is-active", isActive);
+            panel.setAttribute("aria-hidden", isActive ? "false" : "true");
+          });
+        };
+
+        const openProductsMenu = function () {
+          cancelProductsClose();
+          productsMenu.classList.add("is-open");
+          productsTrigger.setAttribute("aria-expanded", "true");
+        };
+
+        const closeProductsMenuNow = function () {
+          cancelProductsClose();
+          productsMenu.classList.remove("is-open");
+          productsTrigger.setAttribute("aria-expanded", "false");
+        };
+
+        const scheduleProductsClose = function () {
+          cancelProductsClose();
+          productsCloseTimer = window.setTimeout(function () {
+            closeProductsMenuNow();
+          }, 180);
+        };
+
+        // Products is a special case: only the visible nav label opens the wide mega menu.
+        productsTrigger.addEventListener("mouseenter", openProductsMenu);
+        productsTrigger.addEventListener("mouseleave", scheduleProductsClose);
+        productsMenu.addEventListener("mouseenter", function () {
+          if (!productsMenu.classList.contains("is-open")) {
+            return;
+          }
+
+          openProductsMenu();
+        });
+        productsMenu.addEventListener("mouseleave", scheduleProductsClose);
+        productsTrigger.addEventListener("focus", openProductsMenu);
+        productsTrigger.addEventListener("focusout", function () {
+          window.setTimeout(function () {
+            if (document.activeElement !== productsTrigger && !productsMenu.contains(document.activeElement)) {
+              closeProductsMenuNow();
+            }
+          }, 0);
+        });
+        productsMenu.addEventListener("focusin", openProductsMenu);
+        productsMenu.addEventListener("focusout", function () {
+          window.setTimeout(function () {
+            if (document.activeElement !== productsTrigger && !productsMenu.contains(document.activeElement)) {
+              closeProductsMenuNow();
+            }
+          }, 0);
+        });
+
+        productGroupButtons.forEach(function (button) {
+          const switchGroup = function () {
+            setActiveProductGroup(button.getAttribute("data-product-key"));
+          };
+
+          button.addEventListener("mouseenter", switchGroup);
+          button.addEventListener("focus", switchGroup);
+          button.addEventListener("click", function () {
+            const targetUrl = button.getAttribute("data-target-url");
+            if (!targetUrl) {
+              return;
+            }
+            window.location.href = targetUrl;
+          });
+        });
+
+        productsTrigger.setAttribute("aria-expanded", "false");
+        setActiveProductGroup("mv-switchgear");
+      }
+      bindHoverDropdown(aboutItem, aboutTrigger, aboutMenu);
+
+      const bindUtilityDropdown = function (wrapper, trigger, panel) {
+        let closeTimer = null;
+
+        if (!wrapper || !trigger || !panel) {
+          return null;
+        }
+
+        const cancelClose = function () {
+          if (closeTimer) {
+            window.clearTimeout(closeTimer);
+            closeTimer = null;
+          }
+        };
+
+        const openPanel = function () {
+          cancelClose();
+          panel.classList.add("is-open");
+          trigger.setAttribute("aria-expanded", "true");
+        };
+
+        const closePanelNow = function () {
+          cancelClose();
+          panel.classList.remove("is-open");
+          trigger.setAttribute("aria-expanded", "false");
+        };
+
+        const scheduleClose = function () {
+          cancelClose();
+          closeTimer = window.setTimeout(function () {
+            closePanelNow();
+          }, 180);
+        };
+
+        wrapper.addEventListener("mouseenter", openPanel);
+        wrapper.addEventListener("mouseleave", scheduleClose);
+
+        panel.addEventListener("mouseenter", openPanel);
+        panel.addEventListener("mouseleave", scheduleClose);
+
+        trigger.addEventListener("focus", openPanel);
+
+        wrapper.addEventListener("focusin", openPanel);
+        wrapper.addEventListener("focusout", function () {
+          window.setTimeout(function () {
+            if (!wrapper.contains(document.activeElement)) {
+              closePanelNow();
+            }
+          }, 0);
+        });
+
+        trigger.setAttribute("aria-expanded", "false");
+
+        return {
+          open: openPanel,
+          close: closePanelNow
+        };
+      };
+
+      bindUtilityDropdown(headerLang, langButton, langDropdown);
+      bindUtilityDropdown(headerSearch, searchButton, searchPanel);
+      bindUtilityDropdown(headerQr, qrButton, qrPanel);
+    }());
+  </script>
+  <script>
+    (function () {
+      if (!document.documentElement.classList.contains("has-motion")) {
+        return;
+      }
+
+      window.requestAnimationFrame(function () {
+        document.documentElement.classList.add("motion-ready");
+      });
+
+      const revealGroups = [
+        {
+          nodes: document.querySelectorAll(".hero-metrics .metric-card"),
+          stagger: 0.06
+        },
+        {
+          nodes: document.querySelectorAll(".business-section .section-heading"),
+          stagger: 0
+        },
+        {
+          nodes: document.querySelectorAll(".business-section .business-card"),
+          stagger: 0.06,
+          baseDelay: 0.08
+        },
+        {
+          nodes: document.querySelectorAll(".strengths-section .section-heading"),
+          stagger: 0
+        },
+        {
+          nodes: document.querySelectorAll(".strengths-section .strength-card"),
+          stagger: 0.05,
+          baseDelay: 0.08
+        },
+        {
+          nodes: document.querySelectorAll(".about-stage"),
+          stagger: 0
+        },
+        {
+          nodes: document.querySelectorAll(".applications-section .section-heading"),
+          stagger: 0
+        },
+        {
+          nodes: document.querySelectorAll(".applications-section .application-card"),
+          stagger: 0.05,
+          baseDelay: 0.08
+        },
+        {
+          nodes: document.querySelectorAll(".partners-section .section-heading"),
+          stagger: 0
+        },
+        {
+          nodes: document.querySelectorAll(".partners-section .market-tile"),
+          stagger: 0.04,
+          baseDelay: 0.08
+        },
+        {
+          nodes: document.querySelectorAll(".partners-section .market-panel"),
+          stagger: 0,
+          baseDelay: 0.16
+        },
+        {
+          nodes: document.querySelectorAll(".inquiry-section .inquiry-panel"),
+          stagger: 0
+        }
+      ];
+
+      const revealTargets = [];
+
+      revealGroups.forEach(function (group) {
+        Array.from(group.nodes).forEach(function (node, index) {
+          node.classList.add("motion-reveal");
+          node.style.setProperty("--reveal-delay", ((group.baseDelay || 0) + (index * group.stagger)).toFixed(2) + "s");
+          revealTargets.push(node);
+        });
+      });
+
+      const observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -6% 0px"
+      });
+
+      revealTargets.forEach(function (target) {
+        observer.observe(target);
+      });
+    }());
+  </script>
+  <script>
+    (function () {
+      const protectedContainerSelectors = [
+        ".hero-media",
+        ".subpage-hero-media",
+        ".business-card-media",
+        ".about-stage-media",
+        ".applications-main-categories-media",
+        ".about-company-overview-media",
+        ".factory-quality-base-media",
+        ".factory-quality-feature-visual"
+      ];
+      const standaloneImageSelectors = [
+        ".factory-quality-evidence-card > img",
+        ".gallery-tile > img"
+      ];
+
+      const preventInteraction = function (node) {
+        ["contextmenu", "dragstart", "selectstart"].forEach(function (eventName) {
+          node.addEventListener(eventName, function (event) {
+            event.preventDefault();
+          });
+        });
+      };
+
+      const ensureOverlay = function (container) {
+        const hasOverlay = Array.from(container.children).some(function (child) {
+          return child.classList && child.classList.contains("gp-image-protect-overlay");
+        });
+        if (hasOverlay) {
+          return;
+        }
+        const overlay = document.createElement("div");
+        overlay.className = "gp-image-protect-overlay";
+        overlay.setAttribute("aria-hidden", "true");
+        container.appendChild(overlay);
+      };
+
+      const protectContainer = function (container) {
+        if (!container) {
+          return;
+        }
+        container.classList.add("gp-image-protect");
+        ensureOverlay(container);
+        preventInteraction(container);
+        container.querySelectorAll("img").forEach(function (image) {
+          image.setAttribute("draggable", "false");
+          preventInteraction(image);
+        });
+      };
+
+      const wrapStandaloneImage = function (image) {
+        if (!image || !image.parentElement) {
+          return null;
+        }
+        if (image.parentElement.classList.contains("gp-image-protect")) {
+          return image.parentElement;
+        }
+        const wrapper = document.createElement("div");
+        wrapper.className = "gp-image-protect gp-image-protect-standalone";
+        image.parentElement.insertBefore(wrapper, image);
+        wrapper.appendChild(image);
+        return wrapper;
+      };
+
+      protectedContainerSelectors.forEach(function (selector) {
+        document.querySelectorAll(selector).forEach(protectContainer);
+      });
+
+      standaloneImageSelectors.forEach(function (selector) {
+        document.querySelectorAll(selector).forEach(function (image) {
+          image.setAttribute("draggable", "false");
+          const wrapper = wrapStandaloneImage(image);
+          if (wrapper) {
+            ensureOverlay(wrapper);
+            preventInteraction(wrapper);
+          }
+          preventInteraction(image);
+        });
+      });
+    }());
+  </script>
+</body>
+</html>

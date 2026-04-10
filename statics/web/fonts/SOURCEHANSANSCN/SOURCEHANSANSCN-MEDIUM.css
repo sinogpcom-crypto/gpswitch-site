@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "SOURCEHANSANSCN-MEDIUM";
+  src: url("SOURCEHANSANSCN-MEDIUM.woff2") format("woff2"),
+       url("SOURCEHANSANSCN-MEDIUM.woff") format("woff"),
+       url("SOURCEHANSANSCN-MEDIUM.ttf") format("truetype"),
+       url("SOURCEHANSANSCN-MEDIUM.eot") format("embedded-opentype"),
+       url("SOURCEHANSANSCN-MEDIUM.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

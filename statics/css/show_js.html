@@ -1,0 +1,669 @@
+<script language="javascript" type="text/javascript" src="{JS_PATH}dialog.js"></script>
+<link href="{CSS_PATH}form.css" rel="stylesheet" type="text/css" />
+<form method="post" action="{APP_PATH}index.php?m=formguide&c=index&a=show&formid={$formid}&siteid=<?php echo $this->siteid;?>"{if $no_allowed} target="member_login"{/if} name="myform" id="myform">
+    <div class="zp-date">
+        <div class="zp-date-red">
+            日期/职位
+        </div>
+        <div class="zp-arrow-down fr">
+            <img src="{IMG_PATH}job/zhaopin_03.png" alt="">
+        </div>
+        <div class="zp-arrow-up fr">
+            <img src="{IMG_PATH}job/zhaopin_04.png" alt="">
+        </div>
+        <div class="zp-list-box">
+            <div class="zp-list">
+                <label for="">填表日期</label>
+                <?php echo date('Y年m月d日')?>
+            </div>
+			{if $fields['warea']}
+            <div class="zp-list">
+                {if $fields['warea']['minlength']>0}<span class="xx">*</span>{/if}
+				<label for="">应聘地址</label>
+                <select class="zp-date-order" value="0" placeholder="应聘地址" name="warea" id="">
+                    {loop $fields['warea']['box'] $k $v}
+						<option value="{$k}">{$v}</option>
+					{/loop}
+                </select>
+            </div>
+			{/if}
+			{if $fields['appointed']}
+            <div class="zp-list">
+				{if $fields['appointed']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">时间</label>
+                <!----><input class="zp-date-order zp-time-left" type="text" name="appointed" placeholder="约定时间">
+                <!----><img class="zp-date-one" src="{IMG_PATH}job/zp_03.png" alt="">
+                <!----><input class="zp-date-order zp-time-left" type="text" name="arrive"  placeholder="到达时间">
+                <!----><img class="zp-date-two" src="{IMG_PATH}job/zp_03.png" alt="">
+                <!----><!--<input class="zp-date-order" type="text" name="appointed" placeholder="约定时间">-->
+                <!----><!--<input class="zp-date-order" type="text" name="arrive" placeholder="到达时间">-->
+            </div>
+			{/if}
+			{if $fields['ptype']||$fields['job']}
+            <div class="zp-list">
+				{if $fields['ptype']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">应聘职位</label>
+                <select class="zp-date-order"  placeholder="职位类型" name="ptype" id="">
+                   {loop $fields['ptype']['box'] $k $v}
+						<option value="{$k}">{$v}</option>
+					{/loop}
+                </select>
+                <input class="zp-date-position" type="text" name="job" placeholder="职位">
+            </div>
+			{/if}
+        </div>
+    </div>
+    <div class="zp-date">
+        <div class="zp-date-red">
+            个人信息
+        </div>
+        <div class="zp-arrow-down fr">
+            <img src="{IMG_PATH}job/zhaopin_03.png" alt="">
+        </div>
+        <div class="zp-arrow-up fr">
+            <img src="{IMG_PATH}job/zhaopin_04.png" alt="">
+        </div>
+        <div class="zp-list-box zp-box-bottom">
+			{if $fields['name']}
+            <div class="zp-list">
+				{if $fields['name']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">姓名</label>
+                <input type="text" name="name" placeholder="请填写真实姓名">
+            </div>
+			{/if}
+			{if $fields['sex']}
+            <div class="zp-list">
+				{if $fields['sex']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">性别</label>
+				{loop $fields['sex']['box'] $k $v}
+					<label class="zp-black" for=""><input type="radio" name="sex" value="{$k}">{$v}</label>
+				{/loop}
+            </div>
+			{/if}
+			{if $fields['marry']}
+            <div class="zp-list">
+				{if $fields['marry']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">婚育状况</label>
+				{loop $fields['marry']['box'] $k $v}
+					<label class="zp-radio zp-black" for=""><input type="radio" name="marry" value="{$k}">{$v}</label>
+				{/loop}
+				
+                <select class="zp-personal-age" value="选择年龄" placeholder="选择年龄" name="childage" id="">
+					{loop $fields['childage']['box'] $k $v}
+						<option value="{$k}">{$v}</option>
+					{/loop}
+                </select>
+            </div>
+			{/if}
+			{if $fields['ID']}
+            <div class="zp-list">
+				{if $fields['ID']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">身份证号</label>
+                <input type="text" name="ID">
+            </div>
+			{/if}
+            {if $fields['residence']}
+            <div class="zp-list">
+				{if $fields['residence']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">户口所在地</label>
+                <input type="text" name="residence">
+            </div>
+			{/if}
+            <div class="zp-gray-line"></div>
+            {if $fields['email']}
+            <div class="zp-list">
+				{if $fields['email']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">电子邮箱</label>
+                <input type="text" name="email">
+            </div>
+			{/if}
+            {if $fields['mobile']}
+            <div class="zp-list">
+				{if $fields['mobile']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">联系电话</label>
+                <input type="text" name="mobile">
+            </div>
+            {/if}
+            {if $fields['qq']}
+            <div class="zp-list">
+				{if $fields['qq']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">QQ或微信</label>
+                <input type="text" name="qq">
+            {/if}
+            {if $fields['addrl']}
+            <div class="zp-list">
+				{if $fields['addrl']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">家庭住址</label>
+				
+				{$forminfos_data[addrl]['form']}
+				
+                <input class="zp-personal-site" type="text" name="addr" placeholder="尽量具体所在地">
+                <label class="zp-personal-label" for="">到公司路程所需</label>
+                <select class="zp-personal-age" value="" placeholder="" name="addrtime" id="">
+                    {loop $fields['addrtime']['box'] $k $v}
+						<option value="{$k}">{$v}</option>
+					{/loop}
+                </select>
+            </div>
+			{/if}
+        </div>
+    </div>
+    </div>
+    <div class="zp-date">
+        <div class="zp-date-red">
+            工作经历
+        </div>
+        <div class="zp-date-gray fl">
+            填写最近两家工作经历（从最近工作经历开始）
+        </div>
+        <div class="zp-arrow-down fr">
+            <img src="{IMG_PATH}job/zhaopin_03.png" alt="">
+        </div>
+        <div class="zp-arrow-up fr">
+            <img src="{IMG_PATH}job/zhaopin_04.png" alt="">
+        </div>
+        <div class="zp-list-box zp-box-bottom">
+			{if $fields['jobtimes1']}
+            <div class="zp-list">
+				{if $fields['jobtimes1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">在职时间</label>
+				{$forminfos_data['jobtimes1']['form']}
+				{$forminfos_data['jobtimee1']['form']}
+                <!--<input class="zp-experience-from date" type="text" name="jobtimes1" id="jobtimes1" placeholder="">
+                <input class="zp-experience-from date" type="text" name="jobtimee1" id="jobtimee1" placeholder="">-->
+            </div>
+			{/if}
+            {if $fields['company1']}
+            <div class="zp-list">
+				{if $fields['company1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">公司名称</label>
+                <input type="text" name="company1" placeholder="">
+            </div>
+            {/if}
+            {if $fields['compsize1']}
+            <div class="zp-list">
+				{if $fields['compsize1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">规模（人）</label>
+                <input class="zp-experience-from" type="text" name="compsize1" placeholder="公司规模">
+                <input class="zp-experience-from" type="text" name="teamsize1" placeholder="部门规模">
+            </div>
+            {/if}
+            {if $fields['team1']}
+            <div class="zp-list">
+				{if $fields['team1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">任职部门</label>
+                <input type="text" name="team1" placeholder="">
+            </div>
+            {/if}
+            {if $fields['job1']}
+            <div class="zp-list">
+				{if $fields['job1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">所在职位</label>
+                <input type="text" name="job1" placeholder="">
+            </div>
+            {/if}
+            {if $fields['income1']}
+            <div class="zp-list">
+				{if $fields['income1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">收入</label>
+                <!----><input  class="zp-salary-left" type="text" name="income1" placeholder="">
+                <!----><img class="zp-experience-one" src="{IMG_PATH}job/zp_23.png" alt="">
+                <!----><!--<input type="text" name="income1" placeholder="">-->
+            </div>
+           {/if}
+            {if $fields['supname1']}
+            <div class="zp-list">
+				{if $fields['supname1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">直属上级</label>
+                <input class="zp-experience-from" type="text" name="supname1" placeholder="姓名">
+                <input class="zp-experience-from" type="text" name="supjob1" placeholder="职位">
+                <input class="zp-experience-from" type="text" name="supmobile1" placeholder="电话">
+            </div>
+            {/if}
+            {if $fields['leaving1']}
+            <div class="zp-list">
+				{if $fields['leaving1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">离职原因</label>
+                <input class="zp-experience-from" type="text" name="leaving1" placeholder="">
+            </div>
+			{/if}
+            <div class="zp-gray-line"></div>
+			{if $fields['jobtimes2']}
+            <div class="zp-list">
+				{if $fields['jobtimes2']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">在职时间</label>
+				{$forminfos_data['jobtimes2']['form']}
+				{$forminfos_data['jobtimee2']['form']}
+                <!--<input class="zp-experience-from" type="text" name="jobtimes2" placeholder="">
+                <input class="zp-experience-from" type="text" name="jobtimee2" placeholder="">-->
+            </div>
+			{/if}
+            {if $fields['company2']}
+            <div class="zp-list">
+				{if $fields['company2']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">公司名称</label>
+                <input type="text" name="company2" placeholder="">
+            </div>
+            {/if}
+            {if $fields['compsize2']}
+            <div class="zp-list">
+				{if $fields['compsize2']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">规模（人）</label>
+                <input class="zp-experience-from" type="text" name="compsize2" placeholder="公司规模">
+                <input class="zp-experience-from" type="text" name="teamsize2" placeholder="部门规模">
+            </div>
+            {/if}
+            {if $fields['team2']}
+            <div class="zp-list">
+				{if $fields['team2']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">任职部门</label>
+                <input type="text" name="team2" placeholder="">
+            </div>
+            {/if}
+            {if $fields['job2']}
+            <div class="zp-list">
+				{if $fields['job2']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">所在职位</label>
+                <input type="text" name="job2" placeholder="">
+            </div>
+            {/if}
+            {if $fields['income2']}
+            <div class="zp-list">
+				{if $fields['income2']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">收入</label>
+                <!----><input  class="zp-salary-left" type="text" name="income2" placeholder="">
+                <!----><img class="zp-experience-one" src="{IMG_PATH}job/zp_23.png" alt="">
+                <!----><!--<input type="text" name="income1" placeholder="">-->
+                <!----><!--<input type="text" name="income2" placeholder="">-->
+            </div>
+           {/if}
+            {if $fields['supname2']}
+            <div class="zp-list">
+				{if $fields['supname2']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">直属上级</label>
+                <input class="zp-experience-from" type="text" name="supname2" placeholder="姓名">
+                <input class="zp-experience-from" type="text" name="supjob2" placeholder="职位">
+                <input class="zp-experience-from" type="text" name="supmobile2" placeholder="电话">
+            </div>
+            {/if}
+            {if $fields['leaving2']}
+            <div class="zp-list">
+				{if $fields['leaving2']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">离职原因</label>
+                <input class="zp-experience-from" type="text" name="leaving2" placeholder="">
+            </div>
+			{/if}
+        </div>
+    </div>
+    <div class="zp-date">
+        <div class="zp-date-red">
+            教育/培训
+        </div>
+        <div class="zp-date-gray fl">
+            毕业院校填写两个教育经历（从高到底开始）
+        </div>
+        <div class="zp-arrow-down fr">
+            <img src="{IMG_PATH}job/zhaopin_03.png" alt="">
+        </div>
+        <div class="zp-arrow-up fr">
+            <img src="{IMG_PATH}job/zhaopin_04.png" alt="">
+        </div>
+        <div class="zp-list-box zp-box-bottom">
+            {if $fields['school1']}
+            <div class="zp-list">
+				{if $fields['school1']['minlength']>0}<span class="xx">*</span>{/if}
+				<label for="">毕业院校</label>
+                <input class="zp-education-academy" type="text" name="school1" placeholder="填写学校">
+            </div>
+            {/if}
+            {if $fields['studyst1']}
+            <div class="zp-list">
+				{if $fields['studyst1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">就读时间</label>
+				{$forminfos_data['studyst1']['form']}
+				{$forminfos_data['studyet1']['form']}
+                <!--<input class="zp-experience-from" type="text" name="studyst1" placeholder="">
+                <input class="zp-experience-from" type="text" name="studyet1" placeholder="">-->
+            </div>
+            {/if}
+            {if $fields['major1']}
+            <div class="zp-list">
+				{if $fields['major1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">专业</label>
+                <input type="text" name="major1" placeholder="">
+            </div>
+            {/if}
+            {if $fields['isget1']}
+            <div class="zp-list">
+				{if $fields['isget1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">是否统招</label>
+                {loop $fields['isget1']['box'] $k $v}
+					<label class="zp-black" for=""><input type="radio" name="isget1" value="{$k}">{$v}</label>
+				{/loop}
+            </div>
+            {/if}
+            {if $fields['edu1']}
+            <div class="zp-list">
+				{if $fields['edu1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">学历</label>
+				 <select class="zp-education-province" value="" placeholder="" name="edu1" id="">
+                {loop $fields['edu1']['box'] $k $v}
+					<option value="{$k}">{$v}</option>
+				{/loop}
+				</select>
+            </div>
+			{/if}
+            <div class="zp-gray-line"></div>
+            {if $fields['school2']}
+            <div class="zp-list">
+				{if $fields['school2']['minlength']>0}<span class="xx">*</span>{/if}
+				<label for="">毕业院校</label>
+                <input class="zp-education-academy" type="text" name="school2" placeholder="填写学校">
+            </div>
+            {/if}
+            {if $fields['studyst2']}
+            <div class="zp-list">
+				{if $fields['studyst2']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">就读时间</label>
+				{$forminfos_data['studyst2']['form']}
+				{$forminfos_data['studyet2']['form']}
+                <!--<input class="zp-experience-from" type="text" name="studyst2" placeholder="">
+                <input class="zp-experience-from" type="text" name="studyet2" placeholder="">-->
+            </div>
+            {/if}
+            {if $fields['major2']}
+            <div class="zp-list">
+				{if $fields['major2']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">专业</label>
+                <input type="text" name="major2" placeholder="">
+            </div>
+            {/if}
+            {if $fields['isget2']}
+            <div class="zp-list">
+				{if $fields['isget2']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">是否统招</label>
+                {loop $fields['isget2']['box'] $k $v}
+					<label class="zp-black" for=""><input type="radio" name="isget2" value="{$k}">{$v}</label>
+				{/loop}
+            </div>
+            {/if}
+            {if $fields['edu2']}
+            <div class="zp-list">
+				{if $fields['edu2']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">学历</label>
+				 <select class="zp-education-province" value="" placeholder="" name="edu2" id="">
+                {loop $fields['edu2']['box'] $k $v}
+					<option value="{$k}">{$v}</option>
+				{/loop}
+				</select>
+            </div>
+			{/if}
+            <!--重复学历-->
+            <div class="zp-gray-line"></div>
+            {if $fields['seclanguage']}
+            <div class="zp-list">
+				{if $fields['seclanguage']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">第二语言</label>
+                <input type="text" name="seclanguage" placeholder="">
+            </div>
+			{/if}
+            {if $fields['state']}
+            <div class="zp-list">
+				{if $fields['state']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">掌握情况</label>
+                {loop $fields['state']['box'] $k $v}
+					<label class="zp-black" for=""><input type="radio" name="isget2" value="{$k}">{$v}</label>
+				{/loop}
+            </div>
+			{/if}
+        </div>
+    </div>
+    <div class="zp-date zp-life">
+        <div class="zp-date-red">
+            生活/发展
+        </div>
+        <div class="zp-arrow-down fr">
+            <img src="{IMG_PATH}job/zhaopin_03.png" alt="">
+        </div>
+        <div class="zp-arrow-up fr">
+            <img src="{IMG_PATH}job/zhaopin_04.png" alt="">
+        </div>
+        <div class="zp-list-box zp-box-bottom">
+			{if $fields['web']}
+            <div class="zp-list">
+				{if $fields['web']['minlength']>0}<span class="xx">*</span>{/if}
+                <p>经常游览的网站名称及网址</p>
+                <textarea name="web" id="" cols="30" rows="10"></textarea>
+            </div>
+			{/if}
+            {if $fields['books']}
+            <div class="zp-list">
+				{if $fields['books']['minlength']>0}<span class="xx">*</span>{/if}
+                <p>平时常阅览的书籍</p>
+                <textarea name="books" id="" cols="30" rows="10"></textarea>
+            </div>
+            {/if}
+            {if $fields['lcomp']}
+            <div class="zp-list">
+				{if $fields['lcomp']['minlength']>0}<span class="xx">*</span>{/if}
+                <p>您喜欢的行业内公司有哪些？请列举3家</p>
+                <textarea name="lcomp" id="" cols="30" rows="10"></textarea>
+            </div>
+            {/if}
+            {if $fields['certificate']}
+            <div class="zp-list">
+				{if $fields['certificate']['minlength']>0}<span class="xx">*</span>{/if}
+                <p>和专业/工作相关的证书</p>
+                <textarea name="certificate" id="" cols="30" rows="10"></textarea>
+            </div>
+			{/if}
+        </div>
+    </div>
+    <div class="zp-date">
+        <div class="zp-date-red">
+            职业信息
+        </div>
+        <div class="zp-arrow-down fr">
+            <img src="{IMG_PATH}job/zhaopin_03.png" alt="">
+        </div>
+        <div class="zp-arrow-up fr">
+            <img src="{IMG_PATH}job/zhaopin_04.png" alt="">
+        </div>
+        <div class="zp-list-box zp-box-bottom">
+            {if $fields['from']}
+            <div class="zp-list">
+				{if $fields['from']['minlength']>0}<span class="xx">*</span>{/if}
+                <p>获得职位信息的渠道</p>
+                {loop $fields['from']['box'] $k $v}
+					<label class="zp-black" for=""><input type="radio" name="from" value="{$k}">{$v}</label>
+				{/loop}
+				<textarea class="zp-how-get" name="fromother" id="" cols="30" rows="10" placeholder="请指明"></textarea>
+            </div>
+			{/if}
+            {if $fields['understand']}
+            <div class="zp-list">
+				{if $fields['understand']['minlength']>0}<span class="xx">*</span>{/if}
+                <p>请阐述您对正邦的理解</p>
+                <textarea class="zp-how-comprehension" name="understand" id="" cols="30" rows="10" placeholder="正邦是"></textarea>
+            </div>
+			{/if}
+            {if $fields['know']}
+            <div class="zp-list">
+				{if $fields['know']['minlength']>0}<span class="xx">*</span>{/if}
+                <p>是否认识正邦现职人员</p>
+                {loop $fields['know']['box'] $k $v}
+					<label class="zp-black" for=""><input type="radio" name="know" value="{$k}">{$v}</label>
+				{/loop}
+                <textarea class="zp-how-reason" name="knowpeo" id="" cols="30" rows="10" placeholder="请指明"></textarea>
+            </div>
+            {/if}
+            {if $fields['factor1']}
+            <div class="zp-list">
+				{if $fields['factor1']['minlength']>0}<span class="xx">*</span>{/if}
+                <p>考虑入职因素排序</p>
+                <select class="zp-occupation-reason" value="" placeholder="" name="factor1" id="">
+                   {loop $fields['factor1']['box'] $k $v}
+					<option value="{$k}">{$v}</option>
+					{/loop}
+                </select>
+				<select class="zp-occupation-reason" value="" placeholder="" name="factor2" id="">
+                   {loop $fields['factor2']['box'] $k $v}
+					<option value="{$k}">{$v}</option>
+					{/loop}
+                </select>
+				<select class="zp-occupation-reason" value="" placeholder="" name="factor3" id="">
+                   {loop $fields['factor3']['box'] $k $v}
+					<option value="{$k}">{$v}</option>
+					{/loop}
+                </select>
+            </div>
+			{/if}
+            <div class="zp-gray-line"></div>
+            {if $fields['jobstatus']}
+            <div class="zp-list">
+				{if $fields['jobstatus']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">工作状态</label>
+				{loop $fields['jobstatus']['box'] $k $v}
+					<label class="zp-black" for=""><input type="radio" name="jobstatus" value="{$k}">{$v}</label>
+				{/loop}
+            </div>
+			{/if}
+            {if $fields['insurance']}
+            <div class="zp-list">
+				{if $fields['insurance']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">在京社保</label>
+                {loop $fields['insurance']['box'] $k $v}
+					<label class="zp-black" for=""><input type="radio" name="insurance" value="{$k}">{$v}</label>
+				{/loop}
+            </div>
+			{/if}
+            {if $fields['fund']}
+            <div class="zp-list">
+				{if $fields['fund']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">住房公积金</label>
+                {loop $fields['fund']['box'] $k $v}
+					<label class="zp-black" for=""><input type="radio" name="fund" value="{$k}">{$v}</label>
+				{/loop}
+                <label class="zp-occupation-label" for="">每月缴纳</label>
+                <input class="zp-occupation-pay" type="text" name="fundmonth" placeholder="">
+            </div>
+            {/if}
+            {if $fields['salary1']}
+            <div class="zp-list">
+				{if $fields['salary1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">期望薪金</label>
+                <!----><input class="zp-probation-salary zp-salary-left" type="text" name="" placeholder="填写试用期期望薪金（税前/月）">
+                <!----><img class="zp-occupation-two" src="{IMG_PATH}job/zp_23.png" alt="">
+                <!----><input class="zp-probation-salary zp-salary-left" type="text" name="" placeholder="填写转正期望薪金（税前/月）">
+                <!----><img class="zp-occupation-three" src="{IMG_PATH}job/zp_23.png" alt="">
+                <!----><!--<input class="zp-probation-salary" type="text" name="salary1" placeholder="填写试用期期望薪金（税前/月）">-->
+                <!----><!--<input class="zp-probation-salary" type="text" name="salary2" placeholder="填写转正期望薪金（税前/月）">-->
+            </div>
+            {/if}
+            {if $fields['structure']}
+            <div class="zp-list">
+				{if $fields['structure']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">期望薪资结构</label>
+                <select class="zp-occupation-reason" value="" placeholder="" name="structure" id="">
+                    {loop $fields['structure']['box'] $k $v}
+					<option value="{$k}">{$v}</option>
+					{/loop}
+                </select>
+            </div>
+			{/if}
+        </div>
+    </div>
+    <div class="zp-date zp-family">
+        <div class="zp-date-red">
+            家庭成员
+        </div>
+        <div class="zp-arrow-down fr">
+            <img src="{IMG_PATH}job/zhaopin_03.png" alt="">
+        </div>
+        <div class="zp-arrow-up fr">
+            <img src="{IMG_PATH}job/zhaopin_04.png" alt="">
+        </div>
+        <div class="zp-list-box zp-box-bottom">
+           {if $fields['fname1']}
+            <div class="zp-list">
+				{if $fields['fname1']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">父亲</label>
+                <input class="zp-family-name" type="text" name="fname1" placeholder="姓名">
+                <input class="zp-family-age" type="text" name="fage1" placeholder="年龄">
+                <input class="zp-family-phone" type="text" name="ftel1" placeholder="电话">
+                <input class="zp-family-firms" type="text" name="fjob1" placeholder="工作单位">
+                <input class="zp-family-position" type="text" name="fpost1" placeholder="职务">
+            </div>
+			{/if}
+            {if $fields['fname2']}
+            <div class="zp-list">
+				{if $fields['fname2']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">母亲</label>
+                <input class="zp-family-name" type="text" name="fname2" placeholder="姓名">
+                <input class="zp-family-age" type="text" name="fage2" placeholder="年龄">
+                <input class="zp-family-phone" type="text" name="ftel2" placeholder="电话">
+                <input class="zp-family-firms" type="text" name="fjob2" placeholder="工作单位">
+                <input class="zp-family-position" type="text" name="fpost2" placeholder="职务">
+            </div>
+            {/if}
+            {if $fields['fname3']}
+            <div class="zp-list">
+				{if $fields['fname3']['minlength']>0}<span class="xx">*</span>{/if}
+                <label for="">配偶/对象</label>
+                <input class="zp-family-name" type="text" name="fname3" placeholder="姓名">
+                <input class="zp-family-age" type="text" name="fage3" placeholder="年龄">
+                <input class="zp-family-phone" type="text" name="ftel3" placeholder="电话">
+                <input class="zp-family-firms" type="text" name="fjob3" placeholder="工作单位">
+                <input class="zp-family-position" type="text" name="fpost3" placeholder="职务">
+            </div>
+			{/if}
+        </div>
+    </div>
+    <div class="zp-date zp-evaluation">
+        <div class="zp-date-red">
+            自我阐述
+        </div>
+        <div class="zp-arrow-down fr">
+            <img src="{IMG_PATH}job/zhaopin_03.png" alt="">
+        </div>
+        <div class="zp-arrow-up fr">
+            <img src="{IMG_PATH}job/zhaopin_04.png" alt="">
+        </div>
+        <div class="zp-list-box zp-box-bottom">
+           {if $fields['advantages']}
+            <div class="zp-list">
+				{if $fields['advantages']['minlength']>0}<span class="xx">*</span>{/if}
+                <p>专业优势</p>
+                <textarea name="advantages" id="" cols="30" rows="10"></textarea>
+            </div>
+			{/if}
+            {if $fields['deficiency']}
+            <div class="zp-list">
+				{if $fields['deficiency']['minlength']>0}<span class="xx">*</span>{/if}
+                <p>专业不足</p>
+                <textarea name="deficiency" id="" cols="30" rows="10"></textarea>
+            </div>
+            {/if}
+            {if $fields['industry']}
+            <div class="zp-list">
+				{if $fields['industry']['minlength']>0}<span class="xx">*</span>{/if}
+                <p>服务客户行业</p>
+                <textarea name="industry" id="" cols="30" rows="10"></textarea>
+            </div>
+            {/if}
+            {if $fields['customer']}
+            <div class="zp-list">
+				{if $fields['customer']['minlength']>0}<span class="xx">*</span>{/if}
+                <p>主要服务客户</p>
+                <textarea name="customer" id="" cols="30" rows="10"></textarea>
+            </div>
+			{/if}
+        </div>
+    </div>
+    <label class="zp-guarantee" for="">
+        <input type="checkbox" name="">
+        <p>我保证上述所填一切资料属实，并保证在以往的历史中无任何犯罪记录。<br>
+        我授权北京正邦品牌服务集团公司或委托第三方对我提供的个人及工作履历信息进行验证核实，包括但不限于通过向权威数据源提请验证以及就个人履历部分向有关单位进行核实。若上述所填资料有不实之处，公司有权随时与我解除劳动关系，但不承担任何经济、法律责任。公司有权要求我补偿由此引起的一切损失，包括为招聘我而花费的费用。</p>
+    </label>
+    <input class="zp-submit" type="submit" name="dosubmit" id="dosubmit" value=" 提交 ">
+</form>
