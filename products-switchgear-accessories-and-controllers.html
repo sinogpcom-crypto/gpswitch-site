@@ -3,10 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <title>Switchgear Accessories And Controllers | Support Components | GreenPower Electric</title>
   <meta name="description" content="Explore GreenPower switchgear accessories and controllers for cabinet support, control functions, and project-oriented supply.">
   <link rel="canonical" href="https://gpswitch.com/products/switchgear-accessories-and-controllers/">
@@ -177,7 +173,7 @@
       color: #08483f;
     }
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1100px) {
       .products-hub-layout {
         grid-template-columns: 1fr;
       }
@@ -188,7 +184,7 @@
       }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 760px) {
       .subpage-hero {
         min-height: 360px;
       }
@@ -211,19 +207,14 @@
     }
   </style>
 </head>
-<body id="top" class="shared-nav-shell">
+<body id="top">
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
         <img src="statics/web/images/logo.png" alt="GreenPower logo">
       </a>
-      <button class="mobile-nav-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="primary-site-nav" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
       <div class="header-nav-group">
-        <nav class="site-nav" id="primary-site-nav" aria-label="Primary navigation">
+        <nav class="site-nav" aria-label="Primary navigation">
           <ul class="site-nav-list">
             <li class="nav-item"><a href="index.html">Home</a></li>
             <li class="nav-item nav-item-products">
@@ -540,9 +531,6 @@
         return { open: openPanel, close: closePanelNow };
       };
 
-      const siteHeader = document.querySelector(".shared-nav-shell .site-header");
-      const siteNav = document.querySelector("#primary-site-nav");
-      const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
       const productsTrigger = document.querySelector(".product-menu-trigger");
       const productsMenu = document.querySelector("#products-mega-menu");
       const aboutItem = document.querySelector(".nav-item-about");
@@ -695,83 +683,10 @@
         trigger.setAttribute("aria-expanded", "false");
         return { open: openPanel, close: closePanelNow };
       };
-      const languageDropdownApi = bindUtilityDropdown(headerLang, langButton, langDropdown);
-      const searchDropdownApi = bindUtilityDropdown(headerSearch, searchButton, searchPanel);
-      const qrDropdownApi = bindUtilityDropdown(headerQr, qrButton, qrPanel);
 
-      if (siteHeader && siteNav && mobileNavToggle && window.matchMedia) {
-        const mobileViewport = window.matchMedia("(max-width: 1023px)");
-
-        const closeUtilityDropdowns = function () {
-          [languageDropdownApi, searchDropdownApi, qrDropdownApi].forEach(function (dropdownApi) {
-            if (dropdownApi && typeof dropdownApi.close === "function") {
-              dropdownApi.close();
-            }
-          });
-        };
-
-        const setMobileNavState = function (isOpen) {
-          siteHeader.classList.toggle("is-mobile-menu-open", isOpen);
-          mobileNavToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        };
-
-        mobileNavToggle.addEventListener("click", function () {
-          if (!mobileViewport.matches) {
-            return;
-          }
-
-          const shouldOpen = !siteHeader.classList.contains("is-mobile-menu-open");
-          if (shouldOpen) {
-            closeUtilityDropdowns();
-          }
-          setMobileNavState(shouldOpen);
-        });
-
-        siteNav.querySelectorAll("a").forEach(function (link) {
-          link.addEventListener("click", function () {
-            if (!mobileViewport.matches) {
-              return;
-            }
-            setMobileNavState(false);
-          });
-        });
-
-        document.addEventListener("click", function (event) {
-          if (!mobileViewport.matches || !siteHeader.classList.contains("is-mobile-menu-open")) {
-            return;
-          }
-
-          if (siteHeader.contains(event.target)) {
-            return;
-          }
-
-          setMobileNavState(false);
-        });
-
-        document.addEventListener("keydown", function (event) {
-          if (event.key !== "Escape" || !siteHeader.classList.contains("is-mobile-menu-open")) {
-            return;
-          }
-
-          setMobileNavState(false);
-        });
-
-        const syncMobileNavState = function (event) {
-          if (event && event.matches) {
-            return;
-          }
-
-          setMobileNavState(false);
-        };
-
-        if (typeof mobileViewport.addEventListener === "function") {
-          mobileViewport.addEventListener("change", syncMobileNavState);
-        } else if (typeof mobileViewport.addListener === "function") {
-          mobileViewport.addListener(syncMobileNavState);
-        }
-
-        setMobileNavState(false);
-      }
+      bindUtilityDropdown(headerLang, langButton, langDropdown);
+      bindUtilityDropdown(headerSearch, searchButton, searchPanel);
+      bindUtilityDropdown(headerQr, qrButton, qrPanel);
     }());
   </script>
 </body>
