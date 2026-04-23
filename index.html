@@ -229,6 +229,46 @@
       transform: translateY(-2px);
     }
 
+    .certifications-section {
+      background: transparent;
+      padding: 6px 0;
+    }
+
+    .certifications-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: 48px;
+      row-gap: 26px;
+      margin-top: 0;
+    }
+
+    .certification-badge {
+      flex: 1 1 calc(14.285% - 48px);
+      min-width: 92px;
+      max-width: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .certification-logo-wrap {
+      height: 70px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .certification-logo {
+      display: block;
+      height: 70px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html.has-motion .hero-media img,
       html.has-motion .hero-content .eyebrow,
@@ -248,6 +288,28 @@
         transition: none !important;
         transform: none !important;
         opacity: 1 !important;
+      }
+
+      .certification-badge {
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .certifications-grid {
+        column-gap: 12px;
+        row-gap: 18px;
+      }
+
+      .certification-badge {
+        flex: 1 1 calc(25% - 12px);
+        min-width: 72px;
+        max-width: 116px;
+      }
+
+      .certification-logo-wrap,
+      .certification-logo {
+        height: 70px;
       }
     }
   </style>
@@ -566,6 +628,48 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="certifications-section">
+      <div class="container">
+        <div class="certifications-grid" aria-label="Certifications and standards logos">
+          <article class="certification-badge">
+            <div class="certification-logo-wrap">
+              <img class="certification-logo" src="statics/web/images/certifications/tuv.png" alt="TUV certification logo">
+            </div>
+          </article>
+          <article class="certification-badge">
+            <div class="certification-logo-wrap">
+              <img class="certification-logo" src="statics/web/images/certifications/asta.png" alt="ASTA certification logo">
+            </div>
+          </article>
+          <article class="certification-badge">
+            <div class="certification-logo-wrap">
+              <img class="certification-logo" src="statics/web/images/certifications/kema.png" alt="KEMA certification logo">
+            </div>
+          </article>
+          <article class="certification-badge">
+            <div class="certification-logo-wrap">
+              <img class="certification-logo" src="statics/web/images/certifications/ce.png" alt="CE certification logo">
+            </div>
+          </article>
+          <article class="certification-badge">
+            <div class="certification-logo-wrap">
+              <img class="certification-logo" src="statics/web/images/certifications/iec.png" alt="IEC certification logo">
+            </div>
+          </article>
+          <article class="certification-badge">
+            <div class="certification-logo-wrap">
+              <img class="certification-logo" src="statics/web/images/certifications/iso.png" alt="ISO certification logo">
+            </div>
+          </article>
+          <article class="certification-badge">
+            <div class="certification-logo-wrap">
+              <img class="certification-logo" src="statics/web/images/certifications/patents.png" alt="Patents and intellectual property logo">
+            </div>
+          </article>
         </div>
       </div>
     </section>
