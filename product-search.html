@@ -576,29 +576,67 @@
         return JSON.parse(new TextDecoder("utf-8").decode(bytes));
       };
 
-      const loadIndex = function () {
-        const tpl = document.getElementById("gpswitch-product-search-index-b64");
-        if (tpl) {
-          const raw = tpl.textContent.replace(/\s+/g, "");
-          if (raw.length > 80) {
-            try {
-              const index = parseIndexFromB64(raw);
-              if (Array.isArray(index)) {
-                return Promise.resolve(index);
-              }
-            } catch (e1) {
+      const embeddedIndexB64 = function () {
+        const el = document.getElementById("gpswitch-product-search-index-b64");
+        if (!el) {
+          return "";
+        }
+        var text = "";
+        if (el.tagName === "TEMPLATE" && el.content) {
+          text = el.content.textContent || "";
+        }
+        if (!text) {
+          text = el.textContent || "";
+        }
+        return text.replace(/\s+/g, "");
+      };
+
+      const catalogIndexFetchUrls = function () {
+        const urls = [];
+        const add = function (href) {
+          if (href && urls.indexOf(href) === -1) {
+            urls.push(href);
+          }
+        };
+
+        if (window.location.protocol === "file:") {
+          add(new URL("statics/web/data/product-search-index.json", window.location.href).href);
+          return urls;
+        }
+
+        var link = document.querySelector('link[rel="stylesheet"][href*="statics"]');
+        if (link) {
+          try {
+            var cssUrl = new URL(link.getAttribute("href"), window.location.href);
+            var k = cssUrl.pathname.indexOf("/statics/web/");
+            if (k !== -1) {
+              var root = cssUrl.origin + cssUrl.pathname.slice(0, k + "/statics/web".length);
+              add(root + "/data/product-search-index.json");
             }
+          } catch (eCss) {
           }
         }
 
-        const urls = [];
-        if (window.location.protocol === "file:") {
-          urls.push(new URL("statics/web/data/product-search-index.json", window.location.href).href);
-        } else {
-          urls.push(new URL("/statics/web/data/product-search-index.json", window.location.origin).href);
-          urls.push(new URL("statics/web/data/product-search-index.json", window.location.href).href);
-          urls.push(new URL("../statics/web/data/product-search-index.json", window.location.href).href);
+        add(new URL("statics/web/data/product-search-index.json", window.location.origin).href);
+        add(new URL("/statics/web/data/product-search-index.json", window.location.origin).href);
+        add(new URL("../statics/web/data/product-search-index.json", window.location.href).href);
+        add(new URL("statics/web/data/product-search-index.json", window.location.href).href);
+        return urls;
+      };
+
+      const loadIndex = function () {
+        const raw = embeddedIndexB64();
+        if (raw.length > 80) {
+          try {
+            const index = parseIndexFromB64(raw);
+            if (Array.isArray(index)) {
+              return Promise.resolve(index);
+            }
+          } catch (e1) {
+          }
         }
+
+        const urls = catalogIndexFetchUrls();
 
         const tryFetch = function (i) {
           if (i >= urls.length) {
@@ -628,7 +666,7 @@
         .catch(function () {
           if (statusEl) {
             statusEl.textContent =
-              "Product search could not load the catalog index. Open products.html or run: python3 scripts/build_product_search_index.py then redeploy product-search.html.";
+              "Product search could not load the catalog index. Ensure statics/web/data/product-search-index.json is deployed, then refresh.";
           }
           if (listEl) {
             listEl.hidden = true;
