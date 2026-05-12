@@ -962,6 +962,21 @@
       bindUtilityDropdown(headerSearch, searchButton, searchPanel);
       bindUtilityDropdown(headerQr, qrButton, qrPanel);
 
+      const searchInput = document.querySelector(".search-input");
+      if (searchInput) {
+        searchInput.addEventListener("keydown", function (event) {
+          if (event.key !== "Enter") {
+            return;
+          }
+          event.preventDefault();
+          const q = searchInput.value.trim();
+          if (!q) {
+            return;
+          }
+          window.location.href = "product-search.html?q=" + encodeURIComponent(q);
+        });
+      }
+
       const productsTabs = Array.from(document.querySelectorAll("[data-products-tab]"));
       const gatewayPanels = Array.from(document.querySelectorAll(".products-panel"));
 
