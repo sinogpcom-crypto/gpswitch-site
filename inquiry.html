@@ -613,10 +613,11 @@
           }
 
           form.reset();
-          setStatus("success", data.message || "Inquiry submitted successfully.");
+          statusBox.className = "form-status form-status-success";
+          statusBox.hidden = true;
           submitButton.textContent = "Inquiry Submitted";
           submitButton.disabled = true;
-          statusBox.scrollIntoView({ behavior: "smooth", block: "center" });
+          window.location.href = "inquiry-success.html";
         } catch (error) {
           setStatus("error", "Submission failed due to a network or server error. Please try again.");
           statusBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
