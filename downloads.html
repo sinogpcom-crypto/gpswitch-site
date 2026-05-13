@@ -16,46 +16,8 @@
       min-height: 440px;
     }
 
-    .downloads-anchor-section {
-      padding-top: 36px;
-      padding-bottom: 0;
-    }
-
-    .downloads-anchor-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .downloads-anchor-link {
-      display: inline-flex;
-      align-items: center;
-      min-height: 44px;
-      padding: 0 18px;
-      border: 1px solid rgba(15, 82, 74, 0.12);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.55);
-      color: #0f524a;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    .downloads-anchor-link:hover,
-    .downloads-anchor-link:focus-visible {
-      border-color: rgba(15, 82, 74, 0.28);
-      color: #0a3f3a;
-      transform: translateY(-1px);
-    }
-
     .downloads-catalog-section + .downloads-catalog-section {
       padding-top: 0;
-    }
-
-    .downloads-anchor-section + .downloads-catalog-section {
-      padding-top: 36px;
     }
 
     .downloads-catalog-section {
@@ -65,11 +27,20 @@
     .downloads-catalog-intro {
       margin-bottom: 24px;
       max-width: 680px;
+      padding-left: 24px;
       scroll-margin-top: 190px;
     }
 
     .downloads-catalog-intro h2 {
       margin-bottom: 10px;
+      font-size: clamp(26px, 2.4vw, 32px);
+      font-weight: 700;
+      line-height: 1.14;
+      letter-spacing: 0.012em;
+    }
+
+    .downloads-catalog-intro > h2:last-child {
+      margin-bottom: 0;
     }
 
     .downloads-catalog-intro p {
@@ -84,14 +55,25 @@
 
     .downloads-catalog-row {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 28px;
       padding: 22px 24px;
       border: 1px solid rgba(15, 82, 74, 0.1);
       border-radius: 20px;
       background: #fff;
       box-shadow: 0 16px 40px rgba(18, 42, 66, 0.06);
+    }
+
+    .downloads-catalog-row .button {
+      align-self: center;
+      flex: 0 0 auto;
+    }
+
+    .downloads-catalog-copy {
+      min-width: 0;
+      flex: 1 1 0;
+      padding-right: 8px;
     }
 
     .downloads-catalog-copy h3 {
@@ -103,27 +85,13 @@
       margin: 0;
       color: #6b7f89;
       font-size: 14px;
+      line-height: 1.55;
+      max-width: none;
     }
 
     @media (max-width: 760px) {
       .subpage-hero {
         min-height: 360px;
-      }
-
-      .downloads-anchor-section {
-        padding-top: 28px;
-      }
-
-      .downloads-anchor-row {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 12px;
-        scrollbar-width: thin;
-      }
-
-      .downloads-anchor-link {
-        flex: 0 0 auto;
-        white-space: nowrap;
       }
 
       .downloads-catalog-row {
@@ -296,51 +264,25 @@
       </div>
     </section>
 
-    <section class="page-section-tight downloads-anchor-section">
-      <div class="container">
-        <div class="downloads-anchor-row">
-          <a class="downloads-anchor-link" href="#mv-switchgear-systems-heading">Medium Voltage Switchgear Systems</a>
-          <a class="downloads-anchor-link" href="#primary-switching-devices-heading">Primary Switching Devices</a>
-          <a class="downloads-anchor-link" href="#instrument-transformers-and-sensors-heading">Instrument Transformers And Indicators</a>
-          <a class="downloads-anchor-link" href="#components-and-spare-parts-heading">Components And Spare Parts</a>
-        </div>
-      </div>
-    </section>
-
     <section class="page-section downloads-catalog-section" id="mv-switchgear-systems">
       <div class="container">
         <div class="downloads-catalog-intro" id="mv-switchgear-systems-heading">
-          <h2>Medium Voltage Switchgear Systems</h2>
-          <p>Catalogs for switchgear systems and packaged medium-voltage distribution solutions.</p>
+          <h2>Master Catalogs</h2>
         </div>
         <div class="downloads-catalog-list">
           <article class="downloads-catalog-row">
             <div class="downloads-catalog-copy">
-              <h3>Metal-Clad Switchgear Catalog</h3>
-              <p class="downloads-catalog-meta">Product Range Overview</p>
+              <h3>E2 — Medium Voltage Switchgear &amp; Components</h3>
+              <p class="downloads-catalog-meta">Covers GreenPower's full indoor switchgear lineup — CGIS, metal-clad switchgear, vacuum circuit breakers, ring main units, and related equipment from 12kV to 40.5kV.</p>
             </div>
-            <a class="button button-primary" href="inquiry.html">Download</a>
+            <a class="button button-primary" href="statics/web/downloads/product/e2-catalog.pdf" target="_blank" rel="noopener">Download</a>
           </article>
           <article class="downloads-catalog-row">
             <div class="downloads-catalog-copy">
-              <h3>Ring Main Unit Catalog</h3>
-              <p class="downloads-catalog-meta">PDF Document</p>
+              <h3>H1 — Medium Voltage Switchgear Components &amp; Accessories</h3>
+              <p class="downloads-catalog-meta">Selection manual for internal switchgear components — chassis, mechanisms, insulators, contacts, earthing switches, and accessories from 12kV to 40.5kV.</p>
             </div>
-            <a class="button button-primary" href="inquiry.html">Download</a>
-          </article>
-          <article class="downloads-catalog-row">
-            <div class="downloads-catalog-copy">
-              <h3>Gas-Insulated Switchgear Catalog</h3>
-              <p class="downloads-catalog-meta">Product Brochure</p>
-            </div>
-            <a class="button button-primary" href="inquiry.html">Download</a>
-          </article>
-          <article class="downloads-catalog-row">
-            <div class="downloads-catalog-copy">
-              <h3>Compact Secondary Substation Catalog</h3>
-              <p class="downloads-catalog-meta">Product Range Overview</p>
-            </div>
-            <a class="button button-primary" href="inquiry.html">Download</a>
+            <a class="button button-primary" href="statics/web/downloads/product/h1-catalog.pdf" target="_blank" rel="noopener">Download</a>
           </article>
         </div>
       </div>
@@ -349,101 +291,120 @@
     <section class="page-section downloads-catalog-section" id="primary-switching-devices">
       <div class="container">
         <div class="downloads-catalog-intro" id="primary-switching-devices-heading">
-          <h2>Primary Switching Devices</h2>
-          <p>Catalogs covering vacuum circuit breakers, earthing switches, load break switches, and related switching devices.</p>
+          <h2>Product Catalogs</h2>
         </div>
         <div class="downloads-catalog-list">
           <article class="downloads-catalog-row">
             <div class="downloads-catalog-copy">
-              <h3>Vacuum Circuit Breaker Catalog</h3>
-              <p class="downloads-catalog-meta">Product Brochure</p>
+              <h3>GPN2-40.5kV — Cubicle Type Gas Insulated Switchgear (CGIS)</h3>
+              <p class="downloads-catalog-meta">Indoor cubicle-type CGIS for 40.5kV single busbar applications, available in SF6, mixed gas (SF6+N2), and SF6-free nitrogen insulation versions.</p>
+            </div>
+            <a class="button button-primary" href="statics/web/downloads/product/gpn2-40.5kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
+          </article>
+          <article class="downloads-catalog-row">
+            <div class="downloads-catalog-copy">
+              <h3>GPN1-40.5kV — Metal-Clad Enclosed Switchgear</h3>
+              <p class="downloads-catalog-meta">Removable AC metal-clad switchgear for 40.5kV indoor applications, rated current up to 2500A, compatible with GreenPower and major international brand VCBs.</p>
+            </div>
+            <a class="button button-primary" href="statics/web/downloads/product/gpn1-40.5kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
+          </article>
+          <article class="downloads-catalog-row">
+            <div class="downloads-catalog-copy">
+              <h3>GPN1-24kV — Metal-Clad Enclosed Switchgear</h3>
+              <p class="downloads-catalog-meta">Removable AC metal-clad switchgear for 3.6~24kV indoor applications, rated current up to 4000A, compatible with GreenPower and major international brand VCBs.</p>
+            </div>
+            <a class="button button-primary" href="statics/web/downloads/product/gpn1-24kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
+          </article>
+          <article class="downloads-catalog-row">
+            <div class="downloads-catalog-copy">
+              <h3>GPN1-17.5kV — Metal-Clad Enclosed Switchgear</h3>
+              <p class="downloads-catalog-meta">Removable AC metal-clad switchgear for 13.8~17.5kV indoor applications, rated current up to 4000A, suitable for single busbar and double busbar configurations.</p>
             </div>
             <a class="button button-primary" href="inquiry.html">Download</a>
           </article>
           <article class="downloads-catalog-row">
             <div class="downloads-catalog-copy">
-              <h3>Earthing Switch Catalog</h3>
-              <p class="downloads-catalog-meta">PDF Document</p>
+              <h3>GPN1-12kV — Metal-Clad Enclosed Switchgear</h3>
+              <p class="downloads-catalog-meta">Removable AC metal-clad switchgear for 3.6~12kV indoor applications, rated current up to 4000A, with arc-proof enclosure and five-prevention interlock as standard.</p>
             </div>
-            <a class="button button-primary" href="inquiry.html">Download</a>
+            <a class="button button-primary" href="statics/web/downloads/product/gpn1-12kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
           </article>
           <article class="downloads-catalog-row">
             <div class="downloads-catalog-copy">
-              <h3>Load Break Switch Catalog</h3>
-              <p class="downloads-catalog-meta">Product Range Overview</p>
+              <h3>GPR1-12(24)kV — SF6 Gas Insulated Ring Main Unit</h3>
+              <p class="downloads-catalog-meta">SF6 gas insulated RMU for 12kV distribution networks, modular design supporting 1~5 functional units, suitable for ring and radial distribution schemes.</p>
             </div>
-            <a class="button button-primary" href="inquiry.html">Download</a>
+            <a class="button button-primary" href="statics/web/downloads/product/gpr1-12kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
           </article>
           <article class="downloads-catalog-row">
             <div class="downloads-catalog-copy">
-              <h3>Disconnect Switch Catalog</h3>
-              <p class="downloads-catalog-meta">PDF Document</p>
+              <h3>GPR1.1-12kV — Dry Air Insulated Ring Main Unit</h3>
+              <p class="downloads-catalog-meta">SF6-free dry air insulated RMU for 12kV distribution networks, zero gauge pressure design, modular and maintenance-free for 30 years.</p>
             </div>
-            <a class="button button-primary" href="inquiry.html">Download</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="page-section downloads-catalog-section" id="instrument-transformers-and-sensors">
-      <div class="container">
-        <div class="downloads-catalog-intro" id="instrument-transformers-and-sensors-heading">
-          <h2>Instrument Transformers And Indicators</h2>
-          <p>Catalogs for current transformers, voltage transformers, sensors, and related measurement products.</p>
-        </div>
-        <div class="downloads-catalog-list">
-          <article class="downloads-catalog-row">
-            <div class="downloads-catalog-copy">
-              <h3>Instrument Transformer Catalog</h3>
-              <p class="downloads-catalog-meta">Product Range Overview</p>
-            </div>
-            <a class="button button-primary" href="inquiry.html">Download</a>
+            <a class="button button-primary" href="statics/web/downloads/product/gpr1.1-12kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
           </article>
           <article class="downloads-catalog-row">
             <div class="downloads-catalog-copy">
-              <h3>Sensors And Monitoring Devices Catalog</h3>
-              <p class="downloads-catalog-meta">Product Brochure</p>
+              <h3>GPR1.2-12kV — Eco-Friendly Gas Insulated Ring Main Unit</h3>
+              <p class="downloads-catalog-meta">SF6-free dry air insulated RMU for 12kV applications, compact modular design with 30-year maintenance-free gas tank, available in fixed and expandable configurations.</p>
             </div>
-            <a class="button button-primary" href="inquiry.html">Download</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="page-section downloads-catalog-section" id="components-and-spare-parts">
-      <div class="container">
-        <div class="downloads-catalog-intro" id="components-and-spare-parts-heading">
-          <h2>Components And Spare Parts</h2>
-          <p>Catalogs for insulation components, copper parts, auxiliary devices, cable accessories, and matched spare parts.</p>
-        </div>
-        <div class="downloads-catalog-list">
-          <article class="downloads-catalog-row">
-            <div class="downloads-catalog-copy">
-              <h3>Insulation Components Catalog</h3>
-              <p class="downloads-catalog-meta">Product Range Overview</p>
-            </div>
-            <a class="button button-primary" href="inquiry.html">Download</a>
+            <a class="button button-primary" href="statics/web/downloads/product/gpr1.2-12kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
           </article>
           <article class="downloads-catalog-row">
             <div class="downloads-catalog-copy">
-              <h3>Copper Components Catalog</h3>
-              <p class="downloads-catalog-meta">PDF Document</p>
+              <h3>GPR2-12(24)kV — SF6 Gas Insulated Ring Main Unit</h3>
+              <p class="downloads-catalog-meta">SF6 gas insulated RMU for 12kV and 24kV distribution networks, modular design supporting 1~5 functional units, suitable for ring and radial distribution schemes.</p>
             </div>
-            <a class="button button-primary" href="inquiry.html">Download</a>
+            <a class="button button-primary" href="statics/web/downloads/product/gpr2-12kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
           </article>
           <article class="downloads-catalog-row">
             <div class="downloads-catalog-copy">
-              <h3>Auxiliary Devices And Spare Parts Catalog</h3>
-              <p class="downloads-catalog-meta">Product Brochure</p>
+              <h3>GPR6-24kV — Air Insulated Ring Main Unit</h3>
+              <p class="downloads-catalog-meta">Air insulated RMU for 24kV distribution networks, vacuum circuit breaker based, with mechanical and electrical interlocking for safe feeder switching and isolation.</p>
             </div>
-            <a class="button button-primary" href="inquiry.html">Download</a>
+            <a class="button button-primary" href="statics/web/downloads/product/gpr6-24kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
           </article>
           <article class="downloads-catalog-row">
             <div class="downloads-catalog-copy">
-              <h3>Cable Accessories Catalog</h3>
-              <p class="downloads-catalog-meta">PDF Document</p>
+              <h3>GPR6-12kV — Air Insulated Ring Main Unit</h3>
+              <p class="downloads-catalog-meta">Air insulated RMU for 12kV distribution networks, vacuum circuit breaker based, with mechanical and electrical interlocking for safe feeder switching and isolation.</p>
             </div>
-            <a class="button button-primary" href="inquiry.html">Download</a>
+            <a class="button button-primary" href="statics/web/downloads/product/gpr6-12kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
+          </article>
+          <article class="downloads-catalog-row">
+            <div class="downloads-catalog-copy">
+              <h3>GP-NER — 10~40.5kV Neutral Earthing Resistor</h3>
+              <p class="downloads-catalog-meta">Neutral earthing resistor device for 10~40.5kV power systems, stainless steel alloy resistor elements with stable high-temperature performance, suitable for industrial, utility, and generator neutral earthing applications.</p>
+            </div>
+            <a class="button button-primary" href="statics/web/downloads/product/gp-ner-20kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
+          </article>
+          <article class="downloads-catalog-row">
+            <div class="downloads-catalog-copy">
+              <h3>GPVN-40.5kV — Indoor Vacuum Circuit Breaker</h3>
+              <p class="downloads-catalog-meta">Indoor vacuum circuit breaker for 40.5kV AC power systems, rated current up to 2500A with short-circuit breaking current up to 31.5kA, spring or electromagnetic operating mechanism, suitable for frequent operation in substations and industrial applications.</p>
+            </div>
+            <a class="button button-primary" href="statics/web/downloads/product/gpvn-40.5kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
+          </article>
+          <article class="downloads-catalog-row">
+            <div class="downloads-catalog-copy">
+              <h3>GPVN-24kV — Indoor Vacuum Circuit Breaker</h3>
+              <p class="downloads-catalog-meta">Indoor vacuum circuit breaker for 24kV AC power systems, rated current up to 4000A with short-circuit breaking current up to 31.5kA, compact holistic sealed structure with mechanical life of 20,000 operations.</p>
+            </div>
+            <a class="button button-primary" href="statics/web/downloads/product/gpvn-24kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
+          </article>
+          <article class="downloads-catalog-row">
+            <div class="downloads-catalog-copy">
+              <h3>GPVN-17.5kV — Indoor Vacuum Circuit Breaker</h3>
+              <p class="downloads-catalog-meta">Indoor vacuum circuit breaker for 13.8~17.5kV AC power systems, rated current up to 4000A with short-circuit breaking current up to 50kA, suitable for frequent operation in protection and control applications.</p>
+            </div>
+            <a class="button button-primary" href="statics/web/downloads/product/gpvn-17.5kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
+          </article>
+          <article class="downloads-catalog-row">
+            <div class="downloads-catalog-copy">
+              <h3>GPVN-12kV — Indoor Vacuum Circuit Breaker</h3>
+              <p class="downloads-catalog-meta">Indoor vacuum circuit breaker for 7.2~12kV AC power systems, rated current up to 4000A with short-circuit breaking current up to 50kA, available in insulating sleeve and embedded pole types with mechanical life of 20,000 operations.</p>
+            </div>
+            <a class="button button-primary" href="statics/web/downloads/product/gpvn-12kv-catalog.pdf" target="_blank" rel="noopener">Download</a>
           </article>
         </div>
       </div>
