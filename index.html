@@ -97,8 +97,6 @@
     .business-card,
     .strength-card,
     .application-card,
-    .market-tile,
-    .market-tags span,
     .about-capability,
     .about-stage-media img {
       transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background-color 220ms ease, color 220ms ease;
@@ -106,8 +104,7 @@
 
     .business-card,
     .strength-card,
-    .application-card,
-    .market-tile {
+    .application-card {
       --reveal-y: 0px;
       --hover-y: 0px;
       transform: translateY(calc(var(--reveal-y) + var(--hover-y)));
@@ -123,16 +120,14 @@
 
     .business-card.motion-reveal,
     .strength-card.motion-reveal,
-    .application-card.motion-reveal,
-    .market-tile.motion-reveal {
+    .application-card.motion-reveal {
       opacity: 0;
       --reveal-y: 26px;
     }
 
     .business-card.motion-reveal.is-visible,
     .strength-card.motion-reveal.is-visible,
-    .application-card.motion-reveal.is-visible,
-    .market-tile.motion-reveal.is-visible {
+    .application-card.motion-reveal.is-visible {
       opacity: 1;
       --reveal-y: 0px;
     }
@@ -142,9 +137,7 @@
     .strength-card.is-visible:hover,
     .strength-card.is-visible:focus-within,
     .application-card.is-visible:hover,
-    .application-card.is-visible:focus-within,
-    .market-tile.is-visible:hover,
-    .market-tile.is-visible:focus-within {
+    .application-card.is-visible:focus-within {
       transition:
         opacity 0.7s ease,
         transform 220ms ease,
@@ -217,24 +210,8 @@
       box-shadow: 0 24px 46px rgba(10, 42, 50, 0.12);
     }
 
-    .market-tile:hover,
-    .market-tile:focus-within {
-      --hover-y: -4px;
-      border-color: rgba(0, 122, 112, 0.2);
-      box-shadow: 0 18px 36px rgba(10, 42, 50, 0.1);
-    }
-
-    .market-tags span:hover,
-    .market-tags span:focus-visible {
-      background: rgba(0, 122, 112, 0.1);
-      border-color: rgba(0, 122, 112, 0.18);
-      color: #0a564d;
-      transform: translateY(-2px);
-    }
-
     .certifications-section {
-      background: transparent;
-      padding: 6px 0;
+      padding: 6px 0 48px;
     }
 
     .certifications-grid {
@@ -282,8 +259,6 @@
       .business-card,
       .strength-card,
       .application-card,
-      .market-tile,
-      .market-tags span,
       .about-capability,
       .about-stage-media img,
       .business-card-body h3,
@@ -473,25 +448,25 @@
       <div class="container hero-content">
         <p class="eyebrow">Powering What Matters</p>
         <h1>Industrial Electrical Equipment And Complete Power Distribution Solutions</h1>
-        <p class="hero-copy">Built for utilities, EPC contractors, industrial plants, and infrastructure projects, GreenPower delivers dependable switchgear systems, core components, and responsive engineering support.</p>
+        <p class="hero-copy">China-based medium-voltage switchgear manufacturer supplying utilities, EPC contractors, and industrial plants with switchgear systems, vacuum circuit breakers, RMUs, and components.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="inquiry.html">Send Inquiry</a>
-          <a class="button button-secondary" href="#business">Explore Products</a>
+          <a class="button button-secondary" href="products.html">Explore Products</a>
         </div>
       </div>
       <div class="hero-metrics">
         <div class="container metrics-grid">
           <div class="metric-card">
-            <strong>3.6kV To 40.5kV</strong>
-            <span>Medium Voltage Product Coverage</span>
+            <strong>Full MV Product Range</strong>
+            <span>Switchgear, circuit breakers, RMUs, and components from 3.6kV to 40.5kV</span>
           </div>
           <div class="metric-card">
-            <strong>One-Stop Supply</strong>
-            <span>Switchgear And Core Components</span>
+            <strong>Global-Grade Components</strong>
+            <span>Materials sourced from the same supply chain as major global switchgear manufacturers</span>
           </div>
           <div class="metric-card">
-            <strong>Export-Oriented</strong>
-            <span>Support For Global Project Demand</span>
+            <strong>Free Engineering Support</strong>
+            <span>Engineering design and after-sales technical guidance on every order</span>
           </div>
         </div>
       </div>
@@ -501,60 +476,60 @@
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Core Portfolio</p>
+            <p class="section-kicker">What We Supply</p>
             <h2>Our Business</h2>
           </div>
-          <p class="section-summary">A focused product lineup for distribution systems, switchgear assemblies, and critical component supply.</p>
+          <p class="section-summary">Medium-voltage switchgear systems, vacuum circuit breakers, RMUs, and components from a China-based manufacturer.</p>
         </div>
         <div class="business-grid">
-          <article class="business-card">
+          <a class="business-card" href="products-metal-clad-switchgear.html" aria-label="Metal-clad switchgear products">
             <div class="business-card-media"><img src="statics/web/images/page/home/home-our-business-metal-clad-switchgear.jpg" alt="Metal-Clad Switchgear"></div>
             <div class="business-card-body">
               <span class="card-number">01</span>
               <h3>Metal-Clad Switchgear</h3>
-              <p>Engineered medium-voltage assemblies for dependable protection, control, and distribution duty.</p>
+              <p>Removable metal-clad switchgear for 12kV to 40.5kV indoor applications, built for protection, control, and reliable power distribution.</p>
             </div>
-          </article>
-          <article class="business-card">
+          </a>
+          <a class="business-card" href="products-ring-main-unit.html" aria-label="Ring main unit products">
             <div class="business-card-media"><img src="statics/web/images/page/home/home-our-business-ring-main-unit.jpg" alt="Ring Main Unit"></div>
             <div class="business-card-body">
               <span class="card-number">02</span>
               <h3>Ring Main Unit</h3>
-              <p>Compact RMU solutions for network reliability, compact substations, and distribution upgrades.</p>
+              <p>SF6, dry air, and eco-friendly RMU solutions for 12kV and 24kV distribution networks and compact substations.</p>
             </div>
-          </article>
-          <article class="business-card">
+          </a>
+          <a class="business-card" href="products-vacuum-circuit-breaker.html" aria-label="Vacuum circuit breaker products">
             <div class="business-card-media"><img src="statics/web/images/page/home/home-our-business-vacuum-circuit-breaker.jpg" alt="Vacuum Circuit Breaker"></div>
             <div class="business-card-body">
               <span class="card-number">03</span>
               <h3>Vacuum Circuit Breaker</h3>
-              <p>Reliable switching devices for switchgear panels, industrial systems, and utility applications.</p>
+              <p>Indoor vacuum circuit breakers from 12kV to 40.5kV, compatible with GreenPower and major international brand switchgear.</p>
             </div>
-          </article>
-          <article class="business-card">
+          </a>
+          <a class="business-card" href="products-load-break-switch.html" aria-label="Load break and isolating switch products">
             <div class="business-card-media"><img src="statics/web/images/page/home/home-our-business-load-break-and-isolating-switches.jpg" alt="Load Break And Isolating Switches"></div>
             <div class="business-card-body">
               <span class="card-number">04</span>
               <h3>Load Break And Isolating Switches</h3>
-              <p>Switching and isolation solutions for feeder control, sectionalizing, and operational safety.</p>
+              <p>Outdoor and indoor load break and isolating switches for 12kV to 40.5kV feeder control, sectionalizing, and network reconfiguration.</p>
             </div>
-          </article>
-          <article class="business-card">
+          </a>
+          <a class="business-card" href="products-instrument-transformers.html" aria-label="Instrument transformers and indicators products">
             <div class="business-card-media"><img src="statics/web/images/page/home/home-our-business-instrument-transformers-and-indicators.jpg" alt="Instrument Transformers And Indicators"></div>
             <div class="business-card-body">
               <span class="card-number">05</span>
               <h3>Instrument Transformers And Indicators</h3>
-              <p>Current, voltage, and sensing solutions for metering, protection, and monitoring requirements.</p>
+              <p>Current and voltage transformers, charged display indicators, and test tools for 12kV to 40.5kV metering, protection, and diagnostics.</p>
             </div>
-          </article>
-          <article class="business-card">
+          </a>
+          <a class="business-card" href="products-chassis-and-auxiliary-trucks.html" aria-label="Switchgear components and spare parts products">
             <div class="business-card-media"><img src="statics/web/images/page/home/home-our-business-switchgear-components-and-spare-parts.jpg" alt="Switchgear Components And Spare Parts"></div>
             <div class="business-card-body">
               <span class="card-number">06</span>
               <h3>Switchgear Components And Spare Parts</h3>
-              <p>Critical assemblies, insulating parts, mechanisms, and accessories for retrofit and service support.</p>
+              <p>Chassis, insulating parts, contacts, operating mechanisms, and accessories for 12kV to 40.5kV switchgear retrofit, maintenance, and new builds.</p>
             </div>
-          </article>
+          </a>
         </div>
       </div>
     </section>
@@ -563,41 +538,41 @@
       <div class="container">
         <div class="section-heading section-heading-light">
           <div>
-            <p class="section-kicker">Execution Advantage</p>
-            <h2>Our Strengths</h2>
+            <p class="section-kicker">Why GreenPower</p>
+            <h2>Built for Demanding Projects</h2>
           </div>
-          <p class="section-summary">The approved GreenPower draft emphasizes capability, reliability, and end-to-end support. This section follows that same intent.</p>
+          <p class="section-summary">30 years of manufacturing experience, global certifications, and end-to-end support — from product selection to after-sales service.</p>
         </div>
         <div class="strengths-grid">
           <article class="strength-card">
             <h3>One-Stop Procurement</h3>
-            <p>Integrated sourcing across switchgear assemblies, components, and accessories to simplify project coordination.</p>
-          </article>
-          <article class="strength-card">
-            <h3>Customized Engineering</h3>
-            <p>Configuration support for varying voltage levels, climates, standards, and site-specific operating requirements.</p>
+            <p>Full product lineup from 3.6kV to 40.5kV — switchgear assemblies, vacuum circuit breakers, ring main units, and components all sourced through a single supplier to simplify your project coordination.</p>
           </article>
           <article class="strength-card">
             <h3>Quality Manufacturing</h3>
-            <p>Disciplined production management and inspection workflows that support consistency from fabrication to final delivery.</p>
+            <p>ISO/IEC/GB certified, with KEMA and ASTA approvals on earthing switch products and CE certification across the product range. Every unit ships after 100% full inspection.</p>
           </article>
           <article class="strength-card">
-            <h3>Flexible Logistics</h3>
-            <p>Shipment planning by sea, land, air, and carrier to balance schedule, cost, and equipment protection.</p>
+            <h3>Proven Industry Experience</h3>
+            <p>30 years in medium voltage switchgear manufacturing, backed by 150+ patented designs and the same material suppliers used by Siemens, ABB, and Schneider.</p>
+          </article>
+          <article class="strength-card">
+            <h3>Global Export Track Record</h3>
+            <p>Products exported to 100+ countries over 15 years, with Fortune 500 brand customers among our repeat buyers.</p>
           </article>
           <article class="strength-card">
             <h3>After-Sales Assurance</h3>
-            <p>Responsive technical communication and ongoing service support for installations, spares, and maintenance needs.</p>
+            <p>24/7 technical support with free engineering design and after-sales guidance included on every order — no hidden service fees.</p>
           </article>
           <article class="strength-card">
-            <h3>Export Coordination</h3>
-            <p>Practical support for overseas orders, distributor supply, and project-based documentation needs.</p>
+            <h3>Flexible Logistics</h3>
+            <p>Urgent orders accepted. Shipment arranged by sea, air, or land to match your schedule, budget, and equipment protection requirements.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section about-greenpower-section">
       <div class="container">
         <div class="about-stage">
           <div class="about-stage-media">
@@ -607,20 +582,20 @@
             <div class="about-copy">
               <p class="section-kicker">Company Profile</p>
               <h2>About GreenPower</h2>
-              <p>GreenPower Electric focuses on medium-voltage switchgear systems, switching devices, instrument transformers, and component supply for utility, industrial, and project-based procurement demand.</p>
-              <p>Our business approach combines practical engineering support, responsive quotation handling, and stable supply coordination for domestic and export-oriented industrial electrical projects.</p>
+              <p>GreenPower Electric is a China-based medium-voltage switchgear manufacturer specializing in switchgear systems, vacuum circuit breakers, RMUs, switching devices, and components for utility, industrial, and project-based procurement worldwide.</p>
+              <p>With in-house engineering capability and direct export infrastructure, GreenPower supports the full procurement cycle — from product selection and customization through to delivery and after-sales service.</p>
               <div class="about-capabilities">
                 <div class="about-capability">
                   <h3>3.6kV To 40.5kV</h3>
-                  <p>Medium Voltage Product Coverage</p>
+                  <p>Medium-voltage product coverage</p>
                 </div>
                 <div class="about-capability">
                   <h3>OEM And Retrofit</h3>
-                  <p>Support For New Supply And Replacement Demand</p>
+                  <p>Support for new builds and replacement</p>
                 </div>
                 <div class="about-capability">
                   <h3>Export-Oriented</h3>
-                  <p>Built For Overseas Projects And Distribution</p>
+                  <p>Built for overseas projects and distributor supply</p>
                 </div>
               </div>
             </div>
@@ -671,14 +646,62 @@
       </div>
     </section>
 
+    <section class="partners-logo-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Partnerships</p>
+            <h2>Trusted By Global Partners</h2>
+          </div>
+          <p class="section-summary">Supplying OEM brands, utilities, and EPC contractors across 100+ countries.</p>
+        </div>
+        <div class="partners-logo-wall" aria-label="Representative industry partners">
+          <div class="partners-logo-row">
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/abb.png" width="200" height="56" alt="ABB" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/schneider.png" width="200" height="56" alt="Schneider Electric" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/siemens.png" width="200" height="56" alt="Siemens" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/state-grid.png" width="200" height="56" alt="State Grid Corporation of China" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/acit.png" width="200" height="56" alt="ACIT" loading="lazy" decoding="async"></div>
+          </div>
+          <div class="partners-logo-row">
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/cooper.png" width="200" height="56" alt="Cooper" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/mitsubishi.png" width="200" height="56" alt="Mitsubishi Electric" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/pdvsa.png" width="200" height="56" alt="PDVSA" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/toshiba.png" width="200" height="56" alt="Toshiba" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/zpue.png" width="200" height="56" alt="ZPUE" loading="lazy" decoding="async"></div>
+          </div>
+          <div class="partners-logo-row">
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/eaton.png" width="200" height="56" alt="Eaton" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/alfanar.png" width="200" height="56" alt="Alfanar" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/ls.png" width="200" height="56" alt="LS Electric" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/alstom.png" width="200" height="56" alt="Alstom" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/sac.png" width="200" height="56" alt="SAC" loading="lazy" decoding="async"></div>
+          </div>
+          <div class="partners-logo-row">
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/saudi-electricity.png" width="200" height="56" alt="Saudi Electricity" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/cspg.png" width="200" height="56" alt="China Southern Power Grid" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/nari.png" width="200" height="56" alt="NARI" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/pln.png" width="200" height="56" alt="PLN" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/evn.png" width="200" height="56" alt="EVN" loading="lazy" decoding="async"></div>
+          </div>
+          <div class="partners-logo-row partners-logo-row--short">
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/ceeg.png" width="200" height="56" alt="China Electrical Equipment Group" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/ge.png" width="200" height="56" alt="GE" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/srs.png" width="200" height="56" alt="SRS" loading="lazy" decoding="async"></div>
+            <div class="partners-logo-cell"><img src="statics/web/images/partners/s-jagmohan.png" width="200" height="56" alt="S. Jagmohan" loading="lazy" decoding="async"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section applications-section">
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Application Scope</p>
+            <p class="section-kicker">Where We Serve</p>
             <h2>Applications</h2>
           </div>
-          <p class="section-summary">An overview of the project scenarios and industry environments where GreenPower products are typically applied.</p>
+          <p class="section-summary">Medium-voltage switchgear and components for utility, industrial, infrastructure, and EPC applications.</p>
         </div>
         <div class="application-grid">
           <article class="application-card">
@@ -709,50 +732,12 @@
       </div>
     </section>
 
-    <section class="section partners-section">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Global Cooperation</p>
-            <h2>Market Coverage</h2>
-          </div>
-          <p class="section-summary">A structured overview of the customer types and market channels served across project-based industrial electrical supply.</p>
-        </div>
-        <div class="partners-layout">
-          <div class="market-grid partner-logos">
-            <article class="logo-tile market-tile"><span>Utility Companies</span></article>
-            <article class="logo-tile market-tile"><span>EPC Contractors</span></article>
-            <article class="logo-tile market-tile"><span>Industrial Plants</span></article>
-            <article class="logo-tile market-tile"><span>Grid Projects</span></article>
-            <article class="logo-tile market-tile"><span>Export Distributors</span></article>
-            <article class="logo-tile market-tile"><span>Retrofit Demand</span></article>
-          </div>
-          <aside class="market-panel">
-            <h3>Market Coverage</h3>
-            <ul class="market-list">
-              <li>Power utilities and industrial clients in domestic and overseas markets</li>
-              <li>Support for EPC procurement, distributor sourcing, and project-based supply</li>
-              <li>Responsive coordination for customized requirements and repeat orders</li>
-            </ul>
-            <div class="market-tags">
-              <span>Asia</span>
-              <span>Middle East</span>
-              <span>Africa</span>
-              <span>South America</span>
-              <span>Industrial OEM</span>
-              <span>Power Grid</span>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
     <section class="section inquiry-section" id="inquiry">
       <div class="container inquiry-panel">
         <div class="inquiry-copy">
           <p class="section-kicker">Project Consultation</p>
           <h2>Discuss Your Project Requirements</h2>
-          <p>Share your voltage class, product list, drawings, or project schedule. GreenPower can support quotation, customization, and supply coordination for upcoming procurement.</p>
+          <p>Share your voltage class, switchgear type, or project requirements. GreenPower provides quotation and supply coordination for medium-voltage projects at any stage.</p>
         </div>
         <div class="inquiry-actions">
           <a class="button button-primary" href="inquiry.html">Send Inquiry</a>
@@ -767,6 +752,13 @@
       <div class="footer-brand">
         <img src="statics/web/images/footer_logo.png" alt="GreenPower footer logo">
         <p>GreenPower provides industrial electrical equipment and distribution solutions with a practical focus on quality, application fit, and dependable customer support.</p>
+
+        <nav class="footer-social" aria-label="Follow GreenPower on social media">
+          <a href="https://www.youtube.com/@GreenPower-Electric" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="statics/web/images/social/youtube-logo.png" alt="" width="28" height="28" decoding="async"></a>
+          <a href="https://www.facebook.com/people/Zhejiang-Greenpower-Electric-Co-Ltd/100083901876783" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="statics/web/images/social/facebook-logo.png" alt="" width="28" height="28" decoding="async"></a>
+          <a href="https://www.linkedin.com/in/annie-chan-18631862" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="statics/web/images/social/linkedin-logo.png" alt="" width="28" height="28" decoding="async"></a>
+          <a href="https://sinogp.en.alibaba.com/" target="_blank" rel="noopener noreferrer" aria-label="Alibaba international — sinogp store"><img src="statics/web/images/social/alibaba-logo.png" alt="" width="28" height="28" decoding="async"></a>
+        </nav>
       </div>
       <div class="footer-column">
         <h3>Contact</h3>
@@ -785,7 +777,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <p>© GreenPower Electric. Static homepage draft preview.</p>
+        <p>© GreenPower Electric. It Never Speaks, But Always Protects</p>
         <a href="#top">Back to top</a>
       </div>
     </div>
@@ -1083,6 +1075,15 @@
           baseDelay: 0.04
         },
         {
+          nodes: document.querySelectorAll(".partners-logo-section .section-heading"),
+          stagger: 0
+        },
+        {
+          nodes: document.querySelectorAll(".partners-logo-section .partners-logo-wall .partners-logo-cell"),
+          stagger: 0.035,
+          baseDelay: 0.06
+        },
+        {
           nodes: document.querySelectorAll(".applications-section .section-heading"),
           stagger: 0
         },
@@ -1090,20 +1091,6 @@
           nodes: document.querySelectorAll(".applications-section .application-card"),
           stagger: 0.05,
           baseDelay: 0.08
-        },
-        {
-          nodes: document.querySelectorAll(".partners-section .section-heading"),
-          stagger: 0
-        },
-        {
-          nodes: document.querySelectorAll(".partners-section .market-tile"),
-          stagger: 0.04,
-          baseDelay: 0.08
-        },
-        {
-          nodes: document.querySelectorAll(".partners-section .market-panel"),
-          stagger: 0,
-          baseDelay: 0.16
         },
         {
           nodes: document.querySelectorAll(".inquiry-section .inquiry-panel"),

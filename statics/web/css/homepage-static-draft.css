@@ -745,6 +745,7 @@ a {
   background: rgba(8, 25, 28, 0.84);
   box-shadow: var(--shadow-lg);
   color: rgba(255, 255, 255, 0.8);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background-color 0.28s ease;
 }
 
 .metric-card strong {
@@ -762,6 +763,15 @@ a {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .metric-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.22);
+    background-color: rgba(14, 36, 40, 0.92);
+    box-shadow: 0 32px 80px rgba(6, 22, 24, 0.5), 0 14px 32px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .section {
@@ -800,7 +810,7 @@ a {
 .business-section .section-summary,
 .strengths-section .section-summary,
 .applications-section .section-summary,
-.partners-section .section-summary {
+.partners-logo-section .section-summary {
   width: min(100%, 33ch);
   justify-self: end;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -815,7 +825,7 @@ a {
 }
 
 .applications-section .section-summary,
-.partners-section .section-summary {
+.partners-logo-section .section-summary {
   color: rgba(20, 28, 34, 0.64);
 }
 
@@ -843,6 +853,17 @@ a {
   border-radius: var(--radius-lg);
   overflow: hidden;
   align-self: stretch;
+}
+
+a.business-card {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.business-card:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
 }
 
 .business-card::before {
@@ -1097,6 +1118,141 @@ a {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
+}
+
+.partners-logo-section {
+  margin-top: 0;
+  padding: 104px 0 80px;
+}
+
+.about-greenpower-section,
+.certifications-section,
+.partners-logo-section,
+.applications-section,
+.inquiry-section {
+  background-color: var(--surface-soft);
+}
+
+/* Tighter hand-off to Applications: avoid stacking this section's padding with .section's large top padding. */
+.partners-logo-section + .section.applications-section {
+  padding-top: 64px;
+}
+
+.partners-logo-section .section-heading {
+  margin-bottom: 36px;
+}
+
+.partners-logo-wall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.partners-logo-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 200px));
+  column-gap: 36px;
+  row-gap: 0;
+  justify-content: center;
+  width: min(100%, calc(5 * 200px + 4 * 36px));
+  max-width: 100%;
+}
+
+.partners-logo-cell {
+  width: 100%;
+  min-width: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: transform 0.22s ease;
+}
+
+.partners-logo-wall img {
+  width: 200px;
+  height: 56px;
+  max-width: 100%;
+  object-fit: contain;
+  opacity: 1;
+  transition: transform 0.22s ease;
+  transform: translateZ(0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .partners-logo-cell:hover {
+    transform: translateY(-4px);
+  }
+
+  .partners-logo-cell:hover img {
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metric-card {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+
+  .partners-logo-cell,
+  .partners-logo-wall img {
+    transition: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .metric-card:hover {
+      transform: none;
+    }
+
+    .partners-logo-cell:hover {
+      transform: none;
+    }
+
+    .partners-logo-cell:hover img {
+      transform: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-logo-section {
+    margin-top: 0;
+    padding: 88px 0 56px;
+  }
+
+  .partners-logo-section + .section.applications-section {
+    padding-top: 48px;
+  }
+
+  .partners-logo-wall {
+    gap: 22px;
+    align-items: stretch;
+  }
+
+  .partners-logo-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 22px 20px;
+    width: auto;
+    max-width: none;
+  }
+
+  .partners-logo-cell {
+    width: min(200px, 46vw);
+    height: auto;
+    min-height: 52px;
+  }
+
+  .partners-logo-wall img {
+    width: 100%;
+    height: auto;
+    max-height: 52px;
+  }
 }
 
 .application-card {
@@ -1525,6 +1681,41 @@ a {
   margin-bottom: 20px;
 }
 
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  background: transparent;
+  border: none;
+  transform: scale(1.06);
+  outline: none;
+}
+
+.footer-social img {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  object-fit: contain;
+  display: block;
+}
+
 .footer-column h3 {
   color: #fff;
   font-size: 16px;
@@ -1700,7 +1891,7 @@ a {
   .business-section .section-summary,
   .strengths-section .section-summary,
   .applications-section .section-summary,
-  .partners-section .section-summary {
+  .partners-logo-section .section-summary {
     width: min(100%, 34ch);
     font-size: 15px;
   }
@@ -1878,7 +2069,7 @@ a {
   .business-section .section-summary,
   .strengths-section .section-summary,
   .applications-section .section-summary,
-  .partners-section .section-summary {
+  .partners-logo-section .section-summary {
     width: min(100%, 36ch);
     justify-self: start;
     font-size: 15px;
