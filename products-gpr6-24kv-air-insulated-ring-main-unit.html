@@ -22,6 +22,7 @@
     }());
   </script>
   <link rel="stylesheet" href="statics/web/css/homepage-static-draft.css">
+  <link rel="stylesheet" href="statics/web/css/catalog-download-modal.css">
   <style>
     .subpage-main {
       background: linear-gradient(90deg, rgba(233, 244, 238, 0.68) 0%, rgba(244, 249, 246, 0.4) 28%, rgba(255, 255, 255, 0.98) 54%, #ffffff 72%);
@@ -787,7 +788,7 @@
             </h1>
             <div class="product-hero-actions">
               <a class="button button-primary" href="inquiry.html">Send Inquiry</a>
-              <a class="button button-secondary" href="statics/web/downloads/product/gpr6-24kv-catalog.pdf" target="_blank" rel="noopener">Download Catalog</a>
+              <button type="button" class="button button-secondary js-catalog-download" data-catalog-file="statics/web/downloads/product/gpr6-24kv-catalog.pdf" data-catalog-product="GPR6-24kV Air Insulated Ring Main Unit">Download Catalog</button>
             </div>
             <div class="product-hero-specs">
               <div class="product-hero-spec"><strong>Rated Voltage</strong><span>24 kV</span></div>
@@ -1280,5 +1281,6 @@
       });
     }());
   </script>
+  <script src="statics/web/js/catalog-download-modal.js" defer></script>
 </body>
 </html>
