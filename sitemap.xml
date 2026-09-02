@@ -2,167 +2,207 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gpswitch.com/</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/about-greenpower.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/about/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/applications.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/applications/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/downloads.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/downloads/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/factory-quality.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/factory-quality/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/inquiry.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/inquiry/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-chassis-and-auxiliary-trucks.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/chassis-and-auxiliary-trucks/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-compact-secondary-substation.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/compact-secondary-substation/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-contact-and-copper-parts.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/contact-and-copper-parts/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-disconnector-switch.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/disconnector-switch/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-earthing-switch.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/earthing-switch/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-gas-insulated-switchgear.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gas-insulated-switchgear/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-gpn1-12kv-metal-clad-switchgear.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gn19-12kv-disconnector-switch/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-gpn1-24kv-metal-clad-switchgear.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpfn7-12kv-load-break-switch/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-gpn1-40-5kv-metal-clad-switchgear.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpn1-12kv-metal-clad-switchgear/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-gpr1-12-24-sf6-gas-insulated-ring-main-unit.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpn1-24kv-metal-clad-switchgear/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-gpr1-2-12kv-ring-main-unit.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpn1-40-5kv-metal-clad-switchgear/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-gpr2-12-24-sf6-gas-insulated-ring-main-unit.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpn2-40-5kv-cgis/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-gpr6-12kv-air-insulated-ring-main-unit.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpr1-12-24-sf6-gas-insulated-ring-main-unit/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-indicators-and-detection-devices.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpr1-2-12kv-ring-main-unit/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-insulating-parts.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpr2-12-24-sf6-gas-insulated-ring-main-unit/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-instrument-transformers.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpr6-12kv-air-insulated-ring-main-unit/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-load-break-switch.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpr6-24kv-air-insulated-ring-main-unit/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-metal-clad-switchgear.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpvn-12kv-vacuum-circuit-breaker/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-metering-and-monitoring-devices.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpvn-17-5kv-vacuum-circuit-breaker/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-operating-mechanisms-and-coils.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpvn-24kv-vacuum-circuit-breaker/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-ring-main-unit.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/gpvn-40-5kv-vacuum-circuit-breaker/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-switchgear-accessories-and-controllers.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/indicators-and-detection-devices/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-test-and-diagnostic-tools.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/instrument-transformers/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-vacuum-circuit-breaker.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/insulating-parts/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/products-vacuum-interrupters.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/load-break-switch/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gpswitch.com/projects-references.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://gpswitch.com/products/metal-clad-switchgear/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gpswitch.com/products/metering-and-monitoring-devices/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gpswitch.com/products/operating-mechanisms-and-coils/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gpswitch.com/products/ring-main-unit/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gpswitch.com/products/switchgear-accessories-and-controllers/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gpswitch.com/products/test-and-diagnostic-tools/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gpswitch.com/products/vacuum-circuit-breaker/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gpswitch.com/products/vacuum-interrupters/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gpswitch.com/projects/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>

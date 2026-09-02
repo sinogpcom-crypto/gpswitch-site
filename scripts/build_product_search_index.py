@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild statics/web/data/product-search-index.json from products*.html in repo root."""
+"""Rebuild the product search index with directory-style public URLs."""
 
 import base64
 import json
@@ -8,8 +8,23 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "statics/web/data/product-search-index.json"
-PRODUCT_SEARCH_HTML = ROOT / "product-search.html"
+PRODUCT_SEARCH_HTML = ROOT / "search/index.html"
 B64_MARKER = "__GPSWITCH_EMBED_PRODUCT_SEARCH_V1__"
+
+
+def clean_product_url(source_path: Path) -> str:
+    relative = source_path.relative_to(ROOT).as_posix()
+    if relative == "products/index.html":
+        return "/products/"
+    if relative.startswith("products/") and relative.endswith("/index.html"):
+        return "/" + relative.removesuffix("index.html")
+    raise ValueError(f"Unexpected product page path: {relative}")
+
+
+def product_source_paths() -> list[Path]:
+    hub = ROOT / "products/index.html"
+    detail_pages = sorted((ROOT / "products").glob("*/index.html"))
+    return [hub, *detail_pages]
 
 
 def strip_tags(s: str) -> str:
@@ -79,7 +94,7 @@ def extract_products_hub_cards(html: str):
         hm = re.search(r"<h4[^>]*>([\s\S]*?)</h4>", block, re.I)
         pm = re.search(r"</h4>\s*<p[^>]*>([\s\S]*?)</p>", block, re.I)
         am = re.search(
-            r'<a class="button button-primary" href="(products-[^"]+\.html)"',
+            r'<a class="button button-primary" href="(/products/[^"]+/)"',
             block,
             re.I,
         )
@@ -108,9 +123,9 @@ def main() -> None:
         if extra:
             e["extra"].append(extra)
 
-    for path in sorted(ROOT.glob("products*.html")):
+    for path in product_source_paths():
         html = path.read_text(encoding="utf-8")
-        url = path.name
+        url = clean_product_url(path)
         tm = re.search(r"<title>([^<]+)</title>", html, re.I)
         dm = re.search(
             r'<meta\s+name="description"\s+content="([^"]*)"', html, re.I
@@ -121,12 +136,12 @@ def main() -> None:
         h1 = extract_h1(html)
         cards = extract_card_snippets(html)
         main_text = extract_main_text(html)
-        slug_words = url.replace(".html", "").replace("-", " ")
+        slug_words = path.stem.replace("-", " ")
         codes = extract_data_codes(html)
         extra = " ".join(x for x in (h1, cards, main_text, codes, slug_words) if x)
         merge(url, title=label, description=desc, extra=extra)
 
-    products_path = ROOT / "products.html"
+    products_path = ROOT / "products/index.html"
     if products_path.exists():
         ph = products_path.read_text(encoding="utf-8")
         for target, text in extract_products_hub_cards(ph):
@@ -139,7 +154,7 @@ def main() -> None:
             e["title"],
             e["description"],
             " ".join(e["extra"]),
-            url.replace("-", " ").replace(".html", ""),
+            url.strip("/").replace("/", " ").replace("-", " "),
         ]
         search_text = norm_space(" ".join(parts)).lower()
         out_list.append(
