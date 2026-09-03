@@ -127,6 +127,25 @@
   transform: none;
 }
 
+.catalog-download-form__privacy {
+  margin: -2px 0 0;
+  color: rgba(20, 28, 34, 0.62);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.catalog-download-form__privacy a {
+  color: #087f70;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.catalog-download-form__privacy a:hover,
+.catalog-download-form__privacy a:focus-visible {
+  color: #05685d;
+}
+
 .catalog-download-modal__message {
   margin: 0;
   padding: 14px 16px;

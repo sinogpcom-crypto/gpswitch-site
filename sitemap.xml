@@ -27,8 +27,13 @@
   </url>
   <url>
     <loc>https://gpswitch.com/inquiry/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gpswitch.com/privacy/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://gpswitch.com/products/</loc>

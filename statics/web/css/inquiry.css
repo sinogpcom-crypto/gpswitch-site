@@ -197,32 +197,30 @@ a {
   grid-column: 1 / -1;
 }
 
-.attachment-hint {
-  margin-top: 22px;
-  padding: 18px 18px 0;
-  border-top: 1px solid rgba(12, 32, 36, 0.08);
-}
-
-.attachment-hint strong {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.attachment-hint p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 14px;
-  line-height: 1.65;
-}
-
 .form-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 18px;
+  margin-top: 26px;
+}
+
+.form-privacy-note {
+  margin: 26px 0 0;
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.form-privacy-note a {
+  color: #087f70;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.form-privacy-note a:hover,
+.form-privacy-note a:focus-visible {
+  color: #05685d;
 }
 
 .button {
@@ -322,7 +320,7 @@ a {
 }
 
 .inquiry-success-inner {
-  max-width: 760px;
+  max-width: 980px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -341,9 +339,12 @@ a {
 
 .inquiry-success-title-line + .inquiry-success-title-line {
   margin-top: 0.2em;
+  font-size: clamp(32px, 4vw, 44px);
+  line-height: 1.12;
 }
 
 .inquiry-success-intro {
+  max-width: 920px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -359,6 +360,13 @@ a {
 
 .inquiry-success-actions .button {
   text-decoration: none;
+}
+
+.inquiry-success-actions .button-secondary:hover,
+.inquiry-success-actions .button-secondary:focus-visible {
+  background: rgba(0, 122, 112, 0.16);
+  border-color: rgba(0, 122, 112, 0.24);
+  color: #08483f;
 }
 
 @media (max-width: 1024px) {

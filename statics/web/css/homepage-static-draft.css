@@ -1753,6 +1753,17 @@ a.business-card:focus-visible {
 .footer-column p {
   font-size: 14px;
   line-height: 1.65;
+  color: #506562;
+}
+
+.footer-column a {
+  color: #506562;
+  transition: color 0.18s ease;
+}
+
+.footer-column a:hover,
+.footer-column a:focus-visible {
+  color: #fff;
 }
 
 @media (max-width: 1100px) {

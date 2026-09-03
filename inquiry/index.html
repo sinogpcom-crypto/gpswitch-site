@@ -11,14 +11,9 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png">
   <link rel="stylesheet" href="/statics/web/css/homepage-static-draft.css">
   <link rel="stylesheet" href="/statics/web/css/inquiry.css">
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BYYEXMD4H0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-BYYEXMD4H0');
-</script>
+  <!-- Cookie choice and privacy-first analytics -->
+<link rel="stylesheet" href="/statics/web/css/cookie-consent.css">
+<script src="/statics/web/js/cookie-consent.js" defer></script>
 </head>
 <body id="top">
   <header class="site-header">
@@ -164,11 +159,8 @@
       <div class="container">
         <p class="page-kicker">Project Inquiry</p>
         <h1>Send Inquiry</h1>
-        <p class="page-intro">
-          Share your product requirements, voltage class, drawings, quantities, or project details.
-          GreenPower supports engineers, procurement teams, distributors, and project buyers with
-          responsive quotation and technical coordination.
-        </p>
+        <p class="page-intro">Share your product requirements, voltage class, quantities, or project details.</p>
+        <p class="page-intro">GreenPower supports engineers, procurement teams, EPC contractors, panel builders, and distributors with technical clarification and quotation preparation.</p>
       </div>
     </section>
 
@@ -206,7 +198,7 @@
               </label>
               <label class="field">
                 <span>Voltage Class</span>
-                <input type="text" name="voltage_class" placeholder="e.g. 12kV / 24kV / 36kV">
+                <input type="text" name="voltage_class" placeholder="e.g. 12kV / 24kV / 36kV / 40.5kV">
               </label>
               <label class="field">
                 <span>Quantity / Project Stage</span>
@@ -217,21 +209,18 @@
                 <textarea name="message" rows="7" placeholder="Project background, technical requirements, standards, or requested support" required></textarea>
               </label>
             </div>
-            <div class="attachment-hint">
-              <strong>Attachments</strong>
-              <p>You may also share drawings, product lists, specifications, or project schedules by email after initial contact.</p>
-            </div>
             <div class="form-status" id="formStatus" hidden></div>
             <div class="form-actions">
               <button class="button button-primary" type="submit" id="submitInquiry">Submit Inquiry</button>
               <a class="button button-secondary" href="https://wa.me/8618989782765">WhatsApp</a>
             </div>
+            <p class="form-privacy-note">We use your details to respond to this inquiry. <a href="/privacy/">Privacy Policy</a></p>
           </form>
         </div>
 
         <aside class="support-panel">
           <h2>Quick Support</h2>
-          <p>For urgent quotation support or distributor discussions, use the contact channels below while preparing your inquiry details.</p>
+          <p>For product selection, technical questions or distributor inquiries, contact us by email or WhatsApp.</p>
           <div class="support-list">
             <div class="support-item">
               <span>Email</span>
@@ -252,6 +241,40 @@
       </div>
     </section>
   </main>
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <img src="/statics/web/images/footer_logo.png" alt="GreenPower footer logo">
+        <p>GreenPower provides industrial electrical equipment and distribution solutions with a practical focus on quality, application fit, and dependable customer support.</p>
+        <nav class="footer-social" aria-label="Follow GreenPower on social media">
+          <a href="https://www.youtube.com/@GreenPower-Electric" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="/statics/web/images/social/youtube-logo.png" alt="" width="28" height="28" decoding="async"></a>
+          <a href="https://www.facebook.com/people/Zhejiang-Greenpower-Electric-Co-Ltd/100083901876783" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="/statics/web/images/social/facebook-logo.png" alt="" width="28" height="28" decoding="async"></a>
+          <a href="https://www.linkedin.com/in/annie-chan-18631862" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="/statics/web/images/social/linkedin-logo.png" alt="" width="28" height="28" decoding="async"></a>
+          <a href="https://sinogp.en.alibaba.com/" target="_blank" rel="noopener noreferrer" aria-label="Alibaba international — sinogp store"><img src="/statics/web/images/social/alibaba-logo.png" alt="" width="28" height="28" decoding="async"></a>
+        </nav>
+      </div>
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <p>No. 827 Wenzhou Avenue, Wenzhou, Zhejiang, 325011, China</p>
+        <p>Tel: +86 189 8978 2765</p>
+        <p>Email: gp@sinogp.com</p>
+      </div>
+      <div class="footer-column">
+        <h3>Company</h3>
+        <p><a href="/about/">About GreenPower</a></p>
+        <p><a href="/factory-quality/">Factory &amp; Quality</a></p>
+        <p><a href="/applications/">Applications</a></p>
+        <p><a href="/projects/">Projects &amp; References</a></p>
+        <p><a href="/downloads/">Downloads</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© GreenPower Electric. It Never Speaks, But Always Protects</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
   <script>
     (function () {
       const bindHoverDropdown = function (wrapper, trigger, panel) {

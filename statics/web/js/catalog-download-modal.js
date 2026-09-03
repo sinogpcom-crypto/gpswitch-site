@@ -40,6 +40,7 @@
       '<label class="field"><span>Email *</span><input type="email" name="email" id="catalog-download-email" autocomplete="email" required></label>' +
       '<label class="field"><span>Company *</span><input type="text" name="company" id="catalog-download-company" autocomplete="organization" required></label>' +
       '<button type="submit" class="button button-primary" id="catalog-download-submit">Download Catalog</button>' +
+      '<p class="catalog-download-form__privacy">We use the information you provide to deliver the requested catalog and follow up on your request. See our <a href="/privacy/">Privacy Policy</a>.</p>' +
       '<p class="catalog-download-modal__message" id="catalog-download-message" role="status" hidden></p>' +
       "</form></div>";
 
