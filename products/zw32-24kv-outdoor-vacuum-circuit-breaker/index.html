@@ -669,6 +669,9 @@
     .product-installation-table th { width: auto; }
     .product-installation-table tbody th { width: 27%; }
     .product-installation-table td:nth-child(2) { width: 30%; }
+    @media (min-width: 1101px) {
+      .product-overview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
   </style>
   <!-- Cookie choice and privacy-first analytics -->
 <link rel="stylesheet" href="/statics/web/css/cookie-consent.css">
@@ -691,7 +694,7 @@
     {
       "@type": "PropertyValue",
       "name": "Rated voltage",
-      "value": "24 kV"
+      "value": "17.5 kV / 24 kV"
     },
     {
       "@type": "PropertyValue",
@@ -876,7 +879,7 @@
               <button type="button" class="button button-secondary js-catalog-download" data-catalog-file="/statics/web/downloads/product/zw32-24kv-catalog.pdf" data-catalog-product="ZW32-24kV Outdoor Vacuum Circuit Breaker">Download Catalog</button>
             </div>
             <div class="product-hero-specs">
-              <div class="product-hero-spec"><strong>Rated Voltage</strong><span>24 kV</span></div>
+              <div class="product-hero-spec"><strong>Rated Voltage</strong><span>17.5 kV / 24 kV</span></div>
               <div class="product-hero-spec"><strong>Rated Current</strong><span>630 A / 1250 A</span></div>
               <div class="product-hero-spec"><strong>Short-Circuit Breaking Current</strong><span>20 kA / 25 kA</span></div>
               <div class="product-hero-spec"><strong>Mechanism Options</strong><span>Spring / permanent magnet</span></div>
@@ -897,7 +900,7 @@
             <h2>Product Overview</h2>
             <p class="product-detail-summary-text">ZW32-24kV is a pole-mounted outdoor vacuum circuit breaker for three-phase, 50 Hz distribution systems. It switches load current and interrupts overload and short-circuit currents in substation, industrial, mining and rural distribution networks. Spring and permanent-magnet mechanisms are available. With a matched controller, the breaker can provide automatic reclosing and distribution automation functions.</p>
           </div>
-          <div class="page-grid-2">
+          <div class="page-grid-2 product-overview-grid">
             <article class="page-panel">
               <h3>Outdoor Distribution Protection</h3>
               <p>The three-phase pillar arrangement serves outdoor distribution circuits, including locations with frequent switching and urban or rural network upgrades.</p>
@@ -939,7 +942,7 @@
             <caption class="sr-only">ZW32-24kV electrical and operating ratings</caption>
             <thead><tr><th scope="col">Parameter</th><th scope="col">Data</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Rated Voltage</th><td>24 kV</td></tr>
+              <tr><th scope="row">Rated Voltage</th><td>17.5 kV / 24 kV</td></tr>
               <tr><th scope="row">Rated Current</th><td>630 A / 1250 A</td></tr>
               <tr><th scope="row">Rated Frequency</th><td>50 Hz</td></tr>
               <tr><th scope="row">Rated Short-Circuit Breaking Current</th><td>20 kA / 25 kA</td></tr>
