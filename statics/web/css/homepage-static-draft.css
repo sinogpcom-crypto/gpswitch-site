@@ -2115,7 +2115,7 @@ a.business-card:focus-visible {
   }
 }
 
-/* Product navigation: three core groups and supporting measurement options. */
+/* Product navigation: four product groups and supporting measurement options. */
 .header-nav-group, .nav-item-products { position: static; }
 
 .nav-dropdown-products {
@@ -2127,12 +2127,12 @@ a.business-card:focus-visible {
 .product-menu { grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr) minmax(0, 1fr); min-height: 360px; }
 #products-mega-menu .product-panel.is-active,
 #products-mega-menu .product-support-panel.is-active { position: relative; inset: auto; }
-#products-mega-menu .product-menu-feature { white-space: normal; display: grid; gap: 6px; margin: 20px 28px 0; padding: 16px; border: 1px solid rgba(0, 122, 112, 0.18); border-radius: 14px; background: rgba(0, 122, 112, 0.06); color: #0a564d; font-size: 14px; font-weight: 700; line-height: 1.4; }
-#products-mega-menu .product-menu-feature small { color: rgba(20, 28, 34, 0.66); font-size: 12px; font-weight: 500; }
-#products-mega-menu .product-menu-feature:hover, #products-mega-menu .product-menu-feature:focus-visible { border-color: #007a70; background: rgba(0, 122, 112, 0.1); }
 .product-menu-options-title { margin: 20px 0 10px; padding-top: 16px; border-top: 1px solid rgba(12, 32, 36, 0.1); color: rgba(20, 28, 34, 0.66); font-size: 12px; font-weight: 600; line-height: 1.4; }
 .product-menu-option-links { display: grid; gap: 8px; }
 .product-menu-option-links a { padding: 5px 0; white-space: normal; color: rgba(20, 28, 34, 0.68); font-size: 13px; line-height: 1.4; }
 .product-menu-option-links a:hover, .product-menu-option-links a:focus-visible { color: #007a70; }
 
 .product-menu-option-links a + a { border-top: 0; }
+
+#products-mega-menu .product-panel:not(.is-active),
+#products-mega-menu .product-support-panel:not(.is-active) { display: none; }
