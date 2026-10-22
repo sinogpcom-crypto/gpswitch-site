@@ -339,6 +339,8 @@
 <link rel="stylesheet" href="/statics/web/css/cookie-consent.css">
 <script src="/statics/web/js/cookie-consent.js" defer></script>
 <script type="application/ld+json" id="product-category-list">{"@context": "https://schema.org", "@type": "ItemList", "name": "GreenPower Product Categories", "numberOfItems": 23, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Metal-Clad Switchgear", "url": "https://gpswitch.com/products/metal-clad-switchgear/"}, {"@type": "ListItem", "position": 2, "name": "Ring Main Units", "url": "https://gpswitch.com/products/ring-main-unit/"}, {"@type": "ListItem", "position": 3, "name": "Gas-Insulated Switchgear", "url": "https://gpswitch.com/products/gas-insulated-switchgear/"}, {"@type": "ListItem", "position": 4, "name": "Neutral Earthing Resistors", "url": "https://gpswitch.com/products/neutral-earthing-resistors/"}, {"@type": "ListItem", "position": 5, "name": "Vacuum Circuit Breakers", "url": "https://gpswitch.com/products/vacuum-circuit-breaker/"}, {"@type": "ListItem", "position": 6, "name": "Load Break Switches", "url": "https://gpswitch.com/products/load-break-switch/"}, {"@type": "ListItem", "position": 7, "name": "Disconnectors", "url": "https://gpswitch.com/products/disconnector-switch/"}, {"@type": "ListItem", "position": 8, "name": "Earthing Switches", "url": "https://gpswitch.com/products/earthing-switch/"}, {"@type": "ListItem", "position": 9, "name": "Vacuum Contactor-Fuse Combinations", "url": "https://gpswitch.com/products/vacuum-contactor-fuse-combinations/"}, {"@type": "ListItem", "position": 10, "name": "Insulating Parts", "url": "https://gpswitch.com/products/insulating-parts/"}, {"@type": "ListItem", "position": 11, "name": "Contacts & Copper Parts", "url": "https://gpswitch.com/products/contact-and-copper-parts/"}, {"@type": "ListItem", "position": 12, "name": "Chassis & Functional Trucks", "url": "https://gpswitch.com/products/chassis-and-auxiliary-trucks/"}, {"@type": "ListItem", "position": 13, "name": "Shutters & Interlocks", "url": "https://gpswitch.com/products/shutters-and-interlocks/"}, {"@type": "ListItem", "position": 14, "name": "Operating Mechanisms & Coils", "url": "https://gpswitch.com/products/operating-mechanisms-and-coils/"}, {"@type": "ListItem", "position": 15, "name": "Cabinet Hardware & Secondary Accessories", "url": "https://gpswitch.com/products/switchgear-accessories-and-controllers/"}, {"@type": "ListItem", "position": 16, "name": "Climate Control & Lighting", "url": "https://gpswitch.com/products/climate-control-and-lighting/"}, {"@type": "ListItem", "position": 17, "name": "Cable Connectors & Accessories", "url": "https://gpswitch.com/products/cable-connectors-and-accessories/"}, {"@type": "ListItem", "position": 18, "name": "Surge Arresters", "url": "https://gpswitch.com/products/surge-arresters/"}, {"@type": "ListItem", "position": 19, "name": "Current-Limiting Fuses", "url": "https://gpswitch.com/products/current-limiting-fuses/"}, {"@type": "ListItem", "position": 20, "name": "Drop-Out Fuse Cutouts", "url": "https://gpswitch.com/products/drop-out-fuses/"}, {"@type": "ListItem", "position": 21, "name": "Voltage & Status Indication", "url": "https://gpswitch.com/products/indicators-and-detection-devices/"}, {"@type": "ListItem", "position": 22, "name": "Integrated Control & Condition Monitoring", "url": "https://gpswitch.com/products/integrated-control-and-condition-monitoring/"}, {"@type": "ListItem", "position": 23, "name": "Instrument Transformers & Metering", "url": "https://gpswitch.com/products/instrument-transformers/"}]}</script>
+<link rel="stylesheet" href="/statics/web/css/header-search.css?v=20261022">
+  <script src="/statics/web/js/header-search.js?v=20261022" defer></script>
 </head>
 <body id="top">
   <header class="site-header">
@@ -374,12 +376,37 @@
         </nav>
         <div class="header-tools" aria-label="Utility actions">
           <div class="header-search">
-            <button class="tool-button" type="button" aria-label="Search" aria-expanded="false">
+            <button class="tool-button" type="button" aria-label="Search products" aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false" data-header-search-trigger>
               <span class="tool-icon tool-search" aria-hidden="true"></span>
             </button>
-            <div class="search-panel">
-              <input class="search-input" type="search" placeholder="Search" aria-label="Search">
-            </div>
+            <dialog class="header-search-dialog" id="site-search-dialog" aria-labelledby="site-search-title">
+              <div class="header-search-dialog-header">
+                <h2 id="site-search-title">Search Products</h2>
+                <button class="header-search-close" type="button" aria-label="Close search" data-header-search-close><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="header-search-dialog-body">
+                <form class="header-search-form" action="/search/" method="get" role="search" aria-label="Product search">
+                  <label class="header-search-sr-only" for="site-search-query">Search products, models or keywords</label>
+                  <div class="header-search-row">
+                    <div class="header-search-input-wrap">
+                      <input class="header-search-input" id="site-search-query" name="q" type="search" placeholder="Search products, models or keywords" autocomplete="off" enterkeyhint="search">
+                      <button class="header-search-clear" type="button" aria-label="Clear search" data-header-search-clear hidden><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <button class="button button-primary header-search-submit" type="submit">Search</button>
+                  </div>
+                </form>
+                <div class="header-search-suggestions">
+                  <p>Suggested Searches</p>
+                  <div class="header-search-terms">
+                    <button type="button" data-header-search-term="GPJN15">GPJN15</button>
+                    <button type="button" data-header-search-term="GPVN">GPVN</button>
+                    <button type="button" data-header-search-term="RMU">RMU</button>
+                    <button type="button" data-header-search-term="NER">NER</button>
+                    <button type="button" data-header-search-term="Cable Cleats">Cable Cleats</button>
+                  </div>
+                </div>
+              </div>
+            </dialog>
           </div>
           <div class="header-qr">
             <button class="tool-button" type="button" aria-label="QR code" aria-expanded="false">
@@ -675,82 +702,9 @@
         return { open: openPanel, close: closePanelNow };
       };
 
-      bindUtilityDropdown(headerSearch, searchButton, searchPanel);
+
       bindUtilityDropdown(headerQr, qrButton, qrPanel);
 
-      const searchInput = document.querySelector(".search-input");
-      if (searchInput) {
-        searchInput.addEventListener("keydown", function (event) {
-          if (event.key !== "Enter") {
-            return;
-          }
-          event.preventDefault();
-          const q = searchInput.value.trim();
-          if (!q) {
-            return;
-          }
-          window.location.href = "/search/?q=" + encodeURIComponent(q);
-        });
-      }
-
-      const productsTabs = Array.from(document.querySelectorAll("[data-products-tab]"));
-      const gatewayPanels = Array.from(document.querySelectorAll(".products-panel"));
-
-      if (productsTabs.length && gatewayPanels.length) {
-        const setGatewayPanel = function(key) {
-          productsTabs.forEach(function(tab) {
-            const isActive = tab.getAttribute("data-products-tab") === key;
-            tab.classList.toggle("is-active", isActive);
-            tab.setAttribute("aria-selected", isActive ? "true" : "false");
-          });
-          gatewayPanels.forEach(function(panel) {
-            const isActive = panel.id === "products-panel-" + key;
-            panel.classList.toggle("is-active", isActive);
-            panel.setAttribute("aria-hidden", isActive ? "false" : "true");
-          });
-        };
-
-        const scrollToGatewayPanelTop = function(key) {
-          const panel = document.getElementById("products-panel-" + key);
-          const cardGrid = panel ? panel.querySelector(".products-card-grid") : null;
-
-          if (!cardGrid) {
-            return;
-          }
-
-          const headerOffset = 110;
-          const targetTop = Math.max(window.scrollY + cardGrid.getBoundingClientRect().top - headerOffset, 0);
-
-          window.scrollTo({
-            top: targetTop,
-            behavior: "smooth"
-          });
-        };
-
-        productsTabs.forEach(function(tab) {
-          tab.addEventListener("click", function() {
-            const key = tab.getAttribute("data-products-tab");
-            setGatewayPanel(key);
-            window.history.replaceState(null, "", "#" + key);
-            window.requestAnimationFrame(function() {
-              scrollToGatewayPanelTop(key);
-            });
-          });
-        });
-
-        const selectGatewayFromHash = function () {
-          const originalKey = window.location.hash.slice(1);
-          const key = ({"system-earthing-protection":"protection-monitoring","instrument-transformers":"protection-monitoring"})[originalKey] || originalKey;
-          const isGroup = productsTabs.some(function (tab) { return tab.getAttribute("data-products-tab") === key; });
-          if (isGroup) {
-            setGatewayPanel(key);
-            window.requestAnimationFrame(function () { scrollToGatewayPanelTop(key); });
-          }
-          return isGroup;
-        };
-        if (!selectGatewayFromHash()) { setGatewayPanel("mv-switchgear"); }
-        window.addEventListener("hashchange", selectGatewayFromHash);
-      }
     }());
   </script>
   <script>

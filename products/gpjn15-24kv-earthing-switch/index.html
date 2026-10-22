@@ -703,6 +703,8 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="/statics/web/css/header-search.css?v=20261022">
+  <script src="/statics/web/js/header-search.js?v=20261022" defer></script>
 </head>
 <body id="top">
   <header class="site-header">
@@ -738,12 +740,37 @@
         </nav>
         <div class="header-tools" aria-label="Utility actions">
           <div class="header-search">
-            <button class="tool-button" type="button" aria-label="Search" aria-expanded="false">
+            <button class="tool-button" type="button" aria-label="Search products" aria-haspopup="dialog" aria-controls="site-search-dialog" aria-expanded="false" data-header-search-trigger>
               <span class="tool-icon tool-search" aria-hidden="true"></span>
             </button>
-            <div class="search-panel">
-              <input class="search-input" type="search" placeholder="Search" aria-label="Search">
-            </div>
+            <dialog class="header-search-dialog" id="site-search-dialog" aria-labelledby="site-search-title">
+              <div class="header-search-dialog-header">
+                <h2 id="site-search-title">Search Products</h2>
+                <button class="header-search-close" type="button" aria-label="Close search" data-header-search-close><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="header-search-dialog-body">
+                <form class="header-search-form" action="/search/" method="get" role="search" aria-label="Product search">
+                  <label class="header-search-sr-only" for="site-search-query">Search products, models or keywords</label>
+                  <div class="header-search-row">
+                    <div class="header-search-input-wrap">
+                      <input class="header-search-input" id="site-search-query" name="q" type="search" placeholder="Search products, models or keywords" autocomplete="off" enterkeyhint="search">
+                      <button class="header-search-clear" type="button" aria-label="Clear search" data-header-search-clear hidden><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <button class="button button-primary header-search-submit" type="submit">Search</button>
+                  </div>
+                </form>
+                <div class="header-search-suggestions">
+                  <p>Suggested Searches</p>
+                  <div class="header-search-terms">
+                    <button type="button" data-header-search-term="GPJN15">GPJN15</button>
+                    <button type="button" data-header-search-term="GPVN">GPVN</button>
+                    <button type="button" data-header-search-term="RMU">RMU</button>
+                    <button type="button" data-header-search-term="NER">NER</button>
+                    <button type="button" data-header-search-term="Cable Cleats">Cable Cleats</button>
+                  </div>
+                </div>
+              </div>
+            </dialog>
           </div>
           <div class="header-qr">
             <button class="tool-button" type="button" aria-label="QR code" aria-expanded="false">
@@ -1189,23 +1216,9 @@
         return { open: openPanel, close: closePanelNow };
       };
 
-      bindUtilityDropdown(headerSearch, searchButton, searchPanel);
+
       bindUtilityDropdown(headerQr, qrButton, qrPanel);
 
-      const searchInput = document.querySelector(".search-input");
-      if (searchInput) {
-        searchInput.addEventListener("keydown", function (event) {
-          if (event.key !== "Enter") {
-            return;
-          }
-          event.preventDefault();
-          const q = searchInput.value.trim();
-          if (!q) {
-            return;
-          }
-          window.location.href = "/search/?q=" + encodeURIComponent(q);
-        });
-      }
     }());
   </script>
   <script>

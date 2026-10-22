@@ -1,0 +1,115 @@
+/* Persistent header search. The native dialog owns focus and the backdrop. */
+.header-search-dialog {
+  box-sizing: border-box;
+  position: fixed;
+  inset: auto;
+  top: var(--header-search-top, 96px);
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+  width: min(1200px, calc(100vw - 32px));
+  max-width: none;
+  max-height: var(--header-search-max-height, calc(100dvh - 112px));
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid rgba(12, 32, 36, .1);
+  border-radius: 20px;
+  color: #142b28;
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(7, 29, 26, .25);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.header-search-dialog:not([open]) { display: none; }
+.header-search-dialog::backdrop { background: rgba(5, 24, 27, .42); }
+.header-search-dialog-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 32px 18px;
+  background: #fff;
+}
+.header-search-dialog-header h2 {
+  margin: 0;
+  color: #142b28;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.header-search-close, .header-search-clear {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: #315550;
+  background: #edf5f2;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 28px;
+  line-height: 1;
+}
+.header-search-close { flex: 0 0 40px; width: 40px; height: 40px; }
+.header-search-dialog-body { padding: 0 32px 30px; }
+.header-search-form { margin: 0; }
+.header-search-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: stretch; }
+.header-search-input-wrap { position: relative; min-width: 0; }
+.header-search-input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: 58px;
+  padding: 0 54px 0 18px;
+  border: 1px solid #bacfc9;
+  border-radius: 12px;
+  outline: none;
+  color: #183831;
+  background: #fff;
+  font: inherit;
+  font-size: 17px;
+  line-height: 1.4;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.header-search-input::placeholder { color: #778581; opacity: 1; }
+.header-search-input::-webkit-search-cancel-button { -webkit-appearance: none; }
+.header-search-input:focus { border-color: #007a70; box-shadow: 0 0 0 3px rgba(0, 122, 112, .12); }
+.header-search-clear { position: absolute; right: 12px; top: 13px; width: 32px; height: 32px; font-size: 23px; background: transparent; }
+.header-search-clear[hidden] { display: none; }
+.header-search-submit { min-width: 140px; min-height: 58px; border-radius: 12px; font: inherit; font-size: 15px; font-weight: 700; cursor: pointer; }
+.header-search-suggestions { margin-top: 21px; }
+.header-search-suggestions p { margin: 0 0 10px; color: #687772; font-size: 13px; font-weight: 600; line-height: 1.5; }
+.header-search-terms { display: flex; flex-wrap: wrap; gap: 8px; }
+.header-search-terms button {
+  padding: 8px 14px;
+  border: 1px solid #d4e5df;
+  border-radius: 999px;
+  color: #185f54;
+  background: #f6faf8;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.header-search-close:hover, .header-search-clear:hover { color: #004f46; background: #dfeee8; }
+.header-search-terms button:hover { border-color: #007a70; background: #e9f4ef; }
+.header-search-close:focus-visible, .header-search-clear:focus-visible, .header-search-terms button:focus-visible, .header-search-submit:focus-visible { outline: 3px solid rgba(0, 122, 112, .45); outline-offset: 3px; }
+.header-search-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 600px) {
+  .header-search-dialog { width: calc(100vw - 24px); border-radius: 17px; }
+  .header-search-dialog-header { padding: 18px 18px 14px; gap: 12px; }
+  .header-search-dialog-header h2 { font-size: 24px; }
+  .header-search-dialog-body { padding: 0 18px 22px; }
+  .header-search-row { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .header-search-input { height: 54px; padding-left: 13px; font-size: 16px; }
+  .header-search-clear { top: 11px; }
+  .header-search-submit { width: 100%; min-height: 50px; }
+  .header-search-suggestions { margin-top: 18px; }
+}
+
