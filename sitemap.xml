@@ -40,36 +40,16 @@
     <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://gpswitch.com/products/chassis-and-auxiliary-trucks/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://gpswitch.com/products/chassis-and-auxiliary-trucks/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url>
     <loc>https://gpswitch.com/products/compact-secondary-substation/</loc>
     <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://gpswitch.com/products/contact-and-copper-parts/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gpswitch.com/products/disconnector-switch/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gpswitch.com/products/earthing-switch/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gpswitch.com/products/gas-insulated-switchgear/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://gpswitch.com/products/contact-and-copper-parts/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/disconnector-switch/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/earthing-switch/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/gas-insulated-switchgear/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url>
     <loc>https://gpswitch.com/products/gn19-12kv-disconnector-switch/</loc>
     <lastmod>2026-09-01</lastmod>
@@ -150,61 +130,25 @@
     <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://gpswitch.com/products/indicators-and-detection-devices/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gpswitch.com/products/instrument-transformers/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gpswitch.com/products/insulating-parts/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gpswitch.com/products/load-break-switch/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gpswitch.com/products/metal-clad-switchgear/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://gpswitch.com/products/indicators-and-detection-devices/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/instrument-transformers/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/insulating-parts/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/load-break-switch/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/metal-clad-switchgear/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url>
     <loc>https://gpswitch.com/products/metering-and-monitoring-devices/</loc>
     <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://gpswitch.com/products/operating-mechanisms-and-coils/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gpswitch.com/products/ring-main-unit/</loc>
-    <lastmod>2026-10-14</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gpswitch.com/products/switchgear-accessories-and-controllers/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://gpswitch.com/products/operating-mechanisms-and-coils/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/ring-main-unit/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/switchgear-accessories-and-controllers/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url>
     <loc>https://gpswitch.com/products/test-and-diagnostic-tools/</loc>
     <lastmod>2026-09-01</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://gpswitch.com/products/vacuum-circuit-breaker/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://gpswitch.com/products/vacuum-circuit-breaker/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url>
     <loc>https://gpswitch.com/products/vacuum-interrupters/</loc>
     <lastmod>2026-09-01</lastmod>
@@ -280,9 +224,13 @@
     <lastmod>2026-10-20</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://gpswitch.com/products/system-earthing-protection/</loc>
-    <lastmod>2026-10-22</lastmod>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>https://gpswitch.com/products/neutral-earthing-resistors/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/vacuum-contactor-fuse-combinations/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/shutters-and-interlocks/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/climate-control-and-lighting/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/cable-connectors-and-accessories/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/surge-arresters/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/current-limiting-fuses/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/drop-out-fuses/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/integrated-control-and-condition-monitoring/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
 </urlset>

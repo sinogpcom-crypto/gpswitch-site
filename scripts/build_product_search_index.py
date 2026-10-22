@@ -24,7 +24,8 @@ def clean_product_url(source_path: Path) -> str:
 def product_source_paths() -> list[Path]:
     hub = ROOT / "products/index.html"
     detail_pages = sorted((ROOT / "products").glob("*/index.html"))
-    return [hub, *detail_pages]
+    excluded = {"vacuum-interrupters", "compact-secondary-substation", "test-and-diagnostic-tools", "system-earthing-protection", "metering-and-monitoring-devices"}
+    return [hub, *(p for p in detail_pages if p.parent.name not in excluded and re.search(r'<h1[ >]', p.read_text(encoding="utf-8"), re.I))]
 
 
 def strip_tags(s: str) -> str:

@@ -2136,3 +2136,44 @@ a.business-card:focus-visible {
 
 #products-mega-menu .product-panel:not(.is-active),
 #products-mega-menu .product-support-panel:not(.is-active) { display: none; }
+
+/* Approved product catalog: category families and application-specific accessories. */
+.catalog-category-section { padding-top:32px; }
+.catalog-breadcrumbs { display:flex;flex-wrap:wrap;gap:8px 12px;margin:0 0 26px;color:#65716e;font-size:13px;line-height:1.6; }
+.catalog-breadcrumbs a { color:#0a6258; }
+.catalog-layout { display:grid;grid-template-columns:minmax(220px,270px) minmax(0,1fr);gap:28px;align-items:start; }
+.catalog-sidebar { display:grid;gap:9px;position:sticky;top:110px; }
+.catalog-sidebar a { padding:14px 16px;border:1px solid transparent;border-radius:17px;background:rgba(255,255,255,.6);color:#294a50;font-size:15px;font-weight:600;line-height:1.45;overflow-wrap:anywhere; }
+.catalog-sidebar a.is-active,.catalog-sidebar a:hover,.catalog-sidebar a:focus-visible { background:rgba(0,122,112,.08);border-color:rgba(0,122,112,.23);color:#005e54; }
+.catalog-content { min-width:0; }
+.catalog-family-links { display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px; }
+.catalog-family-links a { padding:9px 13px;border:1px solid rgba(0,122,112,.18);border-radius:999px;background:rgba(255,255,255,.75);color:#0a6258;font-size:13px;font-weight:600;line-height:1.45; }
+.catalog-family-links a:hover,.catalog-family-links a:focus-visible { background:#e5f3ef; }
+.catalog-family-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px; }
+.catalog-family-card { scroll-margin-top:110px;min-width:0;padding:26px;border:1px solid rgba(0,122,112,.13);border-radius:23px;background:rgba(255,255,255,.92);box-shadow:0 16px 32px rgba(15,38,33,.05); }
+.catalog-family-card h2,.catalog-family-card h3 { margin:0 0 13px;font-size:23px;line-height:1.25;overflow-wrap:anywhere; }
+.catalog-family-card p { margin:0 0 15px;color:#606b6d;font-size:15px;line-height:1.7; }
+.catalog-family-card ul { margin:0;padding-left:19px;color:#425654;font-size:14px;line-height:1.8; }
+.catalog-family-card li + li { margin-top:4px; }
+.catalog-family-stack { display:grid;gap:36px; }
+.catalog-family-section { min-width:0;scroll-margin-top:110px; }
+.catalog-family-section>h2 { margin:0 0 20px;font-size:28px;line-height:1.25; }
+.catalog-text-link { display:inline-block;margin-top:18px;color:#007a70;font-weight:700; }
+.catalog-layout .products-card { min-width:0; }
+#products-mega-menu .product-submenu-links a { padding-top:10px;padding-bottom:10px; }
+#products-mega-menu .product-menu-option-links a { padding-top:5px;padding-bottom:5px; }
+@media(max-width:900px) {
+ .catalog-layout { grid-template-columns:1fr;gap:24px; }
+ .catalog-sidebar { display:flex;position:static;overflow-x:auto;gap:8px;padding-bottom:8px; }
+ .catalog-sidebar a { flex:0 0 auto;max-width:250px;padding:11px 14px;font-size:13px; }
+}
+@media(max-width:600px) {
+ .catalog-category-section { padding-top:24px; }
+ .catalog-family-grid { grid-template-columns:1fr;gap:18px; }
+ .catalog-family-card { padding:23px; }
+ .catalog-family-card h2,.catalog-family-card h3 { font-size:22px; }
+ .catalog-family-section>h2 { font-size:25px; }
+ .catalog-family-links { flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px; }
+ .catalog-family-links a { flex:0 0 auto;max-width:230px; }
+ .catalog-breadcrumbs { font-size:12px;gap:6px 8px; }
+}
