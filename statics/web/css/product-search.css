@@ -59,6 +59,9 @@
   scroll-margin-top: 120px;
 }
 
+/* This static announcement receives focus after paging; interactive controls keep their focus indicators. */
+.product-search-status:focus { outline: none; }
+
 .product-search-results[hidden],
 .product-search-pagination[hidden] { display: none; }
 
