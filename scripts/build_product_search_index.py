@@ -5,6 +5,8 @@ import base64
 import json
 import re
 from pathlib import Path
+from html import unescape
+from html.parser import HTMLParser
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "statics/web/data/product-search-index.json"
@@ -29,7 +31,7 @@ def product_source_paths() -> list[Path]:
 
 
 def strip_tags(s: str) -> str:
-    return re.sub(r"<[^>]+>", " ", s)
+    return unescape(re.sub(r"<[^>]+>", " ", s))
 
 
 def norm_space(s: str) -> str:
@@ -59,6 +61,38 @@ def extract_card_snippets(html: str) -> str:
     return " ".join(chunks)
 
 
+class ProductBodyParser(HTMLParser):
+    """Ignore shared navigation, controls and generic calls to action."""
+    void = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.stack, self.parts = [], []
+
+    def handle_starttag(self, tag, attrs):
+        classes = dict(attrs).get("class", "").split()
+        skip = (bool(self.stack and self.stack[-1][1]) or
+                tag in {"nav", "aside", "footer", "script", "style", "form", "button", "dialog", "template"} or
+                any(c == "button" or re.search(r"(?:^|-)(?:sidebar|breadcrumbs?|cta|kicker|tabs)(?:-|$)", c) for c in classes))
+        if tag not in self.void:
+            self.stack.append((tag, skip))
+
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+        if tag not in self.void:
+            self.handle_endtag(tag)
+
+    def handle_endtag(self, tag):
+        for i in range(len(self.stack) - 1, -1, -1):
+            if self.stack[i][0] == tag:
+                del self.stack[i:]
+                break
+
+    def handle_data(self, data):
+        if not self.stack or not self.stack[-1][1]:
+            self.parts.append(data)
+
+
 def extract_main_text(html: str, max_chars: int = 120000) -> str:
     """Plain text inside <main> (product body, specs, paragraphs). Excludes script/style."""
     m = re.search(r"<main\b[^>]*>([\s\S]*?)</main>", html, re.I)
@@ -68,7 +102,9 @@ def extract_main_text(html: str, max_chars: int = 120000) -> str:
     body = re.sub(r"<script\b[\s\S]*?</script>", " ", body, flags=re.I)
     body = re.sub(r"<style\b[\s\S]*?</style>", " ", body, flags=re.I)
     body = re.sub(r"<!--[\s\S]*?-->", " ", body)
-    text = norm_space(strip_tags(body))
+    parser = ProductBodyParser()
+    parser.feed(body)
+    text = norm_space(" ".join(parser.parts))
     if len(text) > max_chars:
         text = text[:max_chars]
     return text
@@ -110,8 +146,62 @@ def extract_products_hub_cards(html: str):
     return out
 
 
+CATEGORIES = {
+    "metal-clad-switchgear": "mcs", "ring-main-unit": "rmu", "gas-insulated-switchgear": "gis",
+    "neutral-earthing-resistors": "ner", "vacuum-circuit-breaker": "vcb", "load-break-switch": "lbs",
+    "disconnector-switch": "dsw", "earthing-switch": "esw", "vacuum-contactor-fuse-combinations": "fc",
+    "insulating-parts": "ip", "contact-and-copper-parts": "cc", "chassis-and-auxiliary-trucks": "ch",
+    "shutters-and-interlocks": "si", "operating-mechanisms-and-coils": "om",
+    "switchgear-accessories-and-controllers": "ia", "climate-control-and-lighting": "cl",
+    "cable-connectors-and-accessories": "ca", "surge-arresters": "sa", "current-limiting-fuses": "clf",
+    "drop-out-fuses": "dof", "indicators-and-detection-devices": "vsi",
+    "integrated-control-and-condition-monitoring": "ic", "instrument-transformers": "ct",
+}
+
+
+def product_metadata(path, source, h1, main_text):
+    """Use own rated-value rows, never withstand voltages or inferred equivalence."""
+    slug = path.parent.name
+    kind = "hub" if path == ROOT / "products/index.html" else "category" if slug in CATEGORIES else "product"
+    category = CATEGORIES.get(slug, "")
+    if not category and kind == "product":
+        for prefix, family in [("gpn1-", "mcs"), ("gpn2-", "gis"), ("gpr", "rmu"), ("gpvn-", "vcb"),
+                               ("zw", "vcb"), ("gpfn", "lbs"), ("gpwf", "lbs"), ("gpjn", "esw"), ("gn", "dsw")]:
+            if slug.startswith(prefix):
+                category = family
+                break
+    fields = []
+    if kind == "product":
+        for block in re.findall(r'<div class="product-hero-spec"[^>]*>([\s\S]*?)</div>', source, re.I):
+            label = re.search(r"<strong[^>]*>([\s\S]*?)</strong>", block, re.I)
+            value = re.search(r"<span[^>]*>([\s\S]*?)</span>", block, re.I)
+            if label and value:
+                fields.append((norm_space(strip_tags(label[1])).lower(), norm_space(strip_tags(value[1]))))
+        for block in re.findall(r"<tr\b[^>]*>([\s\S]*?)</tr>", source, re.I):
+            cells = re.findall(r"<(?:th|td)\b[^>]*>([\s\S]*?)</(?:th|td)>", block, re.I)
+            if len(cells) >= 2:
+                fields.append((norm_space(strip_tags(cells[0])).lower(), norm_space(strip_tags(" ".join(cells[1:])))))
+    def numeric(values):
+        numbers, ranges = set(), []
+        for value in values:
+            numbers.update(float(n) for n in re.findall(r"\d+(?:\.\d+)?", value))
+            for lo, hi in re.findall(r"(\d+(?:\.\d+)?)\s*(?:~|–|—|-|\bto\b)\s*(\d+(?:\.\d+)?)", value, re.I):
+                bounds = [float(lo), float(hi)]
+                if bounds[0] <= bounds[1] and bounds not in ranges:
+                    ranges.append(bounds)
+        return sorted(numbers), ranges
+    volts, vranges = numeric([v for k, v in fields if k == "rated voltage"])
+    amps, aranges = numeric([v for k, v in fields if "rated current" in k and "short" not in k])
+    if kind == "product" and not volts:
+        volts = sorted({float(n) for n in re.findall(r"(\d+(?:\.\d+)?)\s*kv\b", h1, re.I)})
+    models = re.findall(r"\b(?:GP[A-Z0-9.]+|ZW\d+[A-Z]?|GN\d+[A-Z]?)(?:[- ][\d.]+(?:\(\d+\))?(?:kV)?)*(?:\s*EK\d+)?", h1, re.I) if kind == "product" else []
+    return {"kind": kind, "category": category, "models": models,
+            "voltages": volts, "voltageRanges": vranges, "currents": amps, "currentRanges": aranges}
+
+
 def main() -> None:
     by_url: dict[str, dict] = {}
+    metadata = {}
 
     def merge(url: str, title="", description="", extra=""):
         e = by_url.setdefault(
@@ -132,11 +222,13 @@ def main() -> None:
             r'<meta\s+name="description"\s+content="([^"]*)"', html, re.I
         )
         title = norm_space(strip_tags(tm.group(1))) if tm else url
-        desc = dm.group(1).strip() if dm else ""
+        desc = unescape(dm.group(1).strip()) if dm else ""
         label = title.split("|")[0].strip()
         h1 = extract_h1(html)
+        label = h1 or label
         cards = extract_card_snippets(html)
         main_text = extract_main_text(html)
+        metadata[url] = product_metadata(path, html, h1, main_text)
         slug_words = path.stem.replace("-", " ")
         codes = extract_data_codes(html)
         extra = " ".join(x for x in (h1, cards, main_text, codes, slug_words) if x)
@@ -164,6 +256,7 @@ def main() -> None:
                 "title": e["title"],
                 "description": e["description"],
                 "searchText": search_text,
+                **metadata[url],
             }
         )
 
