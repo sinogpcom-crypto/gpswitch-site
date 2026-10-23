@@ -106,28 +106,88 @@
       return {row:row, score:score, matches:unique(matches), related:hits < q.tokens.length};
     }).filter(Boolean).sort(function (a, b) { return b.score - a.score || a.row.url.localeCompare(b.row.url); });
   };
-  const api = {normalize:normalize, parseQuery:parseQuery, search:search};
+  const PAGE_SIZE = 10;
+  const paginate = function (items, requestedPage) {
+    const value = String(requestedPage == null ? "1" : requestedPage);
+    const number = /^\d+$/.test(value) ? Number(value) : 1;
+    const totalPages = Math.ceil(items.length / PAGE_SIZE);
+    const page = Math.min(Math.max(Number.isSafeInteger(number) ? number : 1, 1), totalPages || 1);
+    const offset = (page - 1) * PAGE_SIZE;
+    return {page:page, total:items.length, totalPages:totalPages, start:items.length ? offset + 1 : 0,
+      end:Math.min(offset + PAGE_SIZE, items.length), items:items.slice(offset, offset + PAGE_SIZE)};
+  };
+  const pageNumbers = function (page, totalPages) {
+    const numbers = unique([1, page - 1, page, page + 1, totalPages])
+      .filter(function (n) { return n >= 1 && n <= totalPages; }).sort(function (a, b) { return a - b; });
+    const result = [];
+    numbers.forEach(function (number, i) {
+      const previous = numbers[i - 1];
+      if (previous && number - previous === 2) result.push(previous + 1);
+      else if (previous && number - previous > 2) result.push(null);
+      result.push(number);
+    });
+    return result;
+  };
+  const pageUrl = function (href, query, page) {
+    const url = new URL(href);
+    url.searchParams.set("q", query);
+    url.searchParams.delete("page");
+    if (page > 1) url.searchParams.set("page", String(page));
+    url.hash = "productSearchStatus";
+    return url.pathname + url.search + url.hash;
+  };
+  const api = {normalize:normalize, parseQuery:parseQuery, search:search, paginate:paginate, pageNumbers:pageNumbers, pageUrl:pageUrl};
   if (typeof module === "object" && module.exports) { module.exports = api; return; }
   root.GPSwitchProductSearch = api;
   const status = document.getElementById("productSearchStatus");
   const list = document.getElementById("productSearchResults");
   const input = document.getElementById("productSearchQuery");
+  const pagination = document.getElementById("productSearchPagination");
   if (!status || !list) return;
-  const query = new URLSearchParams(root.location.search).get("q") || "";
+  const params = new URLSearchParams(root.location.search);
+  const query = params.get("q") || "";
   if (input) input.value = query;
   const escape = function (text) { return String(text).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); };
+  const renderPagination = function (page) {
+    if (!pagination) return;
+    pagination.hidden = page.totalPages <= 1;
+    if (pagination.hidden) { pagination.innerHTML = ""; return; }
+    const href = function (n) { return escape(pageUrl(root.location.href, query, n)); };
+    const previous = page.page > 1 ? '<a class="product-search-page" rel="prev" href="' + href(page.page - 1) + '">Previous</a>' :
+      '<span class="product-search-page" aria-disabled="true">Previous</span>';
+    const next = page.page < page.totalPages ? '<a class="product-search-page" rel="next" href="' + href(page.page + 1) + '">Next</a>' :
+      '<span class="product-search-page" aria-disabled="true">Next</span>';
+    pagination.innerHTML = previous + pageNumbers(page.page, page.totalPages).map(function (number) {
+      if (number === null) return '<span class="product-search-ellipsis" aria-hidden="true">&hellip;</span>';
+      if (number === page.page) return '<span class="product-search-page" aria-current="page" aria-label="Page ' + number + '">' + number + '</span>';
+      return '<a class="product-search-page" aria-label="Page ' + number + '" href="' + href(number) + '">' + number + '</a>';
+    }).join("") + next;
+  };
   const render = function (index) {
-    if (!query.trim()) { status.textContent = "Enter a product name, model, or keyword above, then press Search or Enter."; list.hidden = true; list.innerHTML = ""; return; }
+    if (!query.trim()) { status.textContent = "Enter a product name, model, or keyword above, then press Search or Enter."; list.hidden = true; list.innerHTML = ""; renderPagination(paginate([], 1)); return; }
     const results = search(index, query);
-    status.textContent = results.length ? results.length + " relevant product page" + (results.length === 1 ? "" : "s") + " found." : "No related products found. Try a product type, model, or voltage, or browse the product catalog.";
+    const page = paginate(results, params.get("page"));
+    status.textContent = results.length ? "Showing " + page.start + "–" + page.end + " of " + page.total + " results." : "No related products found. Try a product type, model, or voltage, or browse the product catalog.";
     if (results.length && results[0].related) status.textContent += " Showing related products for your search.";
     list.hidden = !results.length;
-    list.innerHTML = results.map(function (item) {
+    list.innerHTML = page.items.map(function (item) {
       const row = item.row;
       return '<li><a href="' + escape(row.url) + '"><strong>' + escape(row.title) + '</strong><span class="product-search-snippet">' + escape(row.description || "") + '</span>' +
         (item.matches.length ? '<span class="product-search-snippet">Matched: ' + escape(item.matches.join(" · ")) + '</span>' : "") +
         '<span class="product-search-url">' + escape(row.url) + '</span></a></li>';
     }).join("");
+    renderPagination(page);
+    // Real links preserve native back/forward navigation and can be bookmarked.
+    if (params.has("page") && params.get("page") !== (page.page > 1 ? String(page.page) : "")) {
+      const url = new URL(root.location.href);
+      url.searchParams.delete("page");
+      if (page.page > 1) url.searchParams.set("page", String(page.page));
+      if (root.history && root.history.replaceState) root.history.replaceState(null, "", url.pathname + url.search + url.hash);
+    }
+    if (root.location.hash === "#productSearchStatus") {
+      status.focus({preventScroll:true});
+      status.scrollIntoView({block:"start", behavior:"auto"});
+    }
   };
   const load = function () {
     const template = document.getElementById("gpswitch-product-search-index-b64");
@@ -147,5 +207,5 @@
   load().then(function (index) {
     if (!Array.isArray(index)) throw new Error("Invalid index");
     render(index);
-  }).catch(function () { status.textContent = "Product search is temporarily unavailable. Please refresh or browse the product catalog."; list.hidden = true; });
+  }).catch(function () { status.textContent = "Product search is temporarily unavailable. Please refresh or browse the product catalog."; list.hidden = true; renderPagination(paginate([], 1)); });
 }(typeof window === "undefined" ? globalThis : window));
