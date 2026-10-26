@@ -67,6 +67,9 @@
         if (contains(text, phrase) && (!best || phrase.length > best.phrase.length)) best = {key:group[0], label:group[1], phrase:phrase};
       });
     });
+    // Preserve the product meaning of plural "contacts"; singular "contact us"
+    // remains a company/contact intent even though plural normalization is shared.
+    if (!best && /\bcontacts\b/i.test(String(query))) best = {key:"cc", label:"Contacts & Copper Parts", phrase:"contact"};
     const family = best ? [best.key] : contains(text, "switchgear") ? ["mcs", "rmu", "gis"] : [];
     return {text:text, brand:brand, siteIntent:siteIntent ? siteIntent.key : "", family:family, label:best ? best.label : family.length ? "Switchgear" : "",
       voltages:unique(Array.from(text.matchAll(/(\d+(?:\.\d+)?)kv\b/g), function (m) { return Number(m[1]); })),
