@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild the product search index with directory-style public URLs."""
+"""Rebuild the site search index from product pages and selected public site pages."""
 
 import base64
 import json
@@ -199,6 +199,17 @@ def product_metadata(path, source, h1, main_text):
             "voltages": volts, "voltageRanges": vranges, "currents": amps, "currentRanges": aranges}
 
 
+SITE_PAGES = [
+    ("index.html", "/", "home", ["home", "homepage"]),
+    ("about/index.html", "/about/", "company", ["about", "about us", "company", "company profile", "company introduction", "who we are"]),
+    ("factory-quality/index.html", "/factory-quality/", "factory", ["factory", "manufacturing", "quality", "quality assurance", "inspection", "certification", "certificates"]),
+    ("applications/index.html", "/applications/", "applications", ["application", "applications", "industries"]),
+    ("projects/index.html", "/projects/", "projects", ["project", "projects", "references", "project references"]),
+    ("downloads/index.html", "/downloads/", "downloads", ["catalog", "catalogue", "catalogs", "catalogues", "download", "downloads", "brochure"]),
+    ("inquiry/index.html", "/inquiry/", "contact", ["contact", "contact us", "inquiry", "enquiry", "request a quote", "quotation", "email", "phone", "address"]),
+]
+
+
 def main() -> None:
     by_url: dict[str, dict] = {}
     metadata = {}
@@ -240,6 +251,20 @@ def main() -> None:
         for target, text in extract_products_hub_cards(ph):
             if target in by_url:
                 merge(target, extra=text)
+
+    # Only canonical public content is added. Redirects, privacy, search and
+    # submission/success utilities stay outside the index; shared chrome is ignored.
+    for relative, url, section, aliases in SITE_PAGES:
+        source = (ROOT / relative).read_text(encoding="utf-8")
+        tm = re.search(r"<title>([^<]+)</title>", source, re.I)
+        dm = re.search(r'<meta\s+name="description"\s+content="([^"]*)"', source, re.I)
+        title = norm_space(strip_tags(tm[1])).split("|")[0].strip() if tm else extract_h1(source)
+        description = unescape(dm[1].strip()) if dm else ""
+        body = extract_main_text(source)
+        merge(url, title=title, description=description, extra=body)
+        metadata[url] = {"kind": "page", "siteSection": section, "aliases": aliases,
+                         "category": "", "models": [], "voltages": [], "voltageRanges": [],
+                         "currents": [], "currentRanges": []}
 
     out_list = []
     for url, e in sorted(by_url.items(), key=lambda x: x[0]):

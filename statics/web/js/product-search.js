@@ -1,4 +1,4 @@
-/* Product relevance search: own content, product families and rated values. */
+/* Site and product search: own content, company topics, product families and rated values. */
 (function (root) {
   "use strict";
   const plurals = {switches:"switch", breakers:"breaker", units:"unit", parts:"part", contacts:"contact", shutters:"shutter", interlocks:"interlock", insulators:"insulator", resistors:"resistor", mechanisms:"mechanism", coils:"coil", trucks:"truck", accessories:"accessory", fuses:"fuse", arresters:"arrester", transformers:"transformer", indicators:"indicator", connectors:"connector", cleats:"cleat", bushings:"bushing", boxes:"box"};
@@ -8,7 +8,8 @@
       .replace(/(^|[^a-z0-9])(\d+(?:\.\d+)?)\s*[/(]\s*(\d+(?:\.\d+)?)\)?\s*kv\b/g, "$1$2kv $3kv")
       .replace(/(\d+(?:\.\d+)?)\s*(kv|ka|a|hz)\b/g, "$1$2")
       .replace(/[^a-z0-9.\u4e00-\u9fff]+/g, " ")
-      .trim().split(/\s+/).map(function (word) { return plurals[word] || word; }).join(" ");
+      .trim().split(/\s+/).map(function (word) { return plurals[word] || word; }).join(" ")
+      .replace(/\bgreen power\b/g, "greenpower").replace(/\bgreenpowerelectric\b/g, "greenpower electric");
   };
   const groups = [
     ["mcs", "Metal-Clad Switchgear", ["metal clad switchgear", "metal enclosed switchgear", "air insulated switchgear"]],
@@ -35,11 +36,30 @@
     ["ic", "Integrated Control & Condition Monitoring", ["integrated control", "condition monitoring", "wireless temperature"]],
     ["ct", "Instrument Transformers & Metering", ["instrument transformer", "current transformer", "voltage transformer", "power meter"]]
   ];
-  const stop = new Set("a an the and or for of to with in on at by please show me your our i we need looking find product products medium high voltage ac hz electric electrical greenpower".split(" "));
+  const stop = new Set("a an the and or for of to with in on at by please show me your our i we us need looking find product products medium high voltage ac hz electric electrical".split(" "));
+  const sitePages = new Set(["/", "/about/", "/factory-quality/", "/applications/", "/projects/", "/downloads/", "/inquiry/"]);
+  const brandPriority = {company:1000, home:900, factory:800, projects:700, applications:600, downloads:500, contact:400};
+  const siteIntents = [
+    ["company", ["about", "about us", "company", "company profile", "company introduction", "who we are"]],
+    ["factory", ["factory", "manufacturing", "quality", "quality assurance", "inspection", "certification", "certificates"]],
+    ["applications", ["application", "applications", "industries"]],
+    ["projects", ["project", "projects", "references", "project references"]],
+    ["downloads", ["catalog", "catalogue", "catalogs", "catalogues", "download", "downloads", "brochure"]],
+    ["contact", ["contact", "contact us", "inquiry", "enquiry", "request a quote", "quotation", "email", "phone", "address"]],
+    ["home", ["home", "homepage"]]
+  ];
   const contains = function (text, phrase) { return (" " + text + " ").indexOf(" " + phrase + " ") !== -1; };
   const unique = function (values) { return Array.from(new Set(values)); };
   const parseQuery = function (query) {
     const text = normalize(query).replace(/\bmv\b/g, "medium voltage");
+    const brand = contains(text, "greenpower");
+    let siteIntent = null;
+    siteIntents.forEach(function (entry) {
+      entry[1].forEach(function (alias) {
+        const phrase = normalize(alias);
+        if (contains(text, phrase) && (!siteIntent || phrase.length > siteIntent.phrase.length)) siteIntent = {key:entry[0], phrase:phrase};
+      });
+    });
     let best = null;
     groups.forEach(function (group) {
       group[2].forEach(function (alias) {
@@ -48,10 +68,10 @@
       });
     });
     const family = best ? [best.key] : contains(text, "switchgear") ? ["mcs", "rmu", "gis"] : [];
-    return {text:text, family:family, label:best ? best.label : family.length ? "Switchgear" : "",
+    return {text:text, brand:brand, siteIntent:siteIntent ? siteIntent.key : "", family:family, label:best ? best.label : family.length ? "Switchgear" : "",
       voltages:unique(Array.from(text.matchAll(/(\d+(?:\.\d+)?)kv\b/g), function (m) { return Number(m[1]); })),
       currents:unique(Array.from(text.matchAll(/(\d+(?:\.\d+)?)a\b/g), function (m) { return Number(m[1]); })),
-      tokens:unique(text.split(/\s+/).filter(function (word) { return word.length > 1 && !stop.has(word); }))};
+      tokens:unique(text.split(/\s+/).filter(function (word) { return word.length > 1 && word !== "greenpower" && !stop.has(word); }))};
   };
   const supports = function (values, ranges, requested) {
     return requested.some(function (value) {
@@ -60,7 +80,8 @@
   };
   const search = function (index, query) {
     const q = parseQuery(query);
-    if (!q.text || !q.tokens.length) return [];
+    if (!q.text || (!q.tokens.length && !q.brand)) return [];
+    const brandOnly = q.brand && !q.tokens.length;
     const compact = q.text.replace(/\s+/g, "");
     const knownModels = [];
     index.forEach(function (row) {
@@ -70,11 +91,16 @@
       });
     });
     const longestModel = knownModels.sort(function (a, b) { return b.length - a.length; })[0];
+    const siteOnly = brandOnly || (q.siteIntent && !q.family.length && !longestModel && !q.voltages.length && !q.currents.length);
     return index.map(function (row) {
-      if (!/^\/products\/(?:[a-z0-9-]+\/)?$/.test(row.url)) return null;
+      const productUrl = /^\/products\/(?:[a-z0-9-]+\/)?$/.test(row.url);
+      if (!productUrl && !(row.kind === "page" && sitePages.has(row.url))) return null;
       const title = normalize(row.title), description = normalize(row.description);
       const body = normalize(row.bodyText || row.searchText);
       const kind = row.kind || "product";
+      if (siteOnly && kind !== "page") return null;
+      if (brandOnly) return {row:row, score:brandPriority[row.siteSection] || 0, matches:["GreenPower"], related:false};
+      const aliases = normalize((row.aliases || []).join(" "));
       const exactModel = longestModel && (row.models || []).some(function (m) { return normalize(m).replace(/\s+/g, "") === longestModel; });
       if (longestModel && !exactModel) return null;
       if (q.family.length && !q.family.includes(row.category)) return null;
@@ -83,6 +109,8 @@
       if (q.voltages.length && (row.voltages || []).length && !voltageMatch) return null;
       if (q.currents.length && (row.currents || []).length && !currentMatch) return null;
       let score = exactModel ? 1500 : 0;
+      if (q.siteIntent && row.siteSection === q.siteIntent) score += 500;
+      if (kind === "page" && !q.siteIntent) score -= 40;
       if (q.family.length) score += 100;
       if (kind === "category" && q.family.length && !q.voltages.length && !q.currents.length && !longestModel) score += 400;
       if (voltageMatch) score += 250;
@@ -93,6 +121,7 @@
       q.tokens.forEach(function (token) {
         if (contains(title, token)) { score += 22; hits++; strongHits++; }
         else if (contains(description, token)) { score += 9; hits++; strongHits++; }
+        else if (contains(aliases, token)) { score += 12; hits++; strongHits++; }
         else if (contains(body, token)) { score += 2; hits++; }
       });
       if (!q.family.length && !exactModel && !voltageMatch && !currentMatch &&
@@ -164,11 +193,11 @@
     }).join("") + next;
   };
   const render = function (index) {
-    if (!query.trim()) { status.textContent = "Enter a product name, model, or keyword above, then press Search or Enter."; list.hidden = true; list.innerHTML = ""; renderPagination(paginate([], 1)); return; }
+    if (!query.trim()) { status.textContent = "Enter a product name, company topic, model, or keyword above, then press Search or Enter."; list.hidden = true; list.innerHTML = ""; renderPagination(paginate([], 1)); return; }
     const results = search(index, query);
     const page = paginate(results, params.get("page"));
-    status.textContent = results.length ? "Showing " + page.start + "–" + page.end + " of " + page.total + " results." : "No related products found. Try a product type, model, or voltage, or browse the product catalog.";
-    if (results.length && results[0].related) status.textContent += " Showing related products for your search.";
+    status.textContent = results.length ? "Showing " + page.start + "–" + page.end + " of " + page.total + " results." : "No matching content found. Try a product, company topic, model, or keyword.";
+    if (results.length && results[0].related) status.textContent += " Showing related content for your search.";
     list.hidden = !results.length;
     list.innerHTML = page.items.map(function (item) {
       const row = item.row;
@@ -199,7 +228,7 @@
         if (Array.isArray(index)) return Promise.resolve(index);
       } catch (error) { /* Use the external copy if the embedded copy is unavailable. */ }
     }
-    return fetch("/statics/web/data/product-search-index.json?v=20261023", {credentials:"same-origin"}).then(function (response) {
+    return fetch("/statics/web/data/product-search-index.json?v=20261026-site", {credentials:"same-origin"}).then(function (response) {
       if (!response.ok) throw new Error("Index unavailable");
       return response.json();
     });
@@ -207,5 +236,5 @@
   load().then(function (index) {
     if (!Array.isArray(index)) throw new Error("Invalid index");
     render(index);
-  }).catch(function () { status.textContent = "Product search is temporarily unavailable. Please refresh or browse the product catalog."; list.hidden = true; renderPagination(paginate([], 1)); });
+  }).catch(function () { status.textContent = "Search is temporarily unavailable. Please refresh or browse the site."; list.hidden = true; renderPagination(paginate([], 1)); });
 }(typeof window === "undefined" ? globalThis : window));
