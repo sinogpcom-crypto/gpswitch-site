@@ -17,7 +17,7 @@
   </url>
   <url>
     <loc>https://gpswitch.com/downloads/</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -224,7 +224,7 @@
     <lastmod>2026-10-20</lastmod>
     <priority>0.8</priority>
   </url>
-  <url><loc>https://gpswitch.com/products/neutral-earthing-resistors/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/neutral-earthing-resistors/</loc><lastmod>2026-10-27</lastmod><priority>0.7</priority></url>
   <url><loc>https://gpswitch.com/products/vacuum-contactor-fuse-combinations/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://gpswitch.com/products/shutters-and-interlocks/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://gpswitch.com/products/climate-control-and-lighting/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
@@ -233,4 +233,5 @@
   <url><loc>https://gpswitch.com/products/current-limiting-fuses/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://gpswitch.com/products/drop-out-fuses/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://gpswitch.com/products/integrated-control-and-condition-monitoring/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://gpswitch.com/products/gp-ner-3-3kv-neutral-earthing-resistor/</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
 </urlset>

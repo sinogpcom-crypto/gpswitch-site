@@ -165,7 +165,7 @@ def product_metadata(path, source, h1, main_text):
     kind = "hub" if path == ROOT / "products/index.html" else "category" if slug in CATEGORIES else "product"
     category = CATEGORIES.get(slug, "")
     if not category and kind == "product":
-        for prefix, family in [("gpn1-", "mcs"), ("gpn2-", "gis"), ("gpr", "rmu"), ("gpvn-", "vcb"),
+        for prefix, family in [("gp-ner-", "ner"), ("gpn1-", "mcs"), ("gpn2-", "gis"), ("gpr", "rmu"), ("gpvn-", "vcb"),
                                ("zw", "vcb"), ("gpfn", "lbs"), ("gpwf", "lbs"), ("gpjn", "esw"), ("gn", "dsw")]:
             if slug.startswith(prefix):
                 category = family
@@ -190,11 +190,19 @@ def product_metadata(path, source, h1, main_text):
                 if bounds[0] <= bounds[1] and bounds not in ranges:
                     ranges.append(bounds)
         return sorted(numbers), ranges
-    volts, vranges = numeric([v for k, v in fields if k == "rated voltage"])
-    amps, aranges = numeric([v for k, v in fields if "rated current" in k and "short" not in k])
+    voltage_labels = {"rated voltage"}
+    if category == "ner":
+        voltage_labels.update({"system rated voltage", "rated system voltage", "system voltage"})
+    volts, vranges = numeric([v for k, v in fields if k in voltage_labels])
+    current_values = [v for k, v in fields if "rated current" in k and "short" not in k]
+    if category == "ner":
+        current_values.extend(amp + " A" for k, v in fields if k == "short-time current" for amp in re.findall(r"(\d+(?:\.\d+)?)\s*A\b", v, re.I))
+    amps, aranges = numeric(current_values)
     if kind == "product" and not volts:
         volts = sorted({float(n) for n in re.findall(r"(\d+(?:\.\d+)?)\s*kv\b", h1, re.I)})
     models = re.findall(r"\b(?:GP[A-Z0-9.]+|ZW\d+[A-Z]?|GN\d+[A-Z]?)(?:[- ][\d.]+(?:\(\d+\))?(?:kV)?)*(?:\s*EK\d+)?", h1, re.I) if kind == "product" else []
+    if kind == "product" and category == "ner":
+        models = re.findall(r"\bGP-NER-\d+(?:\.\d+)?kV\b", h1, re.I)
     return {"kind": kind, "category": category, "models": models,
             "voltages": volts, "voltageRanges": vranges, "currents": amps, "currentRanges": aranges}
 
