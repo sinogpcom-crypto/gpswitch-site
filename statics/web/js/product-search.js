@@ -230,7 +230,7 @@
         if (Array.isArray(index)) return Promise.resolve(index);
       } catch (error) { /* Use the external copy if the embedded copy is unavailable. */ }
     }
-    return fetch("/statics/web/data/product-search-index.json?v=20261027-catalog", {credentials:"same-origin"}).then(function (response) {
+    return fetch("/statics/web/data/product-search-index.json?v=20261028-chassis", {credentials:"same-origin"}).then(function (response) {
       if (!response.ok) throw new Error("Index unavailable");
       return response.json();
     });

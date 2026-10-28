@@ -6,7 +6,7 @@ from __future__ import annotations
 import html
 import json
 
-from build_clean_url_pages import ROOT, ROUTES, SITE_ORIGIN
+from build_clean_url_pages import DIRECTORY_REDIRECTS, ROOT, ROUTES, SITE_ORIGIN
 
 
 MARKER = "GPSWITCH_LEGACY_REDIRECT"
@@ -18,11 +18,12 @@ def clean_target_exists(clean_path: str) -> bool:
     return (ROOT / clean_path.strip("/") / "index.html").is_file()
 
 
-def redirect_document(clean_path: str) -> str:
+def redirect_document(clean_path: str, *, preserve_suffix: bool = False) -> str:
     canonical = SITE_ORIGIN + clean_path
     escaped_path = html.escape(clean_path, quote=True)
     escaped_canonical = html.escape(canonical, quote=True)
     js_path = json.dumps(clean_path, ensure_ascii=False)
+    js_destination = js_path + (" + window.location.search + window.location.hash" if preserve_suffix else "")
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -32,7 +33,7 @@ def redirect_document(clean_path: str) -> str:
   <title>Page Moved | GreenPower Electric</title>
   <link rel="canonical" href="{escaped_canonical}">
   <meta http-equiv="refresh" content="0; url={escaped_path}">
-  <script>window.location.replace({js_path});</script>
+  <script>window.location.replace({js_destination});</script>
 </head>
 <body>
   <p>This page has moved to <a href="{escaped_path}">{escaped_canonical}</a>.</p>
@@ -57,10 +58,15 @@ def main() -> None:
 
     for source_name, clean_path in legacy_routes.items():
         (ROOT / source_name).write_text(
-            redirect_document(clean_path), encoding="utf-8"
+            redirect_document(clean_path, preserve_suffix=clean_path in DIRECTORY_REDIRECTS.values()), encoding="utf-8"
         )
 
-    print(f"Built {len(legacy_routes)} legacy redirect pages.")
+    for old_path, clean_path in DIRECTORY_REDIRECTS.items():
+        target = ROOT / old_path.strip("/") / "index.html"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(redirect_document(clean_path, preserve_suffix=True), encoding="utf-8")
+
+    print(f"Built {len(legacy_routes)} legacy file redirects and {len(DIRECTORY_REDIRECTS)} directory redirects.")
 
 
 if __name__ == "__main__":

@@ -12,6 +12,10 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE_ORIGIN = "https://gpswitch.com"
 LEGACY_REDIRECT_MARKER = "GPSWITCH_LEGACY_REDIRECT"
 
+DIRECTORY_REDIRECTS = {
+    "/products/chassis-and-auxiliary-trucks/": "/products/switchgear-chassis-and-trucks/",
+}
+
 
 def build_route_map() -> dict[str, str]:
     routes = {
@@ -28,7 +32,8 @@ def build_route_map() -> dict[str, str]:
     }
     for path in sorted(ROOT.glob("products-*.html")):
         slug = path.stem.removeprefix("products-")
-        routes[path.name] = f"/products/{slug}/"
+        clean_path = f"/products/{slug}/"
+        routes[path.name] = DIRECTORY_REDIRECTS.get(clean_path, clean_path)
     return routes
 
 
@@ -82,7 +87,8 @@ def clean_local_url(value: str) -> str:
     normalized = normalized.lstrip("/")
     if normalized in ROUTES:
         return ROUTES[normalized] + suffix
-    return "/" + normalized + suffix
+    clean_path = "/" + normalized
+    return DIRECTORY_REDIRECTS.get(clean_path.rstrip("/") + "/", clean_path) + suffix
 
 
 def replace_url_attribute(match: re.Match[str]) -> str:

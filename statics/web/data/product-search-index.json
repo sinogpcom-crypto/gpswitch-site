@@ -156,19 +156,6 @@
     "currentRanges": []
   },
   {
-    "url": "/products/chassis-and-auxiliary-trucks/",
-    "title": "Chassis & Functional Trucks",
-    "description": "Chassis, functional trucks and transfer trolleys for withdrawable switchgear.",
-    "searchText": "chassis & functional trucks chassis, functional trucks and transfer trolleys for withdrawable switchgear. chassis & functional trucks chassis & functional trucks chassis, functional trucks and transfer trolleys for withdrawable switchgear. chassis chassis and racking assemblies matched to the breaker and switchgear layout. racking travel, mounting and interlocks breaker connection and position-switch requirements functional trucks functional trucks configured for the required switchgear circuit. pt and isolation trucks earthing and surge-arrester trucks transfer trolleys transfer trolleys for moving and positioning withdrawable assemblies. cabinet interface and platform height equipment dimensions and handling load chassis accessories operating and marking parts used with the selected chassis. chassis handles chassis in-out marks holders chassis in-out tags index chassis & functional trucks chassis, functional trucks and transfer trolleys for withdrawable switchgear. ch ch products chassis and auxiliary trucks",
-    "kind": "category",
-    "category": "ch",
-    "models": [],
-    "voltages": [],
-    "voltageRanges": [],
-    "currents": [],
-    "currentRanges": []
-  },
-  {
     "url": "/products/climate-control-and-lighting/",
     "title": "Climate Control & Lighting",
     "description": "Cabinet heaters, fans, dehumidifiers, temperature and humidity control, and lighting.",
@@ -357,6 +344,44 @@
     ]
   },
   {
+    "url": "/products/gp-ner-11kv-neutral-earthing-resistor/",
+    "title": "GP-NER-11kV Neutral Earthing Resistor Cabinet",
+    "description": "Custom GP-NER-11kV neutral earthing resistor cabinet for earth-fault current limitation, with 25 A / 10 s duty, 250 Ω ±5% resistance, manual isolation and an IP54 outdoor enclosure.",
+    "searchText": "gp-ner-11kv neutral earthing resistor cabinet custom gp-ner-11kv neutral earthing resistor cabinet for earth-fault current limitation, with 25 a / 10 s duty, 250 ω ±5% resistance, manual isolation and an ip54 outdoor enclosure. gp-ner-11kv neutral earthing resistor cabinet greenpower gp-ner-11kv neutral earthing resistor cabinet system rated voltage 11 kv short-time current 25 a / 10 s nominal resistance 250 ω ±5% enclosure protection ip54, outdoor product overview gp-ner-11kv connects the neutral of an 11 kv system to earth through a resistor to limit earth-fault current. the catalog configuration combines a 250 ω ±5% stainless-steel resistor rated 25 a for 10 s, a manually operated gn19-12/400 disconnector and a protection current transformer in an ip54 outdoor cabinet. each assembly is specified to suit the system earthing and protection requirements. earth-fault current limitation the resistor forms the neutral-to-earth connection. its resistance, short-time current and duration are selected together to match the required earth-fault duty. manual isolation and status contacts the gn19-12/400 disconnector is manually operated. its auxiliary contacts are brought to the xt2 terminal block for the external status circuit. key features manual disconnector the cabinet includes a gn19-12/400 disconnector for isolation during maintenance, with the operating arrangement shown in the outline drawing. protection ct interface an lzzbj9-10 current transformer provides a 100/5 a signal for the external protection circuit. the specified ct class is 5p10, with a 5 va burden. outdoor ip54 enclosure the cabinet uses 2 mm cold-rolled steel plate, finished in ral7035, with a rain canopy, front and rear doors, and ventilation openings lined with dust-proof mesh. technical specifications gp-ner-11kv electrical and enclosure specifications parameter data system rated voltage 11 kv short-time current 25 a duration of short-time current 10 s nominal resistance 250 ω resistance tolerance ±5% resistor material stainless steel disconnector gn19-12/400, manual operation current transformer model lzzbj9-10 current transformer ratio 100/5 a ct protection class 5p10 ct rated burden 5 va installation outdoor enclosure protection ip54 cabinet dimensions (w × d × h) 1000 × 1150 × 2000 mm cabinet material 2 mm cold-rolled steel plate cabinet colour ral7035 base no. 10 channel steel these values describe the 11 kv, 25 a / 10 s configuration in the catalog drawings. resistance, current, duration and enclosure requirements are confirmed for each order. installation and connections foundation and cable entry the cabinet measures 1000 × 1150 × 2000 mm (w × d × h). primary, earthing and secondary cables enter from below through openings fitted with rubber rings and cable clamps. the channel-steel base has copper earthing blocks on both sides with m12 threaded holes. primary and secondary circuits the primary schematic places the disconnector, resistor and ct in the neutral-to-earth circuit. ct secondary connections are shown at xt1, and disconnector auxiliary contacts at xt2, for connection to the external protection and status circuits. the manual includes cabinet views, internal arrangements, the base plan and wiring diagrams. use the supplied assembly drawings to confirm the foundation, cable openings and terminal connections. service conditions altitude not exceeding 4000 m above sea level. ambient temperature -40°c to +60°c. relative humidity not exceeding 95% at 25°c. power frequency 48-52 hz for 50 hz systems; 58-62 hz for 60 hz systems. the installation site should be free from corrosive gases, steam and explosive dust. state any special operating conditions with the enquiry. configuration and ordering system and protection requirements provide the system voltage, neutral arrangement, required earth-fault current, resistance and short-time duration. include the ct ratio, protection class, burden and terminal requirements. systems without an accessible neutral may require an earthing transformer as part of the earthing scheme. monitoring and enclosure options specify any earth-fault event recording, temperature and humidity control, or monitoring interface required. confirm the enclosure material, protection level, installation location and cable entry arrangement with the order. index products gp ner 11kv neutral earthing resistor",
+    "kind": "product",
+    "category": "ner",
+    "models": [
+      "GP-NER-11kV"
+    ],
+    "voltages": [
+      11.0
+    ],
+    "voltageRanges": [],
+    "currents": [
+      25.0
+    ],
+    "currentRanges": []
+  },
+  {
+    "url": "/products/gp-ner-20kv-neutral-earthing-resistor/",
+    "title": "GP-NER-20kV Neutral Earthing Resistor Cabinet",
+    "description": "Custom GP-NER-20kV outdoor neutral earthing resistor cabinet for limiting earth-fault current: 150 A / 10 s, 77 Ω ±5%, IP54 enclosure and 150/1 A measurement CT.",
+    "searchText": "gp-ner-20kv neutral earthing resistor cabinet custom gp-ner-20kv outdoor neutral earthing resistor cabinet for limiting earth-fault current: 150 a / 10 s, 77 ω ±5%, ip54 enclosure and 150/1 a measurement ct. gp-ner-20kv neutral earthing resistor cabinet greenpower gp-ner-20kv neutral earthing resistor cabinet system rated voltage 20 kv short-time current 150 a / 10 s nominal resistance 77 ω ±5% enclosure protection ip54, outdoor product overview gp-ner-20kv is a custom outdoor cabinet for resistance earthing of 20 kv system neutrals. the configuration shown uses a 77 ω ±5% resistor with a 150 a, 10 s short-time rating to limit earth-fault current. an lzzbj9-10 current transformer provides a 150/1 a measurement signal. the resistor and ct are housed in an ip54 steel enclosure with front and rear access. neutral-to-earth connection the resistor connects the system neutral to the earthing grid. resistance, short-time current and duration are specified together to match the earth-fault duty of the installation. current measurement the wiring drawing specifies a 150/1 a ct with accuracy class 1.0 and a 15 va burden. its secondary signal is brought to the xt1 terminal block for the external measurement circuit. key features outdoor ip54 enclosure the cabinet uses 2 mm cold-rolled steel plate, finished in ral7035, with a rain canopy for outdoor installation. front and rear access front and rear doors provide access to the resistor assembly and connections. the drawing specifies reinforced panels and ventilation openings lined with dust-proof mesh. bottom cable entry primary, earthing and secondary cables enter from below. rubber rings and cable clamps are provided at the cable openings shown in the base plan. technical specifications gp-ner-20kv electrical and enclosure specifications parameter data system rated voltage 20 kv short-time current 150 a duration of short-time current 10 s nominal resistance 77 ω resistance tolerance ±5% current transformer model lzzbj9-10 current transformer ratio 150/1 a ct accuracy class 1.0 ct rated burden 15 va ct rated frequency 50 hz installation outdoor enclosure protection ip54 cabinet dimensions (w × d × h) 1300 × 1450 × 2000 mm cabinet material 2 mm cold-rolled steel plate cabinet colour ral7035 base no. 10 channel steel these values describe the 20 kv, 150 a / 10 s configuration in the catalog outline and wiring drawings. resistance, current, duration and enclosure requirements are confirmed for each order. installation and connections foundation and earthing the cabinet measures 1300 × 1450 × 2000 mm (w × d × h). its channel-steel base has copper earthing blocks on both sides with m12 threaded holes. confirm the foundation, anchor positions and bottom cable openings against the supplied base plan. resistor and ct connections the primary diagram shows the resistor and ct in the neutral-to-earth circuit. ct-s1 and ct-s2 connect to xt1-1 and xt1-2 respectively. the outline drawing identifies the neutral-point connection, earthing connection and secondary terminal locations. the manual includes cabinet views, internal arrangements, the base plan and wiring diagrams. use the supplied assembly drawings to confirm the foundation, cable openings and terminal connections. service conditions altitude not exceeding 4000 m above sea level. ambient temperature -40°c to +60°c. relative humidity not exceeding 95% at 25°c. power frequency 48-52 hz for 50 hz systems. the ct shown in this configuration is rated 50 hz. the installation site should be free from corrosive gases, steam and explosive dust. state any special operating conditions or other frequency requirements with the enquiry. configuration and ordering system and ct requirements provide the system voltage, neutral arrangement, required earth-fault current, resistance and short-time duration. define the ct ratio, accuracy class, burden and external circuit requirements. systems without an accessible neutral may require an earthing transformer as part of the earthing scheme. cabinet and monitoring options confirm the enclosure material, protection level, installation location and cable entry arrangement. specify any isolating switch, earth-fault event recording, temperature and humidity control, or monitoring interface required for the ordered assembly. index products gp ner 20kv neutral earthing resistor",
+    "kind": "product",
+    "category": "ner",
+    "models": [
+      "GP-NER-20kV"
+    ],
+    "voltages": [
+      20.0
+    ],
+    "voltageRanges": [],
+    "currents": [
+      150.0
+    ],
+    "currentRanges": []
+  },
+  {
     "url": "/products/gp-ner-3-3kv-neutral-earthing-resistor/",
     "title": "GP-NER-3.3kV Neutral Earthing Resistor Cabinet",
     "description": "GP-NER-3.3kV outdoor neutral earthing resistor cabinet: 200 A for 10 s, 9.5 Ω ±5%, IP54 enclosure and 250/5 A protection CT.",
@@ -372,6 +397,25 @@
     "voltageRanges": [],
     "currents": [
       200.0
+    ],
+    "currentRanges": []
+  },
+  {
+    "url": "/products/gp-ner-33kv-neutral-earthing-resistor/",
+    "title": "GP-NER-33kV Neutral Earthing Resistor Cabinet",
+    "description": "Custom GP-NER-33kV neutral earthing resistor cabinet for earth-fault current limitation, with 1600 A / 10 s duty, 12 Ω ±5% resistance, manual isolation and an IP54 outdoor enclosure.",
+    "searchText": "gp-ner-33kv neutral earthing resistor cabinet custom gp-ner-33kv neutral earthing resistor cabinet for earth-fault current limitation, with 1600 a / 10 s duty, 12 ω ±5% resistance, manual isolation and an ip54 outdoor enclosure. gp-ner-33kv neutral earthing resistor cabinet greenpower gp-ner-33kv neutral earthing resistor cabinet system rated voltage 33 kv short-time current 1600 a / 10 s nominal resistance 12 ω ±5% enclosure protection ip54, outdoor product overview gp-ner-33kv connects the neutral of a 33 kv system to earth through a resistor to limit earth-fault current. the catalog configuration combines a 12 ω ±5% stainless-steel resistor rated 1600 a for 10 s, a manually operated gn27-40.5/1250 disconnector and a protection current transformer in an ip54 outdoor cabinet. each assembly is specified to suit the system earthing and protection requirements. earth-fault current limitation the resistor forms the neutral-to-earth connection. its resistance, short-time current and duration are selected together to match the required earth-fault duty. manual isolation and status contacts the gn27-40.5/1250 disconnector is manually operated. its auxiliary contacts are brought to the xt2 terminal block for the external status circuit. key features manual disconnector the cabinet includes a gn27-40.5/1250 disconnector for isolation during maintenance, with the operating arrangement shown in the outline drawing. protection ct interface an lzzbj9-10 current transformer provides a 1600/5 a signal for the external protection circuit. the specified ct class is 5p10, with a 5 va burden. outdoor ip54 enclosure the cabinet uses 2 mm cold-rolled steel plate, finished in ral7035, with a rain canopy, front and rear doors, and ventilation openings lined with dust-proof mesh. technical specifications gp-ner-33kv electrical and enclosure specifications parameter data system rated voltage 33 kv short-time current 1600 a duration of short-time current 10 s nominal resistance 12 ω resistance tolerance ±5% resistor material stainless steel disconnector gn27-40.5/1250, manual operation current transformer model lzzbj9-10 current transformer ratio 1600/5 a ct protection class 5p10 ct rated burden 5 va installation outdoor enclosure protection ip54 cabinet dimensions (w × d × h) 2100 × 1600 × 2250 mm cabinet material 2 mm cold-rolled steel plate cabinet colour ral7035 base no. 12 channel steel these values describe the 33 kv, 1600 a / 10 s configuration in the catalog drawings. resistance, current, duration and enclosure requirements are confirmed for each order. installation and connections foundation and cable entry the cabinet measures 2100 × 1600 × 2250 mm (w × d × h). primary, earthing and secondary cables enter from below through openings fitted with rubber rings and cable clamps. the channel-steel base has copper earthing blocks on both sides with m12 threaded holes. primary and secondary circuits the primary schematic places the disconnector, resistor and ct in the neutral-to-earth circuit. ct secondary connections are shown at xt1, and disconnector auxiliary contacts at xt2, for connection to the external protection and status circuits. the manual includes cabinet views, internal arrangements, the base plan and wiring diagrams. use the supplied assembly drawings to confirm the foundation, cable openings and terminal connections. service conditions altitude not exceeding 4000 m above sea level. ambient temperature -40°c to +60°c. relative humidity not exceeding 95% at 25°c. power frequency 48-52 hz for 50 hz systems; 58-62 hz for 60 hz systems. the installation site should be free from corrosive gases, steam and explosive dust. state any special operating conditions with the enquiry. configuration and ordering system and protection requirements provide the system voltage, neutral arrangement, required earth-fault current, resistance and short-time duration. include the ct ratio, protection class, burden and terminal requirements. systems without an accessible neutral may require an earthing transformer as part of the earthing scheme. monitoring and enclosure options specify any earth-fault event recording, temperature and humidity control, or monitoring interface required. confirm the enclosure material, protection level, installation location and cable entry arrangement with the order. index products gp ner 33kv neutral earthing resistor",
+    "kind": "product",
+    "category": "ner",
+    "models": [
+      "GP-NER-33kV"
+    ],
+    "voltages": [
+      33.0
+    ],
+    "voltageRanges": [],
+    "currents": [
+      1600.0
     ],
     "currentRanges": []
   },
@@ -1057,6 +1101,19 @@
     "currentRanges": []
   },
   {
+    "url": "/products/switchgear-chassis-and-trucks/",
+    "title": "Chassis & Functional Trucks",
+    "description": "Chassis, functional trucks and transfer trolleys for withdrawable switchgear.",
+    "searchText": "chassis & functional trucks chassis, functional trucks and transfer trolleys for withdrawable switchgear. chassis & functional trucks chassis & functional trucks chassis, functional trucks and transfer trolleys for withdrawable switchgear. chassis chassis and racking assemblies matched to the breaker and switchgear layout. racking travel, mounting and interlocks breaker connection and position-switch requirements functional trucks functional trucks configured for the required switchgear circuit. pt and isolation trucks earthing and surge-arrester trucks transfer trolleys transfer trolleys for moving and positioning withdrawable assemblies. cabinet interface and platform height equipment dimensions and handling load chassis accessories operating and marking parts used with the selected chassis. chassis handles chassis in-out marks holders chassis in-out tags index chassis & functional trucks circuit-breaker chassis, functional trucks and transfer trolleys for withdrawable switchgear. ch ch products switchgear chassis and trucks",
+    "kind": "category",
+    "category": "ch",
+    "models": [],
+    "voltages": [],
+    "voltageRanges": [],
+    "currents": [],
+    "currentRanges": []
+  },
+  {
     "url": "/products/vacuum-circuit-breaker/",
     "title": "Vacuum Circuit Breakers",
     "description": "Indoor and outdoor vacuum circuit breakers for feeder switching and fault interruption.",
@@ -1156,63 +1213,6 @@
     "voltages": [],
     "voltageRanges": [],
     "currents": [],
-    "currentRanges": []
-  },
-  {
-    "url": "/products/gp-ner-11kv-neutral-earthing-resistor/",
-    "title": "GP-NER-11kV Neutral Earthing Resistor Cabinet",
-    "description": "Custom GP-NER-11kV neutral earthing resistor cabinet for earth-fault current limitation, with 25 A / 10 s duty, 250 Ω ±5% resistance, manual isolation and an IP54 outdoor enclosure.",
-    "searchText": "gp-ner-11kv neutral earthing resistor cabinet custom gp-ner-11kv neutral earthing resistor cabinet for earth-fault current limitation, with 25 a / 10 s duty, 250 ω ±5% resistance, manual isolation and an ip54 outdoor enclosure. gp-ner-11kv neutral earthing resistor cabinet greenpower gp-ner-11kv neutral earthing resistor cabinet system rated voltage 11 kv short-time current 25 a / 10 s nominal resistance 250 ω ±5% enclosure protection ip54, outdoor product overview gp-ner-11kv connects the neutral of an 11 kv system to earth through a resistor to limit earth-fault current. the catalog configuration combines a 250 ω ±5% stainless-steel resistor rated 25 a for 10 s, a manually operated gn19-12/400 disconnector and a protection current transformer in an ip54 outdoor cabinet. each assembly is specified to suit the system earthing and protection requirements. earth-fault current limitation the resistor forms the neutral-to-earth connection. its resistance, short-time current and duration are selected together to match the required earth-fault duty. manual isolation and status contacts the gn19-12/400 disconnector is manually operated. its auxiliary contacts are brought to the xt2 terminal block for the external status circuit. key features manual disconnector the cabinet includes a gn19-12/400 disconnector for isolation during maintenance, with the operating arrangement shown in the outline drawing. protection ct interface an lzzbj9-10 current transformer provides a 100/5 a signal for the external protection circuit. the specified ct class is 5p10, with a 5 va burden. outdoor ip54 enclosure the cabinet uses 2 mm cold-rolled steel plate, finished in ral7035, with a rain canopy, front and rear doors, and ventilation openings lined with dust-proof mesh. technical specifications gp-ner-11kv electrical and enclosure specifications parameter data system rated voltage 11 kv short-time current 25 a duration of short-time current 10 s nominal resistance 250 ω resistance tolerance ±5% resistor material stainless steel disconnector gn19-12/400, manual operation current transformer model lzzbj9-10 current transformer ratio 100/5 a ct protection class 5p10 ct rated burden 5 va installation outdoor enclosure protection ip54 cabinet dimensions (w × d × h) 1000 × 1150 × 2000 mm cabinet material 2 mm cold-rolled steel plate cabinet colour ral7035 base no. 10 channel steel these values describe the 11 kv, 25 a / 10 s configuration in the catalog drawings. resistance, current, duration and enclosure requirements are confirmed for each order. installation and connections foundation and cable entry the cabinet measures 1000 × 1150 × 2000 mm (w × d × h). primary, earthing and secondary cables enter from below through openings fitted with rubber rings and cable clamps. the channel-steel base has copper earthing blocks on both sides with m12 threaded holes. primary and secondary circuits the primary schematic places the disconnector, resistor and ct in the neutral-to-earth circuit. ct secondary connections are shown at xt1, and disconnector auxiliary contacts at xt2, for connection to the external protection and status circuits. the manual includes cabinet views, internal arrangements, the base plan and wiring diagrams. use the supplied assembly drawings to confirm the foundation, cable openings and terminal connections. service conditions altitude not exceeding 4000 m above sea level. ambient temperature -40°c to +60°c. relative humidity not exceeding 95% at 25°c. power frequency 48-52 hz for 50 hz systems; 58-62 hz for 60 hz systems. the installation site should be free from corrosive gases, steam and explosive dust. state any special operating conditions with the enquiry. configuration and ordering system and protection requirements provide the system voltage, neutral arrangement, required earth-fault current, resistance and short-time duration. include the ct ratio, protection class, burden and terminal requirements. systems without an accessible neutral may require an earthing transformer as part of the earthing scheme. monitoring and enclosure options specify any earth-fault event recording, temperature and humidity control, or monitoring interface required. confirm the enclosure material, protection level, installation location and cable entry arrangement with the order. index products gp ner 11kv neutral earthing resistor",
-    "kind": "product",
-    "category": "ner",
-    "models": [
-      "GP-NER-11kV"
-    ],
-    "voltages": [
-      11.0
-    ],
-    "voltageRanges": [],
-    "currents": [
-      25.0
-    ],
-    "currentRanges": []
-  },
-  {
-    "url": "/products/gp-ner-20kv-neutral-earthing-resistor/",
-    "title": "GP-NER-20kV Neutral Earthing Resistor Cabinet",
-    "description": "Custom GP-NER-20kV outdoor neutral earthing resistor cabinet for limiting earth-fault current: 150 A / 10 s, 77 Ω ±5%, IP54 enclosure and 150/1 A measurement CT.",
-    "searchText": "gp-ner-20kv neutral earthing resistor cabinet custom gp-ner-20kv outdoor neutral earthing resistor cabinet for limiting earth-fault current: 150 a / 10 s, 77 ω ±5%, ip54 enclosure and 150/1 a measurement ct. gp-ner-20kv neutral earthing resistor cabinet greenpower gp-ner-20kv neutral earthing resistor cabinet system rated voltage 20 kv short-time current 150 a / 10 s nominal resistance 77 ω ±5% enclosure protection ip54, outdoor product overview gp-ner-20kv is a custom outdoor cabinet for resistance earthing of 20 kv system neutrals. the configuration shown uses a 77 ω ±5% resistor with a 150 a, 10 s short-time rating to limit earth-fault current. an lzzbj9-10 current transformer provides a 150/1 a measurement signal. the resistor and ct are housed in an ip54 steel enclosure with front and rear access. neutral-to-earth connection the resistor connects the system neutral to the earthing grid. resistance, short-time current and duration are specified together to match the earth-fault duty of the installation. current measurement the wiring drawing specifies a 150/1 a ct with accuracy class 1.0 and a 15 va burden. its secondary signal is brought to the xt1 terminal block for the external measurement circuit. key features outdoor ip54 enclosure the cabinet uses 2 mm cold-rolled steel plate, finished in ral7035, with a rain canopy for outdoor installation. front and rear access front and rear doors provide access to the resistor assembly and connections. the drawing specifies reinforced panels and ventilation openings lined with dust-proof mesh. bottom cable entry primary, earthing and secondary cables enter from below. rubber rings and cable clamps are provided at the cable openings shown in the base plan. technical specifications gp-ner-20kv electrical and enclosure specifications parameter data system rated voltage 20 kv short-time current 150 a duration of short-time current 10 s nominal resistance 77 ω resistance tolerance ±5% current transformer model lzzbj9-10 current transformer ratio 150/1 a ct accuracy class 1.0 ct rated burden 15 va ct rated frequency 50 hz installation outdoor enclosure protection ip54 cabinet dimensions (w × d × h) 1300 × 1450 × 2000 mm cabinet material 2 mm cold-rolled steel plate cabinet colour ral7035 base no. 10 channel steel these values describe the 20 kv, 150 a / 10 s configuration in the catalog outline and wiring drawings. resistance, current, duration and enclosure requirements are confirmed for each order. installation and connections foundation and earthing the cabinet measures 1300 × 1450 × 2000 mm (w × d × h). its channel-steel base has copper earthing blocks on both sides with m12 threaded holes. confirm the foundation, anchor positions and bottom cable openings against the supplied base plan. resistor and ct connections the primary diagram shows the resistor and ct in the neutral-to-earth circuit. ct-s1 and ct-s2 connect to xt1-1 and xt1-2 respectively. the outline drawing identifies the neutral-point connection, earthing connection and secondary terminal locations. the manual includes cabinet views, internal arrangements, the base plan and wiring diagrams. use the supplied assembly drawings to confirm the foundation, cable openings and terminal connections. service conditions altitude not exceeding 4000 m above sea level. ambient temperature -40°c to +60°c. relative humidity not exceeding 95% at 25°c. power frequency 48-52 hz for 50 hz systems. the ct shown in this configuration is rated 50 hz. the installation site should be free from corrosive gases, steam and explosive dust. state any special operating conditions or other frequency requirements with the enquiry. configuration and ordering system and ct requirements provide the system voltage, neutral arrangement, required earth-fault current, resistance and short-time duration. define the ct ratio, accuracy class, burden and external circuit requirements. systems without an accessible neutral may require an earthing transformer as part of the earthing scheme. cabinet and monitoring options confirm the enclosure material, protection level, installation location and cable entry arrangement. specify any isolating switch, earth-fault event recording, temperature and humidity control, or monitoring interface required for the ordered assembly. index products gp ner 20kv neutral earthing resistor",
-    "kind": "product",
-    "category": "ner",
-    "models": [
-      "GP-NER-20kV"
-    ],
-    "voltages": [
-      20.0
-    ],
-    "voltageRanges": [],
-    "currents": [
-      150.0
-    ],
-    "currentRanges": []
-  },
-  {
-    "url": "/products/gp-ner-33kv-neutral-earthing-resistor/",
-    "title": "GP-NER-33kV Neutral Earthing Resistor Cabinet",
-    "description": "Custom GP-NER-33kV neutral earthing resistor cabinet for earth-fault current limitation, with 1600 A / 10 s duty, 12 Ω ±5% resistance, manual isolation and an IP54 outdoor enclosure.",
-    "searchText": "gp-ner-33kv neutral earthing resistor cabinet custom gp-ner-33kv neutral earthing resistor cabinet for earth-fault current limitation, with 1600 a / 10 s duty, 12 ω ±5% resistance, manual isolation and an ip54 outdoor enclosure. gp-ner-33kv neutral earthing resistor cabinet greenpower gp-ner-33kv neutral earthing resistor cabinet system rated voltage 33 kv short-time current 1600 a / 10 s nominal resistance 12 ω ±5% enclosure protection ip54, outdoor product overview gp-ner-33kv connects the neutral of a 33 kv system to earth through a resistor to limit earth-fault current. the catalog configuration combines a 12 ω ±5% stainless-steel resistor rated 1600 a for 10 s, a manually operated gn27-40.5/1250 disconnector and a protection current transformer in an ip54 outdoor cabinet. each assembly is specified to suit the system earthing and protection requirements. earth-fault current limitation the resistor forms the neutral-to-earth connection. its resistance, short-time current and duration are selected together to match the required earth-fault duty. manual isolation and status contacts the gn27-40.5/1250 disconnector is manually operated. its auxiliary contacts are brought to the xt2 terminal block for the external status circuit. key features manual disconnector the cabinet includes a gn27-40.5/1250 disconnector for isolation during maintenance, with the operating arrangement shown in the outline drawing. protection ct interface an lzzbj9-10 current transformer provides a 1600/5 a signal for the external protection circuit. the specified ct class is 5p10, with a 5 va burden. outdoor ip54 enclosure the cabinet uses 2 mm cold-rolled steel plate, finished in ral7035, with a rain canopy, front and rear doors, and ventilation openings lined with dust-proof mesh. technical specifications gp-ner-33kv electrical and enclosure specifications parameter data system rated voltage 33 kv short-time current 1600 a duration of short-time current 10 s nominal resistance 12 ω resistance tolerance ±5% resistor material stainless steel disconnector gn27-40.5/1250, manual operation current transformer model lzzbj9-10 current transformer ratio 1600/5 a ct protection class 5p10 ct rated burden 5 va installation outdoor enclosure protection ip54 cabinet dimensions (w × d × h) 2100 × 1600 × 2250 mm cabinet material 2 mm cold-rolled steel plate cabinet colour ral7035 base no. 12 channel steel these values describe the 33 kv, 1600 a / 10 s configuration in the catalog drawings. resistance, current, duration and enclosure requirements are confirmed for each order. installation and connections foundation and cable entry the cabinet measures 2100 × 1600 × 2250 mm (w × d × h). primary, earthing and secondary cables enter from below through openings fitted with rubber rings and cable clamps. the channel-steel base has copper earthing blocks on both sides with m12 threaded holes. primary and secondary circuits the primary schematic places the disconnector, resistor and ct in the neutral-to-earth circuit. ct secondary connections are shown at xt1, and disconnector auxiliary contacts at xt2, for connection to the external protection and status circuits. the manual includes cabinet views, internal arrangements, the base plan and wiring diagrams. use the supplied assembly drawings to confirm the foundation, cable openings and terminal connections. service conditions altitude not exceeding 4000 m above sea level. ambient temperature -40°c to +60°c. relative humidity not exceeding 95% at 25°c. power frequency 48-52 hz for 50 hz systems; 58-62 hz for 60 hz systems. the installation site should be free from corrosive gases, steam and explosive dust. state any special operating conditions with the enquiry. configuration and ordering system and protection requirements provide the system voltage, neutral arrangement, required earth-fault current, resistance and short-time duration. include the ct ratio, protection class, burden and terminal requirements. systems without an accessible neutral may require an earthing transformer as part of the earthing scheme. monitoring and enclosure options specify any earth-fault event recording, temperature and humidity control, or monitoring interface required. confirm the enclosure material, protection level, installation location and cable entry arrangement with the order. index products gp ner 33kv neutral earthing resistor",
-    "kind": "product",
-    "category": "ner",
-    "models": [
-      "GP-NER-33kV"
-    ],
-    "voltages": [
-      33.0
-    ],
-    "voltageRanges": [],
-    "currents": [
-      1600.0
-    ],
     "currentRanges": []
   }
 ]
