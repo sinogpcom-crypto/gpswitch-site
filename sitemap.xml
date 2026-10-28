@@ -41,11 +41,6 @@
     <priority>0.8</priority>
   </url>
   <url><loc>https://gpswitch.com/products/switchgear-chassis-and-trucks/</loc><lastmod>2026-10-28</lastmod><priority>0.7</priority></url>
-  <url>
-    <loc>https://gpswitch.com/products/compact-secondary-substation/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
   <url><loc>https://gpswitch.com/products/contact-and-copper-parts/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://gpswitch.com/products/disconnector-switch/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://gpswitch.com/products/earthing-switch/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
@@ -135,25 +130,10 @@
   <url><loc>https://gpswitch.com/products/insulating-parts/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://gpswitch.com/products/load-break-switch/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://gpswitch.com/products/metal-clad-switchgear/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
-  <url>
-    <loc>https://gpswitch.com/products/metering-and-monitoring-devices/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
   <url><loc>https://gpswitch.com/products/operating-mechanisms-and-coils/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://gpswitch.com/products/ring-main-unit/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://gpswitch.com/products/cabinet-hardware-and-secondary-accessories/</loc><lastmod>2026-10-28</lastmod><priority>0.7</priority></url>
-  <url>
-    <loc>https://gpswitch.com/products/test-and-diagnostic-tools/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
   <url><loc>https://gpswitch.com/products/vacuum-circuit-breaker/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
-  <url>
-    <loc>https://gpswitch.com/products/vacuum-interrupters/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <priority>0.8</priority>
-  </url>
   <url>
     <loc>https://gpswitch.com/projects/</loc>
     <lastmod>2026-09-01</lastmod>
