@@ -14,6 +14,9 @@ LEGACY_REDIRECT_MARKER = "GPSWITCH_LEGACY_REDIRECT"
 
 DIRECTORY_REDIRECTS = {
     "/products/chassis-and-auxiliary-trucks/": "/products/switchgear-chassis-and-trucks/",
+    "/products/switchgear-accessories-and-controllers/": "/products/cabinet-hardware-and-secondary-accessories/",
+    "/products/drop-out-fuses/": "/products/drop-out-fuse-cutouts/",
+    "/products/indicators-and-detection-devices/": "/products/voltage-and-status-indication/",
 }
 
 

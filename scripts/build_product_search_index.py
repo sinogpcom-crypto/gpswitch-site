@@ -26,7 +26,7 @@ def clean_product_url(source_path: Path) -> str:
 def product_source_paths() -> list[Path]:
     hub = ROOT / "products/index.html"
     detail_pages = sorted((ROOT / "products").glob("*/index.html"))
-    excluded = {"chassis-and-auxiliary-trucks", "vacuum-contactor-fuse-combinations", "vacuum-interrupters", "compact-secondary-substation", "test-and-diagnostic-tools", "system-earthing-protection", "metering-and-monitoring-devices"}
+    excluded = {"switchgear-accessories-and-controllers", "drop-out-fuses", "indicators-and-detection-devices", "chassis-and-auxiliary-trucks", "vacuum-contactor-fuse-combinations", "vacuum-interrupters", "compact-secondary-substation", "test-and-diagnostic-tools", "system-earthing-protection", "metering-and-monitoring-devices"}
     return [hub, *(p for p in detail_pages if p.parent.name not in excluded and re.search(r'<h1[ >]', p.read_text(encoding="utf-8"), re.I))]
 
 
@@ -152,9 +152,9 @@ CATEGORIES = {
     "disconnector-switch": "dsw", "earthing-switch": "esw",
     "insulating-parts": "ip", "contact-and-copper-parts": "cc", "switchgear-chassis-and-trucks": "ch",
     "shutters-and-interlocks": "si", "operating-mechanisms-and-coils": "om",
-    "switchgear-accessories-and-controllers": "ia", "climate-control-and-lighting": "cl",
+    "cabinet-hardware-and-secondary-accessories": "ia", "climate-control-and-lighting": "cl",
     "cable-connectors-and-accessories": "ca", "surge-arresters": "sa", "current-limiting-fuses": "clf",
-    "drop-out-fuses": "dof", "indicators-and-detection-devices": "vsi",
+    "drop-out-fuse-cutouts": "dof", "voltage-and-status-indication": "vsi",
     "integrated-control-and-condition-monitoring": "ic", "instrument-transformers": "ct",
 }
 
