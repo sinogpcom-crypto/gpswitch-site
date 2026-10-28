@@ -20,7 +20,6 @@
     ["lbs", "Load Break Switch", ["load break switch", "load switch", "lbs"]],
     ["dsw", "Disconnector", ["disconnector switch", "disconnector", "disconnect switch", "isolator"]],
     ["esw", "Earthing Switch", ["earthing switch", "grounding switch"]],
-    ["fc", "Vacuum Contactor-Fuse Combination", ["vacuum contactor fuse combination", "vacuum contactor", "contactor fuse"]],
     ["ip", "Insulating Parts", ["insulating part", "epoxy insulator", "insulator", "contact box", "bushing"]],
     ["cc", "Contacts & Copper Parts", ["contact and copper part", "copper part", "tulip contact", "fixed contact", "contact arm", "fuse clip"]],
     ["ch", "Chassis & Functional Trucks", ["vcb chassis truck", "chassis truck", "chassis", "functional truck", "transfer trolley"]],
@@ -231,7 +230,7 @@
         if (Array.isArray(index)) return Promise.resolve(index);
       } catch (error) { /* Use the external copy if the embedded copy is unavailable. */ }
     }
-    return fetch("/statics/web/data/product-search-index.json?v=20261026-site", {credentials:"same-origin"}).then(function (response) {
+    return fetch("/statics/web/data/product-search-index.json?v=20261027-catalog", {credentials:"same-origin"}).then(function (response) {
       if (!response.ok) throw new Error("Index unavailable");
       return response.json();
     });
