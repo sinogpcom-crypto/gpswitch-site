@@ -32,3 +32,13 @@
 - Compare the new page's main-image DOM and effective CSS rules with the GPN1-12kV reference, including media-query overrides.
 - Verify that no per-product frame padding, forced image dimensions, vertical centering, or competing scale rules override the standard.
 - Preserve unrelated products and the reference page when making an individual adjustment.
+
+## Structured data for inquiry-based product detail pages
+
+- Apply one consistent `WebPage` JSON-LD block with id `product-page-schema` to every product detail page, including newly created pages.
+- Use the page's exact canonical URL, current title and meta description, `inLanguage: en`, and actual hero image as `primaryImageOfPage`. Use only `WebPage`-appropriate properties; do not retain `Product`-only model, brand, offer, rating or technical-property fields on a WebPage node.
+- Identify the website publisher consistently as GreenPower Electric, with organization id `https://gpswitch.com/#organization` and homepage `https://gpswitch.com/`.
+- This independent site presents products for technical selection and inquiry. Do not add `Product`, `ProductGroup`, `ProductModel`, offers, reviews or aggregate ratings by default. A future change to this standard must be based on real, publicly visible information and the user's intended scope; never invent prices, reviews, ratings or availability.
+- Preserve existing valid `BreadcrumbList` and other unrelated structured data. Do not add visible breadcrumbs above the hero as part of metadata work.
+- Keep product parameters, descriptions, catalogs, images, links and layout intact when changing only the schema. Update the sitemap lastmod only for pages actually changed.
+- Before publishing, parse every JSON-LD block, confirm each detail page has exactly one WebPage block, and verify canonical URL, title, description, image and publisher agree with the page. Confirm no Product-family markup remains under the current standard.
